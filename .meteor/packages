@@ -7,3 +7,24 @@
 meteor-platform
 autopublish
 insecure
+
+
+
+
+#Added Packages
+accounts-base
+accounts-password
+aldeed:collection2
+aldeed:simple-schema
+fortawesome:fontawesome
+cfs:standard-packages
+cfs:filesystem
+cfs:gridfs
+iron:router
+less
+cfs:ui
+aldeed:autoform
+yogiben:autoform-file
+twbs:bootstrap
+useraccounts:bootstrap
+useraccounts:core
