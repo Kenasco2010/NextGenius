@@ -7,10 +7,6 @@
 meteor-platform
 autopublish
 insecure
-
-
-
-
 #Added Packages
 accounts-base
 accounts-password
