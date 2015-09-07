@@ -24,3 +24,4 @@ twbs:bootstrap
 useraccounts:bootstrap
 useraccounts:core
 rajit:bootstrap3-datepicker
+aldeed:autoform-bs-datepicker
