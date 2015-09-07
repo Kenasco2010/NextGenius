@@ -7,12 +7,7 @@
 meteor-platform
 autopublish
 insecure
-
-
-
-
 #Added Packages
-accounts-base
 accounts-password
 aldeed:collection2
 aldeed:simple-schema
