@@ -1,24 +1,29 @@
 <template name="insertPlayerDetail">
 	{{#autoForm collection="Players" id="insertPlayerDetail" type="insert"}}
-
-<div class="container col-md-6">
+<div class="row">
+<div class="col-lg-4 col-md-3 col-xs-1"></div>
+<div class="col-lg-4 col-md-6 col-xs-10">
 	<fieldset>
-		<legend>Insert Player Detail</legend>
-			{{> afQuickField name='firstname'}}
-			{{> afQuickField name='lastname'}}
-			{{> afQuickField name='dateofbirth' type="bootstrap-datepicker"}}
+		<legend>Please complete your profile</legend>
+			{{> afQuickField name='firstName'}}
+			{{> afQuickField name='lastName'}}
+			{{> afQuickField name='dateOfBirth' type="bootstrap-datepicker"}}
 			{{> afQuickField name='gender'}}
 			{{> afQuickField name='position'}}
 			{{> afQuickField name='club'}}
 			{{> afQuickField name='division'}}
-			{{> afQuickField name='country'}}
-			{{> afQuickField name='previousclub'}}
-			{{> afQuickField name='transferstatus'}}
+			{{> afQuickField name='originCountry'}}
+			{{> afQuickField name='previousClub'}}
+			{{> afQuickField name='transferStatus'}}
 			{{> afQuickField name='height'}}
 			{{> afQuickField name='weight'}}
+			{{> afFieldInput name='picture'}}
+
 	</fieldset>
 
-	<button class="btn btn-primary" type="submit">Insert Player Detail</button>
+	<button class="btn btn-primary" type="submit">Save Detail</button>
+</div>
 </div>
 	{{/autoForm}}
 </template>
+

@@ -1,0 +1,27 @@
+<template name="playerProfile">
+{{#each playerProfile}}
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2">
+				{{#with FS.GetFile 'images' picture}}
+				<p>Images</p>
+				<img src="this.url" alt="" class="img-rounded"/>
+				{{/with}}
+			</div>
+			<div class="span4">
+				<blockquote>
+					<p>{{firstName}}</p>
+					<p>{{lastName}}</p>
+					<p>{{dateOfBirth}}</p>
+					<p>{{gender}}</p>
+					<p>Country of origin: {{originCountry}}</p><i class="icon-map-marker"></i>
+					<p>Height: {{height}}</p>
+
+				</blockquote>	
+			</div>
+
+		</div>
+	</div>
+{{/each}}
+</template>
+
