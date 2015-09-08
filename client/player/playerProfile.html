@@ -1,5 +1,5 @@
-<template name="playerprofile">
-{{#each playerprofile}}
+<template name="playerProfile">
+{{#each playerProfile}}
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2">
@@ -10,12 +10,13 @@
 			</div>
 			<div class="span4">
 				<blockquote>
-					<p>{{firstname}}</p>
-					<p>{{lastname}}</p>
-					<p>{{dateofbirth}}</p>
+					<p>{{firstName}}</p>
+					<p>{{lastName}}</p>
+					<p>{{dateOfBirth}}</p>
 					<p>{{gender}}</p>
-					<p>Country of origin: {{country}}</p><i class="icon-map-marker"></i>
+					<p>Country of origin: {{originCountry}}</p><i class="icon-map-marker"></i>
 					<p>Height: {{height}}</p>
+
 				</blockquote>	
 			</div>
 
