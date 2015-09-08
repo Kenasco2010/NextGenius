@@ -1,6 +1,6 @@
-<template name="allPlayers">
+<template name="playerProfile">
 
-{{#each allPlayers}}
+{{#with playerProfile}}
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2">
@@ -19,16 +19,14 @@
 					<p>Height: {{height}}</p>
 				</blockquote>	
 			</div>
-			
+			<a href="{{pathFor 'editPlayerProfile' id=_id}}" class="btn btn-primary">Edit Profile</a>
 
-			<a class="btn btn-default" href="{{pathFor 'playerProfile'}}">Show More</a>
 
-			
+			<button class="btn btn-danger" id="delete">Remove</button>
 		</div>
 		
 	</div>
 
 
-{{/each}}
+{{/with}}
 </template>
-
