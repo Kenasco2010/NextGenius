@@ -2,16 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ffe369a6-5e5d-4a48-b37f-f2c2c0baef45" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/click_events.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/clubsAndAcademies/updateClubAndAcademy.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/client/clubsAndAcademies/clubsAndAcademy.html" afterPath="$PROJECT_DIR$/client/clubsAndAcademies/insertClubsAndAcademy.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/shared/click_events.js" afterPath="$PROJECT_DIR$/client/clubsAndAcademies/clubsAndAcademyProfile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/allow.js" afterPath="$PROJECT_DIR$/server/allow.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/collections/clubs.js" afterPath="$PROJECT_DIR$/lib/collections/clubs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/helpers.js" afterPath="$PROJECT_DIR$/client/helpers.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/player/editPlayerProfile.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/player/player.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/player/playerHelpers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/player/insertPlayer.html" afterPath="$PROJECT_DIR$/client/player/insertPlayer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/player/playerProfile.html" afterPath="$PROJECT_DIR$/client/player/playerProfile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/player/playerhook.js" afterPath="$PROJECT_DIR$/client/player/playerhook.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/collections/players.js" afterPath="$PROJECT_DIR$/lib/collections/players.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/router.js" afterPath="$PROJECT_DIR$/lib/router.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="NextGenius.iws" />
@@ -37,8 +35,10 @@
         <entry file="file://$PROJECT_DIR$/lib/router.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-              <folding />
+              <caret line="96" column="31" selection-start-line="96" selection-start-column="31" selection-end-line="96" selection-end-column="31" />
+              <folding>
+                <marker date="1441806157915" expanded="true" signature="1582:1592" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -63,14 +63,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="allow.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="allow.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/allow.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.24017467">
+            <state vertical-scroll-proportion="0.0">
               <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="players.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/collections/players.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5676856">
+              <caret line="81" column="1" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -135,7 +145,6 @@
         <option value="$PROJECT_DIR$/client/player/insertPlayer.html" />
         <option value="$PROJECT_DIR$/client/masterLayout.html" />
         <option value="$PROJECT_DIR$/client/shared/navigation.html" />
-        <option value="$PROJECT_DIR$/lib/collections/players.js" />
         <option value="$PROJECT_DIR$/lib/collections/agentsAndScouts.js" />
         <option value="$PROJECT_DIR$/client/index.html" />
         <option value="$PROJECT_DIR$/lib/collections/clubs.js" />
@@ -146,8 +155,9 @@
         <option value="$PROJECT_DIR$/.meteor/packages" />
         <option value="$PROJECT_DIR$/client/helpers.js" />
         <option value="$PROJECT_DIR$/client/clubsAndAcademies/clubsAndAcademyProfile.html" />
-        <option value="$PROJECT_DIR$/server/allow.js" />
         <option value="$PROJECT_DIR$/client/click_events.js" />
+        <option value="$PROJECT_DIR$/server/allow.js" />
+        <option value="$PROJECT_DIR$/lib/collections/players.js" />
       </list>
     </option>
   </component>
@@ -382,7 +392,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
-          <folding />
+          <folding>
+            <marker date="1441806157915" expanded="true" signature="1582:1592" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -398,7 +410,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="29" column="39" selection-start-line="29" selection-start-column="39" selection-end-line="29" selection-end-column="39" />
-          <folding />
+          <folding>
+            <marker date="1441806157915" expanded="true" signature="1582:1592" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -430,7 +444,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="2" selection-start-line="7" selection-start-column="1" selection-end-line="7" selection-end-column="2" />
           <folding>
-            <marker date="1441708130072" expanded="true" signature="-1:-1" placeholder="//..." />
+            <marker date="1441806157911" expanded="true" signature="-1:-1" placeholder="//..." />
           </folding>
         </state>
       </provider>
@@ -491,14 +505,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/collections/players.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22075471">
-          <caret line="15" column="13" selection-start-line="14" selection-start-column="8" selection-end-line="19" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/clubsAndAcademies/insertClubsAndAcademy.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.8387096">
@@ -534,8 +540,10 @@
     <entry file="file://$PROJECT_DIR$/lib/router.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="31" selection-start-line="69" selection-start-column="31" selection-end-line="69" selection-end-column="31" />
-          <folding />
+          <caret line="96" column="31" selection-start-line="96" selection-start-column="31" selection-end-line="96" selection-end-column="31" />
+          <folding>
+            <marker date="1441806157915" expanded="true" signature="1582:1592" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -565,11 +573,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/allow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24017467">
+        <state vertical-scroll-proportion="0.0">
           <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/collections/players.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5676856">
+          <caret line="81" column="1" selection-start-line="81" selection-start-column="1" selection-end-line="81" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>

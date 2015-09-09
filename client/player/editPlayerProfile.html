@@ -1,0 +1,25 @@
+<template name="editPlayerProfile">
+	
+		<div class="col-lg-4 col-md-3 col-xs-1"></div>
+		<div class="col-lg-4 col-md-6 col-xs-10">
+		<legend>Please edit your profile</legend>
+			{{ #autoForm collection="Players" doc=editPlayerProfile id="updatePlayerDetail" type="update"}}
+				{{> afQuickField name='firstName'}}
+				{{> afQuickField name='lastName'}}
+				{{> afQuickField name='dateOfBirth' type="bootstrap-datepicker"}}
+				{{> afQuickField name='gender'}}
+				{{> afQuickField name='position'}}
+				{{> afQuickField name='club'}}
+				{{> afQuickField name='division'}}
+				{{> afQuickField name='originCountry'}}
+				{{> afQuickField name='previousClub'}}
+				{{> afQuickField name='transferStatus'}}
+				{{> afQuickField name='height'}}
+				{{> afQuickField name='weight'}}
+				{{> afFieldInput name='picture'}}
+			{{/autoForm}}
+
+			<button class="btn btn-primary" type="submit">Update</button>
+		</div>
+
+</template>
