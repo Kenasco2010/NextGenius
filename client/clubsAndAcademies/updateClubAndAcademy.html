@@ -1,0 +1,24 @@
+<template name="updateClubAndAcademy">
+
+    {{#autoForm collection="Clubs" id="updateClubDetail" doc=doc type="update"}}
+        <div class="row">
+            <div class="col-lg-4 col-md-3 col-xs-1"></div>
+            <div class="col-lg-4 col-md-6 col-xs-10">
+
+                <fieldset>
+                    <legend>Please Edit your Club profile</legend>
+                    {{> afQuickField name='clubName'}}
+                    {{> afQuickField name='agentName'}}
+                    {{> afQuickField name='yearOfEstablishment'}}
+                    {{> afQuickField name='location'}}
+                    {{> afQuickField name='address'}}
+                    {{> afQuickField name='league'}}
+                    {{> afQuickField name='license'}}
+                    {{> afQuickField name='country'}}
+                    {{> afQuickField name='province'}}
+                </fieldset>
+                <button class="btn btn-primary " type="submit">Save Detail</button>
+            </div>
+        </div>
+    {{/autoForm}}
+</template>

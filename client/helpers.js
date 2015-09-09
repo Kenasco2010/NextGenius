@@ -33,3 +33,9 @@ Template.editPlayerProfile.helpers({
         return Players.findOne();
     }
 });
+
+Template.playerProfile.helpers({
+    isOwner: function () {
+        return this.owner === Meteor.userId();
+    }
+});
