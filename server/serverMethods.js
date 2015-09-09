@@ -1,5 +1,5 @@
 Meteor.methods({
-    'deleteClubAccount': function(userId){
+    'deleteAccount': function(userId){
        if (this.userId === userId){
            return Meteor.users.remove(userId)
        }

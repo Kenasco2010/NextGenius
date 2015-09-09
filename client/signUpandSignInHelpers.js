@@ -7,18 +7,18 @@ var mySubmitFunc = function(error, state){
         } else if(state === "signIn" && Meteor.user().profile.userType === "agentorscout") {
             Router.go('/agent-profile');
         }
-         else if (state === "signIn" && Meteor.user().profile.userType === "clubsOracademy"){
+        else if (state === "signIn" && Meteor.user().profile.userType === "clubsOracademy"){
             Router.go('/');
         }
         if (state === "signUp" && Meteor.user().profile.userType === "player") {
             Router.go('/insert-player-detail');
 
         } else if(state === "signUp" && Meteor.user().profile.userType === "agentorscout") {
-            Router.go('/agent-info-entry');
+            Router.go('/insert-agent-detail');
 
 
         } else if (state === "signUp" && Meteor.user().profile.userType === "clubsOracademy"){
-            Router.go('/insert-club-detail');
+            Router.go('/');
 
         }
     }

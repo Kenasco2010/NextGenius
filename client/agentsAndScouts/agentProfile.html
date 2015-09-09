@@ -1,0 +1,29 @@
+<template name="agentProfile">
+	<div class="container">
+
+		<div class="centered">
+			{{#with agent}}
+
+			<p>Firstname: {{firstName}}</p>
+			<hr>
+			<p>Lastname: {{lastName}}</p>
+			<hr>
+			<p>Gender: {{gender}}</p>
+			<hr>
+			<p>License: {{license}}</p>
+			<hr>
+			<p>Bio: {{bio}}</p>
+			<hr>
+			<p>Nationality: {{nationality}}</p>
+			<hr>
+			<p>Region: {{region}}</p>
+			<hr>
+			<p>Type of agent: {{typeOfAgent}}</p>
+                <a href="" type="button" class="btn btn-warning btn-lg" id="deleteAgentAccount"> Delete Account</a>
+
+            {{/with}}
+		</div>
+		<a class="btn btn-primary" href="{{pathFor 'updateAgentAndScoutDetail'}}">Edit profile</a>
+	</div>
+	
+</template>

@@ -1,12 +1,11 @@
 <template name="allPlayers">
-
 {{#each allPlayers}}
 	<div class="container">
 		<div class="row">
-			<div class="col-md-2">
+			<div class="col-lg-2">
 				{{#with FS.GetFile 'images' picture}}
 				<p>Images</p>
-				<img src="this.url" alt="" class="img-rounded"/>
+				<img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>
 				{{/with}}
 			</div>
 			<div class="col-md-4">
@@ -19,16 +18,9 @@
 					<p>Height: {{height}}</p>
 				</blockquote>	
 			</div>
-			
-
 			<a class="btn btn-default" href="{{pathFor 'playerProfile'}}">Show More</a>
-
-			
 		</div>
-		
 	</div>
-
-
 {{/each}}
 </template>
 
