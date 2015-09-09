@@ -15,14 +15,15 @@
 					<p>LastName: {{lastName}}</p>
 					<p>Date of Birth: {{dateOfBirth}}</p>
 					<p>Sex: {{gender}}</p>
-					<p>Country of origin: {{originCountry}}</p><i class="icon-map-marker"></i>
+					<p>Country of origin: {{originCountry}}</p>
 					<p>Height: {{height}}</p>
 				</blockquote>	
 			</div>
-			<a href="{{pathFor 'editPlayerProfile' id=_id}}" class="btn btn-primary">Edit Profile</a>
+		{{#if isOwner}}
+			<a href="{{pathFor 'editPlayerProfile'}}" class="btn btn-primary" id="update">Edit Profile</a>
+		{{/if}}
 
-
-			<button class="btn btn-danger" id="delete">Remove</button>
+			
 		</div>
 		
 	</div>

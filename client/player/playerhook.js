@@ -11,3 +11,11 @@ AutoForm.hooks({
 		}
 	} 
 })
+
+AutoForm.hooks({
+	insertPlayerDetail:{
+		onSuccess: function(operation, result, template){
+			Router.go('allPlayers')
+		}
+	}
+})

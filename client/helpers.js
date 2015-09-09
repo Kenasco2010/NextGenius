@@ -27,3 +27,9 @@ var mySubmitFunc = function(error, state){
 AccountsTemplates.configure({
     onSubmitHook: mySubmitFunc
 });
+
+Template.editPlayerProfile.helpers({
+    updateDoc: function () {
+        return Players.findOne();
+    }
+});
