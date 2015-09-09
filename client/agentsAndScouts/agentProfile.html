@@ -1,17 +1,27 @@
 <template name="agentProfile">
 	<div class="container">
 
-		{{#with agent}}
-		<h2>{{firstName}}</h2>
-		<h2>{{LastName}}</h2>
-		<h2>{{gender}}</h2>
-		<h2>{{license}}</h2>
-		<h2>{{bio}}</h2>
-		<h2>{{nationality}}</h2>
-		<h2>{{region}}</h2>
-		<h2>{{typeOfAgent}}</h2>
-		{{/with}}
+		<div class="centered">
+			{{#with agent}}
 
+			<p>Firstname: {{firstName}}</p>
+			<hr>
+			<p>Lastname: {{lastName}}</p>
+			<hr>
+			<p>Gender: {{gender}}</p>
+			<hr>
+			<p>License: {{license}}</p>
+			<hr>
+			<p>Bio: {{bio}}</p>
+			<hr>
+			<p>Nationality: {{nationality}}</p>
+			<hr>
+			<p>Region: {{region}}</p>
+			<hr>
+			<p>Type of agent: {{typeOfAgent}}</p>
+			{{/with}}
+		</div>
+		<a class="btn btn-primary" href="{{pathFor 'updateAgentAndScoutDetail'}}">Edit profile</a>
 	</div>
 	
 </template>
