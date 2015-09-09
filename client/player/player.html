@@ -1,6 +1,6 @@
-<template name="allPlayers">
+<template name="playerProfile">
 
-{{#each allPlayers}}
+{{#with playerProfile}}
 	<div class="container">
 		<div class="row">
 			<div class="col-md-2">
@@ -15,13 +15,13 @@
 					<p>LastName: {{lastName}}</p>
 					<p>Date of Birth: {{dateOfBirth}}</p>
 					<p>Sex: {{gender}}</p>
-					<p>Country of origin: {{originCountry}}</p><i class="icon-map-marker"></i>
+					<p>Country of origin: {{originCountry}}</p>
 					<p>Height: {{height}}</p>
 				</blockquote>	
 			</div>
-			
-
-			<a class="btn btn-default" href="{{pathFor 'playerProfile'}}">Show More</a>
+		{{#if isOwner}}
+			<a href="{{pathFor 'editPlayerProfile'}}" class="btn btn-primary" id="update">Edit Profile</a>
+		{{/if}}
 
 			
 		</div>
@@ -29,6 +29,5 @@
 	</div>
 
 
-{{/each}}
+{{/with}}
 </template>
-

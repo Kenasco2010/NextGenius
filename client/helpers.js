@@ -27,3 +27,15 @@ var mySubmitFunc = function(error, state){
 AccountsTemplates.configure({
     onSubmitHook: mySubmitFunc
 });
+
+Template.editPlayerProfile.helpers({
+    updateDoc: function () {
+        return Players.findOne();
+    }
+});
+
+Template.playerProfile.helpers({
+    isOwner: function () {
+        return this.owner === Meteor.userId();
+    }
+});
