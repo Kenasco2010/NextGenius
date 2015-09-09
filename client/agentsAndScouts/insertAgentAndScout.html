@@ -1,3 +1,44 @@
 <template name="insertAgentAndScoutDetail">
+
+	<div class="">
+		{{#autoForm collection="Agents" id="insertAgentDetail" type="insert"}}
+		<div class="row">
+			<div class="col-lg-4 col-md-3 col-xs-1"></div>
+			<div class="col-lg-4 col-md-6 col-xs-10">
+				<fieldset>
+					<legend>Please complete your profile</legend>
+					{{> afQuickField name='firstName'}}
+					{{> afQuickField name='lastName'}}
+					{{> afQuickField name='gender' options='allowed'}}
+					{{> afQuickField name='license'}}
+					{{> afQuickField name='bio'}}
+					{{> afQuickField name='nationality'}}
+					{{> afQuickField name='region'}}
+					{{> afQuickField name='typeOfAgent'}}
+
+				</fieldset>
+
+				<button class="btn btn-primary" type="submit">Save Detail</button>
+			</div>
+		</div>
+		{{/autoForm}}
+
+	</div>
 	
+</template>
+
+<template name="updateAgentAndScoutDetail">
+	<div class="">
+
+		<h3 align="center">Edit your Profile Details</h3>
+		<div class="row"></div>
+		<div class="col-sm-2"></div>
+		<div class="col-sm-8">
+			{{> quickForm collection="Agents" doc=anAgent id="updateAgent" type="update"}}
+		</div>
+		<div class="col-sm-2"></div>
+		
+
+	</div>
+
 </template>
