@@ -1,0 +1,32 @@
+<template name="uploadVideos">
+    <div class="rows">
+        <div class="col-md-4 col-md-offset-3">
+            {{#autoForm collection="UploadVideos" id="insertUploadVideosForm"}}
+                <fieldset>
+                    {{> afQuickField name='videoCaption' label="Please Upload a Video"}}
+
+                    <input type="file" class="upload-players-video-file_bag">
+                    <!--<button class="upload">Upload</button>-->
+                    {{#each files}}
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">
+                                {{percent_uploaded}}%
+                            </div>
+                        </div>
+                        <div id="videoDisplay">
+                        <video width="400" controls>
+                            <source src="{{url}}" type="video/mp4" class="video-thumbnail"/>
+                        </video>
+                        </div>
+                        {{#if complete}}
+                            <a href="#" data-action="remove-upload-players-video" class="resetimage"><i class="fa fa-times"></i>Remove</a>
+                        {{/if}}
+                    {{/each}}
+
+                </fieldset>
+                <button type="submit" class="btn btn-primary">Insert</button>
+            {{/autoForm}}
+        </div>
+    </div>
+
+</template>
