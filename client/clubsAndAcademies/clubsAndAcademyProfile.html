@@ -3,7 +3,6 @@
         <div class="col-md-6 col-md-offset-3">
             <h3>
             {{#with clubProfile}}
-                {{#if isOwner}}
                     {{clubName}}<br/>
                     {{agentName}}<br/>
                     {{yearOfEstablishment}}<br/>
@@ -15,10 +14,9 @@
                     {{province}}<br/>
 
                     <a href="{{pathFor 'updateClubAndAcademy'}}" type="button" class="btn btn-success btn-lg editClubProfile">Update me</a>
-                    <!--<a href="" type="button" class="btn btn-warning btn-lg" id="deleteClubAccount"> Delete Account</a>-->
-                    {{> quickRemoveButton collection="Clubs" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger deleteClubAccount"}}
+                    <a href="" type="button" class="btn btn-warning btn-lg" id="deleteClubAccount"> Delete Account</a>
+                    <!--{{> quickRemoveButton collection="Clubs" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger deleteClubAccount"}}-->
 
-                {{/if}}
             {{/with}}
             </h3>
         </div>
