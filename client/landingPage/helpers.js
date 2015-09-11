@@ -8,7 +8,7 @@
 AutoForm.hooks({
 	insertEmailsForm:{
 		onSuccess: function(operation, result, template){
-			sweetAlert("Thanks,  We have recieved you email, we will inform you of any updates available.", "success");
+			sweetAlert("Thanks, we will let you know when we launch.", "success");
 		},
 		onError: function(operation, error){
 			sweetAlert("Sorry", "Please fill in the details correctly", "error")
