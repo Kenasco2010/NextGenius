@@ -1,24 +1,117 @@
 <template name="insertClubsAndAcademy">
-    {{#autoForm collection="Clubs" id="insertClubDetail" type="insert"}}
+    <div class="container">
         <div class="row">
-            <div class="col-lg-4 col-md-3 col-xs-1"></div>
-            <div class="col-lg-4 col-md-6 col-xs-10">
-                <fieldset>
-                    <legend>Please complete your Club profile</legend>
-                    {{> afQuickField name='clubName'}}
-                    {{> afQuickField name='agentName'}}
-                    {{> afQuickField name='yearOfEstablishment'}}
-                    {{> afQuickField name='location'}}
-                    {{> afQuickField name='address'}}
-                    {{> afQuickField name='league'}}
-                    {{> afQuickField name='license'}}
-                    {{> afQuickField name='country'}}
-                    {{> afQuickField name='province'}}
-                    {{> afFieldInput name='picture'}}
-                </fieldset>
+            <section>
+                {{#autoForm collection="Clubs" id="insertClubDetail" type="insert"}}
+                    <fieldset>
+                        <legend>Please complete your Club profile</legend>
 
-                <button class="btn btn-primary" type="submit">Save Detail</button>
-            </div>
+                        <div class="wizard">
+                            <div class="wizard-inner">
+                                <div class="connecting-line"></div>
+                                <ul class="nav nav-tabs" role="tablist">
+
+                                    <li role="presentation" class="active">
+                                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-folder-open"></i>
+                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li role="presentation" class="disabled">
+                                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                                        </a>
+                                    </li>
+                                    <li role="presentation" class="disabled">
+                                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>
+                                        </a>
+                                    </li>
+
+                                    <li role="presentation" class="disabled">
+                                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <form role="form">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" role="tabpanel" id="step1">
+                                        <h3>Step 1</h3>
+                                        <p>Personal Information</p>
+                                        <div class="row">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                {{> afQuickField name='clubName'}}
+                                                {{> afQuickField name='agentName'}}
+                                                {{> afQuickField name='yearOfEstablishment'}}
+                                                {{> afQuickField name='location'}}
+                                                {{> afQuickField name='address'}}
+
+                                            </div>
+                                        </div>
+
+                                        <ul class="list-inline pull-right">
+                                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="step2">
+                                        <h3>Step 2</h3>
+                                        <p>Club or Academy information (if any)</p>
+                                        <div class="row">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                {{> afQuickField name='league'}}
+                                                {{> afQuickField name='license'}}
+                                            </div>
+                                        </div>
+
+                                        <ul class="list-inline pull-right">
+                                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="step3">
+                                        <h3>Step 3</h3>
+                                        <p>Physique information</p>
+                                        <div class="row">
+                                            <div class="col-md-6 col-md-offset-3">
+                                                {{> afQuickField name='country'}}
+                                                {{> afQuickField name='province'}}
+                                                {{> afFieldInput name='picture'}}
+                                            </div>
+                                        </div>
+                                        <ul class="list-inline pull-right">
+                                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
+                                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
+                                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="complete">
+                                        <h3>Complete</h3>
+
+                                        <p>You have successfully completed all steps.
+                                            Please verify for correct information</p>
+
+                                        <button class="btn btn-primary" type="submit" id="submit">Save Detail</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </fieldset>
+
+                {{/autoForm}}
+
+            </section>
         </div>
-    {{/autoForm}}
+    </div>
 </template>

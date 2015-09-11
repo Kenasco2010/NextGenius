@@ -8,5 +8,10 @@ Template.uploadVideos.helpers({
         if (this.status == 'complete') {
             return true;
         };
+    },
+    imagedoc: function(){
+        return Session.get('absoluteVideoUrl');
+
     }
-})
+});
+

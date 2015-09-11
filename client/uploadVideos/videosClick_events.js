@@ -1,5 +1,6 @@
 Template.uploadVideos.events({
     "change .upload-players-video-file_bag": function(event, template){
+        alert("please wait while we load your video. we will notify you once its done!")
         //console.log("hellooeoe")
         var files = $("input.upload-players-video-file_bag")[0].files
         S3.upload({

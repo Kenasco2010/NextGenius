@@ -2,7 +2,7 @@ AutoForm.hooks({
 
 	insertPlayerDetail:{
 		onSuccess: function(operation, result, template){
-			Router.go('allPlayers')
+			Router.go('playerProfile')
 		}
 	},
 

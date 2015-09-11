@@ -1,7 +1,7 @@
 <template name="uploadVideos">
     <div class="rows">
         <div class="col-md-4 col-md-offset-3">
-            {{#autoForm collection="UploadVideos" id="insertUploadVideosForm"}}
+            {{#autoForm collection="UploadVideos" id="insertUploadVideosForm" type="insert"}}
                 <fieldset>
                     {{> afQuickField name='videoCaption' label="Please Upload a Video"}}
 
@@ -19,14 +19,30 @@
                         </video>
                         </div>
                         {{#if complete}}
-                            <a href="#" data-action="remove-upload-players-video" class="resetimage"><i class="fa fa-times"></i>Remove</a>
+                            <a href="#" data-action="remove-upload-players-video" class="resetimage"><i class="fa fa-times"></i>Remove Video</a>
                         {{/if}}
                     {{/each}}
-
                 </fieldset>
-                <button type="submit" class="btn btn-primary">Insert</button>
+                <button type="submit" class="btn btn-primary">Publish Video</button>
             {{/autoForm}}
         </div>
     </div>
+    {{> viewVideos}}
+</template>
 
+<template name="viewVideos">
+    <div class="row">
+        <div class="col-md-5 col md-offset-3">
+            <p>
+            <hr/>
+            {{#each videos}}
+                <video width="600" height="300" controls>
+                    <source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
+
+                </video>
+
+            {{/each}}
+            </p>
+        </div>
+    </div>
 </template>
