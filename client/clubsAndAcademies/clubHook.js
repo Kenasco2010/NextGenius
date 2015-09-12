@@ -2,13 +2,13 @@
 AutoForm.hooks({
     insertClubDetail:{
         onSuccess: function(operation, result, template){
-            Router.go('allClubAndAcademy')
+            Router.go('clubAndAcademyProfile')
         }
     },
 
     updatePlayerDetail:{
         onSuccess: function(operation ,result, template){
-            Router.go('/');
+            Router.go('clubAndAcademyProfile');
         }
     }
 });
