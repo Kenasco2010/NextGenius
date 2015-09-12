@@ -1,4 +1,32 @@
 
+Template.updatePlayerProfile.helpers({
+    isOwner: function() {
+        return this.owner === Meteor.userId();
+    },
+    onError: function () {
+        return function (error) { alert("Sorry! This operation was not successful"); console.log(error); };
+    },
+    onSuccess: function () {
+        return function (result) { alert("You have successfully deleted this record"); console.log(result); };
+    },
+    beforeRemove: function () {
+        return function (collection, id) {
+            var doc = collection.findOne(id);
+            if (confirm('Do you really want to delete "' + doc.firstName + '"?')) {
+                this.remove();
+            }
+        };
+    }
+});
+
+Template.updatePlayerProfile.helpers({
+    updateDoc: function(){
+        return Players.findOne();
+    }
+});
+
+
+
 Template.insertPlayerDetail.rendered = function () {
     //Initialize tooltips
     $('.nav-tabs > li a[title]').tooltip();

@@ -4,7 +4,7 @@
 html,body {
 	height:100%;
       background-size: cover;
-    color:#fff;
+    color:#444;
     font-family: 'Lato', sans-serif;
 }
 
@@ -64,9 +64,10 @@ section {
         top: 0; left: 0; bottom: 0; right: 0;
     }
 }
-  
+/*  
 #section1 {
 	background-color: rgba(0,0,0,0.7);
 	color:#fff;
 	font-family: 'Bitter', serif;
 }
+*/
