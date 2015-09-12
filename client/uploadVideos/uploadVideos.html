@@ -15,7 +15,7 @@
                         </div>
                         <div id="videoDisplay">
                         <video width="400" controls>
-                            <source src="{{url}}" type="video/mp4" class="video-thumbnail"/>
+                            <source src="{{url}}" type="video/mp4" class="video-thumbnail resetVideo"/>
                         </video>
                         </div>
                         {{#if complete}}
@@ -27,7 +27,6 @@
             {{/autoForm}}
         </div>
     </div>
-    {{> viewVideos}}
 </template>
 
 <template name="viewVideos">

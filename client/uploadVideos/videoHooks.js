@@ -13,11 +13,11 @@ AutoForm.hooks({
                     this.done(new Error(error));
                 }
                 else {
-                    reset_form_element( $('.file_bag') );
+                    reset_form_element( $('.upload-players-video-file_bag') );
                     $(".progress").remove();
                     $("#videoDisplay").remove();
-                    $(".resetimage").remove();
-                    $('#createEvent').modal('hide');
+                    $(".resetVideo").remove();
+                    //$('#createEvent').modal('hide');
                     // return $('#eventSuccess').modal('show');
                     sweetAlert("Good job!", "You have successfully uploaded a video", "success");
 
