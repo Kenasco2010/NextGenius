@@ -21,11 +21,11 @@
 			</div>
 
             <a href="" type="button" class="btn btn-warning btn-lg" id="deletePlayerAccount"> Delete Account</a>
-            {{#if isOwner}}
+            
                 <a href="{{pathFor 'updatePlayerProfile'}}" class="btn btn-primary" id="update">Update Profile</a>
 			{{> quickRemoveButton collection="Players" _id=this._id  class="btn btn-danger deletePlayerAccount"}}
 
-			{{/if}}
+	
 
 		</div>
 	</div>

@@ -23,6 +23,7 @@ AutoForm.hooks({
 
                 }
             });
+            this.done();
             return false;
         },
     },

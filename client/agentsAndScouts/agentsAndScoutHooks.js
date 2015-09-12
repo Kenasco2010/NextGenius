@@ -5,6 +5,9 @@ AutoForm.hooks({
         onSuccess: function(operation, result, template) {
             //console.log("done");
             Router.go('agentProfile');
+        },
+        onError: function(operation, result, template){
+            Console.log("Not inserted")
         }
     },
     updateAgent: {
