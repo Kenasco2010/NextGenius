@@ -1,6 +1,7 @@
 Template.uploadVideos.events({
     "change .upload-players-video-file_bag": function(event, template){
-        alert("please wait while we load your video. we will notify you once its done!")
+        alert("please wait while we load your video. we will notify you once its done!");
+        $("#videoDisplay").hide();
         //console.log("hellooeoe")
         var files = $("input.upload-players-video-file_bag")[0].files
         S3.upload({
@@ -17,6 +18,8 @@ Template.uploadVideos.events({
                 Session.set('absoluteVideoUrl', success.url);
                 Session.set('relativeVideoUrl', success.relative_url);
                 Session.set('percent_uploaded', success.percent_uploaded);
+                $("#videoDisplay").show();
+
             }
         });
     },
@@ -31,12 +34,17 @@ Template.uploadVideos.events({
                 else {
                     this.status = 'removed';
                     reset_form_element( $('.upload-players-video-file_bag') );
-                    $("#videoDisplay video").attr("src", "");
+                    $("#videoDisplay .myvideocontrolclass").attr("src", "");
                     $('.video-thumbnail').hide();
                     $("[data-action='remove-upload-players-video']").hide();
                     $(".progress").remove();
+                    $("#videoDisplay").remove();
                 }
             });
 
     }
-})
+});
+reset_form_element = function(e) {
+    e.wrap('<form>').parent('form').trigger('reset');
+    e.unwrap();
+}

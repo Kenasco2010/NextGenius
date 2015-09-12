@@ -13,12 +13,13 @@
                                 {{percent_uploaded}}%
                             </div>
                         </div>
-                        <div id="videoDisplay">
-                        <video width="400" controls>
-                            <source src="{{url}}" type="video/mp4" class="video-thumbnail resetVideo"/>
-                        </video>
-                        </div>
+
                         {{#if complete}}
+                            <div id="videoDisplay">
+                                <video width="400" controls class="myvideocontrolclass">
+                                    <source src="{{url}}" type="video/mp4" class="video-thumbnail resetVideo"/>
+                                </video>
+                            </div>
                             <a href="#" data-action="remove-upload-players-video" class="resetimage"><i class="fa fa-times"></i>Remove Video</a>
                         {{/if}}
                     {{/each}}
