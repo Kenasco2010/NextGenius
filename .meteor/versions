@@ -99,3 +99,7 @@ useraccounts:core@1.12.3
 webapp@1.2.0
 webapp-hashing@1.0.3
 yogiben:autoform-file@1.0.1
+<<<<<<< HEAD
+=======
+yogiben:favorites@0.0.4
+>>>>>>> followPlayer
