@@ -30,16 +30,34 @@
     </div>
 </template>
 
-<template name="viewVideos">
+<template name="viewPlayerVideos">
     <div class="row">
         <div class="col-md-5 col md-offset-3">
             <p>
             <hr/>
-            {{#each videos}}
+            {{#each playerVideos}}
                 <video width="600" height="300" controls>
                     <source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
 
                 </video>
+                {{> favoriteButton _id=_id}} - {{favoriteCount _id}}
+
+            {{/each}}
+            </p>
+        </div>
+    </div>
+</template>
+<template name="viewClubVideos">
+    <div class="row">
+        <div class="col-md-5 col md-offset-3">
+            <p>
+            <hr/>
+            {{#each clubVideos}}
+                <video width="600" height="300" controls>
+                    <source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
+
+                </video>
+                {{> favoriteButton _id=_id}} - {{favoriteCount _id}}
 
             {{/each}}
             </p>
