@@ -33,15 +33,18 @@
         <div class="col-md-5 col md-offset-3">
             <p>
             <hr/>
-
+{{#if viewPlayerVideo}}
             {{#each viewPlayerVideo}}
                 <video width="600" height="300" controls>
                     <source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
 
                 </video>
+                <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
 
             {{/each}}
-
+    {{else}}
+    <h2>No videos uploaded</h2>
+{{/if}}
             <a href="" class="owner">click me</a>
             </p>
         </div>

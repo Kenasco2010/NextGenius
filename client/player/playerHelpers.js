@@ -54,7 +54,7 @@ Template.insertPlayerDetail.rendered = function () {
         prevTab($active);
 
     });
-}
+};
 
 function nextTab(elem) {
     $(elem).next().find('a[data-toggle="tab"]').click();
