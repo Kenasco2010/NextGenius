@@ -1,0 +1,32 @@
+<template name="viewClubAndAcademyDetails">
+    {{#with viewClubProfile}}
+        Club Name:    {{clubName}}<br>
+        Agent Name:  {{agentName}}<br>
+        Year Of Establishment:      {{yearOfEstablishmen}}<br>
+        Location:     {{location}}<br>
+        Address:    {{address}}<br>
+        League:    {{league}}<br>
+        License:    {{license}}<br>
+        Country:  {{country}}<br>
+        Province:   {{province}}<br>
+
+    {{/with}}
+
+    <div class="row">
+        <div class="col-md-5 col md-offset-3">
+            <p>
+            <hr/>
+
+            {{#each viewClubVideo}}
+                <video width="600" height="300" controls>
+                    <source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
+
+                </video>
+
+            {{/each}}
+
+            <a href="" class="owner">click me</a>
+            </p>
+        </div>
+    </div>
+</template>

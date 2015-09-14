@@ -1,3 +1,23 @@
 <template name="allClubAndAcademy">
-    <h1>Hey List of all Clubs and Academy!</h1>
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+<h3>
+        {{#each allClubs}}
+            Club Name:    {{clubName}}<br>
+            Agent Name:  {{agentName}}<br>
+            Year Of Establishment:      {{yearOfEstablishmen}}<br>
+            Location:     {{location}}<br>
+            Address:    {{address}}<br>
+            League:    {{league}}<br>
+            License:    {{license}}<br>
+            Country:  {{country}}<br>
+            Province:   {{province}}<br>
+            <a href="{{pathFor 'viewClubAndAcademyDetails' _id=_id}}" class="btn btn-default">view more</a>
+        {{/each}}
+
+</h3>
+    </div>
+</div>
+
+
 </template>
