@@ -1,5 +1,5 @@
 
-Template.updatePlayerProfile.helpers({
+Template.clubAndAcademyProfile.helpers({
     isOwner: function() {
         return this.owner === Meteor.userId();
     },
@@ -12,22 +12,21 @@ Template.updatePlayerProfile.helpers({
     beforeRemove: function () {
         return function (collection, id) {
             var doc = collection.findOne(id);
-            if (confirm('Do you really want to delete "' + doc.firstName + '"?')) {
+            if (confirm('Do you really want to delete "' + doc.clubName + '"?')) {
                 this.remove();
             }
         };
     }
 });
 
-Template.updatePlayerProfile.helpers({
-    updateDoc: function(){
-        return Players.findOne();
+Template.updateClubAndAcademy.helpers({
+    doc: function(){
+        return Clubs.findOne();
     }
 });
 
 
-
-Template.insertPlayerDetail.rendered = function () {
+Template.insertClubsAndAcademy.rendered = function () {
     //Initialize tooltips
     $('.nav-tabs > li a[title]').tooltip();
 
@@ -54,7 +53,8 @@ Template.insertPlayerDetail.rendered = function () {
         prevTab($active);
 
     });
-}
+
+};
 
 function nextTab(elem) {
     $(elem).next().find('a[data-toggle="tab"]').click();
@@ -63,3 +63,11 @@ function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
 }
 
+Template.myFavoriteButtonFavorited.replaces("favoriteButtonFavorited");
+
+Template.myFavoriteButtonNotFavorited.replaces("favoriteButtonNotFavorited");
+
+
+//Template.clubAndAcademyProfile.rendered = function () {
+//    $('a[class="favorite-button"]').text("Follow");
+//}

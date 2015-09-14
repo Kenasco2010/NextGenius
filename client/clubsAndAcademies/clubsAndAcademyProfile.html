@@ -3,7 +3,10 @@
         <div class="col-md-6 col-md-offset-3">
             <h3>
             {{#with clubProfile}}
-                {{#if isOwner}}
+                {{#with FS.GetFile 'images' picture}}
+                    <p>Images</p>
+                    <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>
+                {{/with}}<br/>
                     {{clubName}}<br/>
                     {{agentName}}<br/>
                     {{yearOfEstablishment}}<br/>
@@ -15,13 +18,35 @@
                     {{province}}<br/>
 
                     <a href="{{pathFor 'updateClubAndAcademy'}}" type="button" class="btn btn-success btn-lg editClubProfile">Update me</a>
-                    <!--<a href="" type="button" class="btn btn-warning btn-lg" id="deleteClubAccount"> Delete Account</a>-->
-                    {{> quickRemoveButton collection="Clubs" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger deleteClubAccount"}}
+                    <a href="" type="button" class="btn btn-warning btn-lg" id="deleteClubAccount"> Delete Account</a>
+                    <!--{{> quickRemoveButton collection="Clubs" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger deleteClubAccount"}}-->
 
-                {{/if}}
+                <div class="followButton">
+                    {{> favoriteButton _id=_id}} - {{favoriteCount _id}}
+
+                    Favorite(s)
+                    </div>
+
             {{/with}}
+
             </h3>
         </div>
     </div>
 
+    {{> uploadVideos}}
+    <br/>
+    <div class="row">
+        <div class="col-md-5 col-md-offset-4">
+            {{> viewClubVideos}}
+        </div>
+    </div>
+
+
+</template>
+<template name="myFavoriteButtonFavorited">
+    <a class="favorite-button" doc="{{_id}}"></a>
+</template>
+
+<template name="myFavoriteButtonNotFavorited">
+    <a class="favorite-button" doc="{{_id}}"></a>
 </template>

@@ -14,6 +14,7 @@ fortawesome:fontawesome
 cfs:standard-packages
 cfs:gridfs
 iron:router
+chipcastle:countries
 less
 cfs:ui
 aldeed:autoform
@@ -24,3 +25,8 @@ useraccounts:core
 rajit:bootstrap3-datepicker
 aldeed:autoform-bs-datepicker
 aldeed:delete-button
+lepozepo:s3
+kevohagan:sweetalert
+mrt:moment
+yogiben:favorites
+
