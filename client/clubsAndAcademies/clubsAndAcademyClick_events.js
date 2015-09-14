@@ -7,7 +7,8 @@
 //})
 
 Template.clubAndAcademyProfile.events({
-    "click #deleteAgentAccount":function() {
+    "click #deleteClubAccount":function() {
+        console.log("hellow click me la")
         Meteor.call('deleteAccount', Meteor.userId(), function (e) {
             if (!e) {
                 alert("Next Genius is sad to see you go...")

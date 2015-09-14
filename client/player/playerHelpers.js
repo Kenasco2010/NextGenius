@@ -63,3 +63,6 @@ function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
 }
 
+//Template.insertPlayerDetail.rendered=function() {
+//    $('.my-datepicker').datepicker();
+//}
