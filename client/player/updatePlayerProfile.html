@@ -7,7 +7,7 @@
 				{{#autoForm collection="Players" doc=updateDoc id="updatePlayerDetail" type="update"}}
 					{{> afQuickField name='firstName'}}
 					{{> afQuickField name='lastName'}}
-					{{> afQuickField name='dateOfBirth' type="bootstrap-datepicker"}}
+					{{> afQuickField name='dateOfBirth' type="bootstrap-datepicker" buttonClasses="glyphicon glyphicon-calendar"}}
 					{{> afQuickField name='gender' options="allowed"}}
 					{{> afQuickField name='position' options="allowed"}}
 					{{> afQuickField name='club'}}
