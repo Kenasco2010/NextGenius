@@ -53,7 +53,8 @@ Template.insertClubsAndAcademy.rendered = function () {
         prevTab($active);
 
     });
-}
+
+};
 
 function nextTab(elem) {
     $(elem).next().find('a[data-toggle="tab"]').click();
@@ -61,3 +62,12 @@ function nextTab(elem) {
 function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
 }
+
+Template.myFavoriteButtonFavorited.replaces("favoriteButtonFavorited");
+
+Template.myFavoriteButtonNotFavorited.replaces("favoriteButtonNotFavorited");
+
+
+//Template.clubAndAcademyProfile.rendered = function () {
+//    $('a[class="favorite-button"]').text("Follow");
+//}

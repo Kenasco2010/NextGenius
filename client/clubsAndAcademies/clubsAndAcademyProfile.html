@@ -21,7 +21,14 @@
                     <a href="" type="button" class="btn btn-warning btn-lg" id="deleteClubAccount"> Delete Account</a>
                     <!--{{> quickRemoveButton collection="Clubs" _id=this._id onError=onError onSuccess=onSuccess beforeRemove=beforeRemove class="btn btn-danger deleteClubAccount"}}-->
 
+                <div class="followButton">
+                    {{> favoriteButton _id=_id}} - {{favoriteCount _id}}
+
+                    Favorite(s)
+                    </div>
+
             {{/with}}
+
             </h3>
         </div>
     </div>
@@ -30,7 +37,16 @@
     <br/>
     <div class="row">
         <div class="col-md-5 col-md-offset-4">
-            {{> viewVideos}}
+            {{> viewClubVideos}}
         </div>
     </div>
+
+
+</template>
+<template name="myFavoriteButtonFavorited">
+    <a class="favorite-button" doc="{{_id}}"></a>
+</template>
+
+<template name="myFavoriteButtonNotFavorited">
+    <a class="favorite-button" doc="{{_id}}"></a>
 </template>

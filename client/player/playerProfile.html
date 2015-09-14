@@ -29,13 +29,15 @@
 
 		</div>
 	</div>
+        <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
 	{{/with}}
 
     {{> uploadVideos}}
 <br/>
     <div class="row">
         <div class="col-md-5 col-md-offset-4">
-            {{> viewVideos}}
+
+            {{> viewPlayerVideos}}
             </div>
     </div>
 </template>

@@ -13,12 +13,13 @@
                                 {{percent_uploaded}}%
                             </div>
                         </div>
-                        <div id="videoDisplay">
-                        <video width="400" controls>
-                            <source src="{{url}}" type="video/mp4" class="video-thumbnail resetVideo"/>
-                        </video>
-                        </div>
+
                         {{#if complete}}
+                            <div id="videoDisplay">
+                                <video width="400" controls class="myvideocontrolclass">
+                                    <source src="{{url}}" type="video/mp4" class="video-thumbnail resetVideo"/>
+                                </video>
+                            </div>
                             <a href="#" data-action="remove-upload-players-video" class="resetimage"><i class="fa fa-times"></i>Remove Video</a>
                         {{/if}}
                     {{/each}}
@@ -29,16 +30,34 @@
     </div>
 </template>
 
-<template name="viewVideos">
+<template name="viewPlayerVideos">
     <div class="row">
         <div class="col-md-5 col md-offset-3">
             <p>
             <hr/>
-            {{#each videos}}
+            {{#each playerVideos}}
                 <video width="600" height="300" controls>
                     <source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
 
                 </video>
+                {{> favoriteButton _id=_id}} - {{favoriteCount _id}}
+
+            {{/each}}
+            </p>
+        </div>
+    </div>
+</template>
+<template name="viewClubVideos">
+    <div class="row">
+        <div class="col-md-5 col md-offset-3">
+            <p>
+            <hr/>
+            {{#each clubVideos}}
+                <video width="600" height="300" controls>
+                    <source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
+
+                </video>
+                {{> favoriteButton _id=_id}} - {{favoriteCount _id}}
 
             {{/each}}
             </p>
