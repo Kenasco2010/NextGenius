@@ -29,7 +29,7 @@ Template.updatePlayerProfile.helpers({
 
 Template.insertPlayerDetail.rendered = function () {
     //Initialize tooltips
-    $('.nav-tabs > li a[title]').tooltip();
+    //$('.nav-tabs > li a[title]').tooltip();
 
     //Wizard
     $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
@@ -54,7 +54,7 @@ Template.insertPlayerDetail.rendered = function () {
         prevTab($active);
 
     });
-}
+};
 
 function nextTab(elem) {
     $(elem).next().find('a[data-toggle="tab"]').click();

@@ -1,0 +1,52 @@
+<template name="viewPlayerDetails">
+    {{#with viewPlayerProfile}}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    {{#with FS.GetFile 'images' picture}}
+                        <p>Images</p>
+                        <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>
+                    {{/with}}
+                </div>
+                <div class="col-md-4">
+                    <blockquote>
+                        <p>FirstName: {{firstName}}</p>
+                        <p>LastName: {{lastName}}</p>
+                        <p>Date of Birth: {{dateOfBirth}}</p>
+                        <p>Sex: {{gender}}</p>
+                        <p>Country of origin: {{originCountry}}</p>
+                        <p>Height: {{height}}</p>
+                    </blockquote>
+                </div>
+
+
+            </div>
+        </div>
+    {{#if currentUser}}
+        <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
+        {{else}}
+        <a href="#" class="btn btn-primary">Likes</a><span class="likes"></span>
+    {{/if}}
+    {{/with}}
+
+    <div class="row">
+        <div class="col-md-5 col md-offset-3">
+            <p>
+            <hr/>
+{{#if viewPlayerVideo}}
+            {{#each viewPlayerVideo}}
+                <video width="600" height="300" controls>
+                    <source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
+
+                </video>
+                <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
+
+            {{/each}}
+    {{else}}
+    <h2>No videos uploaded</h2>
+{{/if}}
+            <a href="" class="owner">click me</a>
+            </p>
+        </div>
+    </div>
+</template>

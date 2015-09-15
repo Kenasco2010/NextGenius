@@ -20,18 +20,9 @@
 					<p>Height: {{height}}</p>
 				</blockquote>	
 			</div>
-			
-
-			<a class="btn btn-default" href="{{pathFor 'playerProfile'}}">Show More</a>
-
-			
-
-			
+		<a class="btn btn-default" href="{{pathFor 'viewPlayerDetails' _id=_id}}">Show More</a>
 		</div>
-		
 	</div>
-
-
 {{/each}}
 </template>
 

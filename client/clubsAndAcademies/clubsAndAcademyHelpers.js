@@ -71,3 +71,11 @@ Template.myFavoriteButtonNotFavorited.replaces("favoriteButtonNotFavorited");
 //Template.clubAndAcademyProfile.rendered = function () {
 //    $('a[class="favorite-button"]').text("Follow");
 //}
+Template.viewClubAndAcademyDetails.helpers({
+    videoOwner: function() {
+        return UploadVideos.find({});
+        //var owner = this._id
+        //console.log(this.viewClubProfile.owner)
+    }
+
+});

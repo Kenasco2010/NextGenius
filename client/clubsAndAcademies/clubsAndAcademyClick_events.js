@@ -20,3 +20,11 @@ Template.clubAndAcademyProfile.events({
         });
     }
 });
+
+//Template.viewClubAndAcademyDetails.events({
+//    "click .owner": function() {
+//        //var owner = this._id
+//        console.log(this.viewClubProfile.owner)
+//    }
+//
+//});
