@@ -1,27 +1,45 @@
 <template name="allClubAndAcademy">
-<div class="row">
-    <div class="col-md-6 col-md-offset-3">
-<h3>
+    
+   <div class="container">
+        <div class="row">
         {{#each allClubs}}
-            {{#with FS.GetFile 'images' picture}}
-                <p>Images</p>
-                <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>
-            {{/with}}<br/>
-            Club Name:    {{clubName}}<br>
-            Agent Name:  {{agentName}}<br>
-            Year Of Establishment:      {{yearOfEstablishmen}}<br>
-            Location:     {{location}}<br>
-            Address:    {{address}}<br>
-            League:    {{league}}<br>
-            License:    {{license}}<br>
-            Country:  {{country}}<br>
-            Province:   {{province}}<br>
-            <a href="{{pathFor 'viewClubAndAcademyDetails' _id=_id}}" class="btn btn-default">view more</a>
-        {{/each}}
 
-</h3>
-    </div>
-</div>
+                <div class="col-xs-8 col-sm-6 col-md-6 col-lg-5">
+
+                    <div class="well well-sm">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                    
+                                <img src="{{this.url}}" alt="" class="img-rounded img-responsive" />
+                                      
+                            </div>
+                            <div class="col-sm-6 col-md-8">
+                                <h4>{{clubName}}</h4>
+                                <small><cite title="San Francisco, USA">{{country}} <i class="glyphicon glyphicon-map-marker">
+                                </i></cite></small>
+
+                                <p>
+                                <br>
+                                    <i class="glyphicon glyphicon-envelope"></i>{{address}}
+                                    <br>
+                                    <br />
+                                    <i class="glyphicon glyphicon-globe"></i><a href="http://www.jquery2dotnet.com">league</a>
+                                    <br>
+                                    <br />
+                                    <i class="glyphicon glyphicon-gift"></i>{{license}}</p>
+                                        
+                                         <a class="btn btn-default" href="{{pathFor 'viewClubAndAcademyDetails' _id=_id}}">Show More</a>
+                               
+                                </div>
+                            </div>
+                    </div>
+                
+                </div>
+                {{/each}}
+        </div>   
+    </div>       
+
+
 
 
 </template>

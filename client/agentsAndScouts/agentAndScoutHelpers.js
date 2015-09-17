@@ -1,6 +1,6 @@
 
 Template.updateAgentAndScoutDetail.helpers({
-	anAgent: function() {
+	updateAgent: function() {
 		var id = Meteor.userId();
 		return Agents.findOne({ "owner": id });
 	}
@@ -8,7 +8,7 @@ Template.updateAgentAndScoutDetail.helpers({
 
 Template.insertAgentAndScoutDetail.rendered = function () {
 	//Initialize tooltips
-	$('.nav-tabs > li a[title]').tooltip();
+	// $('.nav-tabs > li a[title]').tooltip();
 
 	//Wizard
 	$('a[data-toggle="tab"]').on('show.bs.tab', function (e) {

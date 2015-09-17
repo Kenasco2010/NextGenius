@@ -1,41 +1,54 @@
 <template name="viewPlayerDetails">
-    {{#with viewPlayerProfile}}
-        <div class="container">
-            <div class="row">
-                <div class="col-md-2">
-                    {{#with FS.GetFile 'images' picture}}
-                        <p>Images</p>
-                        <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>
-                    {{/with}}
-                </div>
-                <div class="col-md-4">
-                    <blockquote>
-                        <p>FirstName: {{firstName}}</p>
-                        <p>LastName: {{lastName}}</p>
-                        <p>Date of Birth: {{dateOfBirth}}</p>
-                        <p>Sex: {{gender}}</p>
-                        <p>Country of origin: {{originCountry}}</p>
-                        <p>Height: {{height}}</p>
-                    </blockquote>
-                </div>
+
+<div class="outter-wrapper body-wrapper">
+    <div class="wrapper ad-pad clearfix">
+        <!-- Start Main Column -->
+        <div class="col-1-1">
+            <!-- Start Gallery Section -->
+            <div class="clearfix">
+                <div class="col-1-4">
+                    <h3>Player Profile</h3>{{#with viewPlayerProfile}}
+                    <ul class="list-4 widget-list option-set" id="filter" data-option-key="filter">{{#with FS.GetFile 'images' picture}}
+                        <br/>
+                        <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>{{/with}}
+                        <li>
+                            <a href="gallery-1.html#show-all" data-option-value="*" class="selected">{{firstName}}</a>
+                        </li>
+                        <li>
+                            <a href="gallery-1.html#cat-1" data-option-value=".cat-1">{{gender}}</a>
+                        </li>
+                        <li>
+                            <a href="gallery-1.html#cat-2" data-option-value=".cat-2">{{originCountry}}</a>
+                        </li>
 
 
+                    </ul>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="#" class="btn btn-primary unFollowPlayerButton" name="unFollowPlayerButton">Unfollow</a>
+                            <a href="#" class="btn btn-primary followPlayerButton" name="followPlayerButton">Follow</a>
+                            <span class="playerFollowers"> - {{countPlayerFollowers}} Follower(s)</span>
+                            <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
+                        </div>
+                    </div>
+                </div>
+
+                {{/with}}
+                </div>
             </div>
         </div>
+
     {{#if currentUser}}
-        <a href="#" class="btn btn-primary unFollowPlayerButton" name="unFollowPlayerButton">Unfollow</a>
 
-        <a href="#" class="btn btn-primary followPlayerButton" name="followPlayerButton">Follow</a>
-    <span class="playerFollowers"> - {{countPlayerFollowers}} Follower(s)</span>
 
-        <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span> |
 
         <!--<a href="#" class="btn btn-primary clickme">click me</a>-->
 
     {{else}}
         <a href="#" class="btn btn-primary">Likes</a><span class="likes"></span>
     {{/if}}
-    {{/with}}
+
 
     <div class="row">
         <div class="col-md-5 col md-offset-3">
@@ -53,8 +66,11 @@
     {{else}}
     <h2>No videos uploaded</h2>
 {{/if}}
+</p>
+       </div>
 
-            </p>
-        </div>
     </div>
+</div>
+    </div>
+
 </template>

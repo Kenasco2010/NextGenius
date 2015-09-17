@@ -1,35 +1,44 @@
-<template name="agentProfile">
-	<div class="container">
 
+	<template name="agentProfile">
+	<legend>Please edit your profile</legend>
+			
+		{{#with agent}}
+					
+	<div class="outter-wrapper body-wrapper">
+	    <div class="wrapper ad-pad clearfix">
+			<div class="col-1-1 form-group">
+				<div class="clearfix">
+					<div class="col-1-4">
+					{{#with FS.GetFile 'agentimages' picture}}	<img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>
+					{{/with}}
+					<p>Name: {{firstName}}&nbsp; {{lastName}}</p>		
+					<p>Gender: {{gender}}</p>
+					<p>License: {{license}}</p>
+					<a href="" type="button" class="btn btn-warning btn-lg" id="deleteAgentAccount">Delete Account</a>
+					</div>	
+					<div class="col-3-4 last">
+						<div class="col-1-1">
+							<p>Bio: {{bio}}</p>
+							<p>Nationality: {{nationality}}</p>
+							<hr>
+							<p>Region: {{region}}</p>
+							<hr>
+							<p>Type of agent: {{typeOfAgent}}</p>
+						</div>
+                        {{countAgentFollowings}} - Following(s)
+						<a  class="btn btn-primary AgentButton" href="{{pathFor 'updateAgentAndScoutDetail'}}">Edit profile</a>
+                        <a class="btn btn-primary" href="{{pathFor 'myFeed'}}">My Feed</a>
 
-			{{#with agent}}
-			{{#with FS.GetFile 'agentimages' picture}}
-			<!-- <p>Image</p> -->
-			<img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>
-			{{/with}}
-
-			<p>Firstname: {{firstName}}</p>
-			<hr>
-			<p>Lastname: {{lastName}}</p>
-			<hr>
-			<p>Gender: {{gender}}</p>
-			<hr>
-			<p>License: {{license}}</p>
-			<hr>
-			<p>Bio: {{bio}}</p>
-			<hr>
-			<p>Nationality: {{nationality}}</p>
-			<hr>
-			<p>Region: {{region}}</p>
-			<hr>
-			<p>Type of agent: {{typeOfAgent}}</p>
-            {{countAgentFollowings}} - Following(s)
-                <a href="" type="button" class="btn btn-warning btn-lg" id="deleteAgentAccount"> Delete Account</a>
-
-            {{/with}}
+                    </div>
+				</div>
+	    	</div>
 		</div>
-		<a class="btn btn-primary" href="{{pathFor 'updateAgentAndScoutDetail'}}">Edit profile</a>
-		<a class="btn btn-primary" href="{{pathFor 'myFeed'}}">My Feed</a>
+		
+				<br/>
+	</div>	
+
+		{{/with}}
+		
 
 	
 </template>	
