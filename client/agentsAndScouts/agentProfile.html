@@ -1,3 +1,4 @@
+
 	<template name="agentProfile">
 	<legend>Please edit your profile</legend>
 			
@@ -24,17 +25,26 @@
 							<hr>
 							<p>Type of agent: {{typeOfAgent}}</p>
 						</div>
+
 						
-						<a class="btn btn-primary AgentButton" href="{{pathFor 'updateAgentAndScoutDetail'}}">Edit profile</a>
+					
 					</div>
+
+                        {{countAgentFollowings}} - Following(s)
+						<a  class="btn btn-primary AgentButton" href="{{pathFor 'updateAgentAndScoutDetail'}}">Edit profile</a>
+                        <a class="btn btn-primary" href="{{pathFor 'myFeed'}}">My Feed</a>
+
+                    </div>
+
 				</div>
 	    	</div>
 		</div>
 		
 				<br/>
-	</div>	
+	
 
 		{{/with}}
 		
+
 	
 </template>	

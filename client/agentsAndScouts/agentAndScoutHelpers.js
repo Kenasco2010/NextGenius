@@ -41,3 +41,25 @@ function nextTab(elem) {
 function prevTab(elem) {
 	$(elem).prev().find('a[data-toggle="tab"]').click();
 }
+
+Template.agentProfile.helpers({
+	countAgentFollowings: function () {
+		return this.following.length;
+	}
+});
+
+Template.myFeed.helpers({
+	playerFeed: function () {
+		//return "hello this is me";
+
+		var agentId = Agents.findOne({owner: Meteor.userId()});
+		//console.log(agentId);
+		//return agentId;
+		var agentOwner = agentId.owner;
+		//console.log(agentOwner)
+		var agentPlayerFollows = Players.find({followers: agentOwner}).fetch();
+		return agentPlayerFollows;
+		//console.log (agentPlayerFollows);
+		//return agentPlayerFollows;
+	}
+});
