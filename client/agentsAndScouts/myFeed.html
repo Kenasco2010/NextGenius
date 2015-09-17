@@ -1,0 +1,14 @@
+<template name="myFeed">
+    <h3>My Feed</h3>
+    {{#each playerFeed}}
+
+        <blockquote>
+            <p>FirstName: {{firstName}}</p>
+            <p>LastName: {{lastName}}</p>
+            <p>Date of Birth: {{dateOfBirth}}</p>
+            <p>Sex: {{gender}}</p>
+            <p>Country of origin: {{originCountry}}</p><i class="icon-map-marker"></i>
+            <p>Height: {{height}}</p>
+        </blockquote>
+{{/each}}
+</template>

@@ -1,7 +1,7 @@
 <template name="agentProfile">
 	<div class="container">
 
-		<div class="centered">
+
 			{{#with agent}}
 			{{#with FS.GetFile 'agentimages' picture}}
 			<!-- <p>Image</p> -->
@@ -23,11 +23,12 @@
 			<p>Region: {{region}}</p>
 			<hr>
 			<p>Type of agent: {{typeOfAgent}}</p>
+            {{countAgentFollowings}} - Following(s)
                 <a href="" type="button" class="btn btn-warning btn-lg" id="deleteAgentAccount"> Delete Account</a>
 
             {{/with}}
 		</div>
 		<a class="btn btn-primary" href="{{pathFor 'updateAgentAndScoutDetail'}}">Edit profile</a>
-	</div>
+
 	
 </template>	

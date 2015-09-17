@@ -1,5 +1,11 @@
 <template name="viewClubAndAcademyDetails">
+
+
     {{#with viewClubProfile}}
+        {{#with FS.GetFile 'images' picture}}
+            <p>Images</p>
+            <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>
+        {{/with}}<br/>
         Club Name:    {{clubName}}<br>
         Agent Name:  {{agentName}}<br>
         Year Of Establishment:      {{yearOfEstablishmen}}<br>
@@ -9,6 +15,12 @@
         License:    {{license}}<br>
         Country:  {{country}}<br>
         Province:   {{province}}<br>
+        <a href="#" class="btn btn-primary unFollowClubButton" name="unFollowClubButton">Unfollow</a>
+
+        <a href="#" class="btn btn-primary followClubButton" name="followClubButton">Follow</a>
+        <span class="followers">- {{countClubFollowers}} Follower(s)</span>
+
+        <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
 
     {{/with}}
 
@@ -22,7 +34,6 @@
                     <source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
 
                 </video>
-                <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
 
             {{/each}}
 

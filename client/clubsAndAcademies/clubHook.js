@@ -15,4 +15,19 @@ AutoForm.hooks({
             Router.go('clubAndAcademyProfile');
         }
     }
+
+    //insertClubDetail:{
+    //    onSuccess: function(operation, result, template){
+    //        Router.go('clubAndAcademyProfile')
+    //    }
+    //},
+    //onError: function(operation, error, template) {
+    //console.log(error)
+    //},
+    //
+    //updateClubDetail:{
+    //    onSuccess: function(operation ,result, template){
+    //        Router.go('clubAndAcademyProfile');
+    //    }
+    //}
 });

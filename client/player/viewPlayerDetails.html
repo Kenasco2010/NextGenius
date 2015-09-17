@@ -23,8 +23,16 @@
             </div>
         </div>
     {{#if currentUser}}
-        <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
-        {{else}}
+        <a href="#" class="btn btn-primary unFollowPlayerButton" name="unFollowPlayerButton">Unfollow</a>
+
+        <a href="#" class="btn btn-primary followPlayerButton" name="followPlayerButton">Follow</a>
+    <span class="playerFollowers"> - {{countPlayerFollowers}} Follower(s)</span>
+
+        <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span> |
+
+        <!--<a href="#" class="btn btn-primary clickme">click me</a>-->
+
+    {{else}}
         <a href="#" class="btn btn-primary">Likes</a><span class="likes"></span>
     {{/if}}
     {{/with}}
@@ -45,7 +53,7 @@
     {{else}}
     <h2>No videos uploaded</h2>
 {{/if}}
-            <a href="" class="owner">click me</a>
+
             </p>
         </div>
     </div>
