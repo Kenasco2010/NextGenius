@@ -28,7 +28,7 @@ Template.updateClubAndAcademy.helpers({
 
 Template.insertClubsAndAcademy.rendered = function () {
     //Initialize tooltips
-    $('.nav-tabs > li a[title]').tooltip();
+    // $('.nav-tabs > li a[title]').tooltip();
 
     //Wizard
     $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
@@ -71,3 +71,11 @@ Template.myFavoriteButtonNotFavorited.replaces("favoriteButtonNotFavorited");
 //Template.clubAndAcademyProfile.rendered = function () {
 //    $('a[class="favorite-button"]').text("Follow");
 //}
+Template.viewClubAndAcademyDetails.helpers({
+    videoOwner: function() {
+        return UploadVideos.find({});
+        //var owner = this._id
+        //console.log(this.viewClubProfile.owner)
+    }
+
+});

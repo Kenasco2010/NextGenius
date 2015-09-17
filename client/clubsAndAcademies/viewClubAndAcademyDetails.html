@@ -1,0 +1,59 @@
+<template name="viewClubAndAcademyDetails">
+    <div class="outter-wrapper body-wrapper">
+    <div class="wrapper ad-pad clearfix">
+        <!-- Start Main Column -->
+        <div class="col-1-1">
+            <!-- Start Gallery Section -->
+            <div class="clearfix">
+                <div class="col-1-4">
+                    <h3>Club Profile</h3>{{#with viewClubProfile}}
+                    <ul class="list-4 widget-list option-set" id="filter" data-option-key="filter">{{#with FS.GetFile 'images' picture}}
+                        <br/>
+                        <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>{{/with}}
+                        <li>
+                            <a href="gallery-1.html#show-all" data-option-value="*" class="selected">{{clubName}}</a>
+                        </li>
+                        <li>
+                            <a href="gallery-1.html#cat-1" data-option-value=".cat-1">{{agentName}}</a>
+                        </li>
+                        <li>
+                            <a href="gallery-1.html#cat-2" data-option-value=".cat-2">{{yearOfEstablishmen}}</a>
+                        </li>
+                        <li>
+                            <a href="gallery-1.html#cat-2" data-option-value=".cat-2">{{address}}</a>
+                        </li>
+                        <li>
+                            <a href="gallery-1.html#cat-2" data-option-value=".cat-2">{{league}}</a>
+                        </li>
+                        <li>
+                            <a href="gallery-1.html#cat-2" data-option-value=".cat-2">{{license}}</a>
+                        </li>
+                        <li>
+                            <a href="gallery-1.html#cat-2" data-option-value=".cat-2">{{country}}</a>
+                        </li>
+                         <li>
+                            <a href="gallery-1.html#cat-2" data-option-value=".cat-2">{{province}}</a>
+                        </li>
+                    </ul>
+                    {{/with}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="container">
+    {{#if viewPlayerVideo}}
+         {{#each viewPlayerVideo}}
+        <div class="col-md-4">
+            <video width="600" height="300" controls class="embed-responsive-item" >
+                <source src="{{absoluteVideoUrl}}" type="video/mp4"></video>
+        </div>
+         <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
+        {{/each}}
+    {{/if}}
+    </div>
+    <a href="" class="owner">click me</a>
+</div>
+
+</template>

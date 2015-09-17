@@ -1,3 +1,44 @@
 <template name="allClubAndAcademy">
-    <h1>Hey List of all Clubs and Academy!</h1>
+    
+   <div class="container">
+        <div class="row">
+        {{#each allClubs}}
+                <div class="col-xs-8 col-sm-6 col-md-6 col-lg-5">
+
+                    <div class="well well-sm">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-4">
+                    
+                                <img src="{{this.url}}" alt="" class="img-rounded img-responsive" />
+                                      
+                            </div>
+                            <div class="col-sm-6 col-md-8">
+                                <h4>{{clubName}}</h4>
+                                <small><cite title="San Francisco, USA">{{country}} <i class="glyphicon glyphicon-map-marker">
+                                </i></cite></small>
+
+                                <p>
+                                <br>
+                                    <i class="glyphicon glyphicon-envelope"></i>{{address}}
+                                    <br>
+                                    <br />
+                                    <i class="glyphicon glyphicon-globe"></i><a href="http://www.jquery2dotnet.com">league</a>
+                                    <br>
+                                    <br />
+                                    <i class="glyphicon glyphicon-gift"></i>{{license}}</p>
+                                        
+                                         <a class="btn btn-default" href="{{pathFor 'viewClubAndAcademyDetails' _id=_id}}">Show More</a>
+                               
+                                </div>
+                            </div>
+                    </div>
+                
+                </div>
+                {{/each}}
+        </div>   
+    </div>       
+
+
+
+
 </template>

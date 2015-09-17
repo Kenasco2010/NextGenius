@@ -10,7 +10,7 @@ AutoForm.hooks({
             Console.log("Not inserted")
         }
     },
-    updateAgent: {
+    updateAgentDetail: {
         onSuccess: function(operation, result, template) {
             //console.log("updated");
             Router.go('agentProfile');

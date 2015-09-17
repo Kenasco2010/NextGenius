@@ -1,47 +1,46 @@
 <template name="allPlayers">
 
-{{#each allPlayers}}
+<!-- {{#each allPlayers}} -->
 	
-<div class="container">
-	<div class="row">
-	        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-	            <div class="well well-sm">
-	                <div class="row">
-	                    <div class="col-sm-6 col-md-4">
-				{{#with FS.GetFile 'images' picture}}
-	                        <img src="{{this.url}}" alt="" class="img-rounded img-responsive" />
-				{{/with}}                    
-	                    </div>
-	                    <div class="col-sm-6 col-md-8">
-	                        <h4>
-	                            {{firstName}}</h4>
-	                        <small><cite title="San Francisco, USA">{{originCountry}} <i class="glyphicon glyphicon-map-marker">
-	                        </i></cite></small>
+	<div class="container">
+		<div class="row">
+		{{#each allPlayers}}
+		        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
 
-	                        <p>
-	                        <br>
-	                            <i class="glyphicon glyphicon-envelope"></i>email@example.com
-	                            <br>
-	                            <br />
-	                            <i class="glyphicon glyphicon-globe"></i><a href="http://www.jquery2dotnet.com">www.jquery2dotnet.com</a>
-	                            <br>
-	                            <br />
-	                            <i class="glyphicon glyphicon-gift"></i>{{dateOfBirth}}</p>
-	                      			
-	                      			<a class="btn btn-default" href="{{pathFor 'playerProfile'}}">Show More</a>
-	                       
-	                        </div>
-	                    </div>
-	            </div>
-	        </div>
-	</div>   
-</div>		
-	
+		            <div class="well well-sm">
+		                <div class="row">
+		                    <div class="col-sm-6 col-md-4">
+					{{#with FS.GetFile 'images' picture}}
+		                        <img src="{{this.url}}" alt="" class="img-rounded img-responsive" />
+					{{/with}}                    
+		                    </div>
+		                    <div class="col-sm-6 col-md-8">
+		                        <h4>
+		                            {{firstName}}</h4>
+		                        <small><cite title="San Francisco, USA">{{originCountry}} <i class="glyphicon glyphicon-map-marker">
+		                        </i></cite></small>
 
-
-    	
-    	
-	
-{{/each}}
+		                        <p>
+		                        <br>
+		                            <i class="glyphicon glyphicon-envelope"></i>email@example.com
+		                            <br>
+		                            <br />
+		                            <i class="glyphicon glyphicon-globe"></i><a href="http://www.jquery2dotnet.com">www.jquery2dotnet.com</a>
+		                            <br>
+		                            <br />
+		                            <i class="glyphicon glyphicon-gift"></i>{{dateOfBirth}}</p>
+		                      			
+		                      			 <a class="btn btn-default" href="{{pathFor 'viewPlayerDetails' _id=_id}}">Show More</a>
+		                       
+		                        </div>
+		                       <!--  <a class="btn btn-default" href="{{pathFor 'viewPlayerDetails' _id=_id}}">Show More</a> -->
+		                    </div>
+		            </div>
+		        
+		        </div>
+		        {{/each}}
+		</div>   
+	</div>		
+<!-- {{/each}} -->
 </template>
 

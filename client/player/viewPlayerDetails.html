@@ -1,0 +1,42 @@
+<template name="viewPlayerDetails">
+
+<div class="outter-wrapper body-wrapper">
+    <div class="wrapper ad-pad clearfix">
+        <!-- Start Main Column -->
+        <div class="col-1-1">
+            <!-- Start Gallery Section -->
+            <div class="clearfix">
+                <div class="col-1-4">
+                    <h3>Player Profile</h3>{{#with viewPlayerProfile}}
+                    <ul class="list-4 widget-list option-set" id="filter" data-option-key="filter">{{#with FS.GetFile 'images' picture}}
+                        <br/>
+                        <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>{{/with}}
+                        <li>
+                            <a href="gallery-1.html#show-all" data-option-value="*" class="selected">{{firstName}}</a>
+                        </li>
+                        <li>
+                            <a href="gallery-1.html#cat-1" data-option-value=".cat-1">{{gender}}</a>
+                        </li>
+                        <li>
+                            <a href="gallery-1.html#cat-2" data-option-value=".cat-2">{{originCountry}}</a>
+                        </li>
+                    </ul>{{/with}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="container">
+    {{#if viewPlayerVideo}}
+         {{#each viewPlayerVideo}}
+        <div class="col-md-4">
+            <video width="360" height="240" controls class="embed-responsive-item" >
+                <source src="{{absoluteVideoUrl}}" type="video/mp4"></video>
+        </div>
+        {{/each}}
+    {{/if}}
+    </div>
+</div>
+
+</template>
