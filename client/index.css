@@ -30,3 +30,12 @@
 	margin-bottom:0;
 	text-transform:uppercase;
 }
+#registerClubbtn{
+	color: #00632c;
+	border:2px solid #00632c;
+	background-color: transparent;
+}
+#registerClubbtn:hover{
+	background-color: #00632c;
+	color: #fff;
+}

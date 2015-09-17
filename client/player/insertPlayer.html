@@ -2,47 +2,48 @@
     <div class="container">
         <div class="row">
             <section>
-{{#autoForm collection="Players" id="insertPlayerDetail" type="insert"}}
-<fieldset>
-    <legend>Please complete your profile</legend>
+                {{#autoForm collection="Players" id="insertPlayerDetail" type="insert"}}
+                <fieldset>
+                    <legend>Please complete your profile</legend>
 
-        <div class="wizard">
-                    <div class="wizard-inner">
-                        <div class="connecting-line"></div>
-                        <ul class="nav nav-tabs navigate-tabs"  role="tablist">
+                    <div class="wizard">
+                        <div class="wizard-inner">
+                            <div class="connecting-line"></div>
+                            <ul class="nav nav-tabs"  role="tablist">
 
-                            <li role="presentation" class="active">
-                                <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-folder-open"></i>
-                            </span>
-                                </a>
-                            </li>
+                                <li role="presentation" class="active">
+                                    <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                                        <span class="round-tab">
+                                            <i class="glyphicon glyphicon-folder-open"></i>
+                                        </span>
+                                    </a>
+                                </li>
 
-                            <li role="presentation" class="disabled">
-                                <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-pencil"></i>
-                            </span>
-                                </a>
-                            </li>
-                            <li role="presentation" class="disabled">
-                                <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-picture"></i>
-                            </span>
-                                </a>
-                            </li>
+                                <li role="presentation" class="disabled">
+                                    <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                                        <span class="round-tab">
+                                            <i class="glyphicon glyphicon-pencil"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="disabled">
+                                    <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                                        <span class="round-tab">
+                                            <i class="glyphicon glyphicon-picture"></i>
+                                        </span>
+                                    </a>
+                                </li>
 
-                            <li role="presentation" class="disabled">
-                                <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-ok"></i>
-                            </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                                <li role="presentation" class="disabled">
+                                    <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                                        <span class="round-tab">
+                                            <i class="glyphicon glyphicon-ok"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
 
                     <form role="form">
                         <div class="tab-content">
@@ -56,78 +57,92 @@
                                         {{> afQuickField name='dateOfBirth' type="bootstrap-datepicker" buttonClasses="glyphicon glyphicon-calendar"}}
                                         {{> afQuickField name='gender' options="allowed"}}
                                         <!--<div class="row">-->
+
+                       <!--  <form role="form">
+                            <div class="tab-content">
+                                <div class="tab-pane active" role="tabpanel" id="step1">
+                                    <h3>Step 1</h3>
+                                    <p>Personal Information</p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-md-offset-3">
+                                            {{> afQuickField name='firstName' }}
+                                            {{> afQuickField name='lastName'}}
+                                            {{> afQuickField name='dateOfBirth' type="bootstrap-datepicker"}}
+                                            {{> afQuickField name='gender' options="allowed"}} -->
+                                            <!--<div class="row">-->
+
                                             <div class=" col-md-offset-1">
                                                 {{> afFieldInput name='picture'}}
                                             </div>
-                                        <!--</div>-->
-                                    </div>
-                                </div>
-
-                                <ul class="list-inline pull-right">
-                                    <li><a href="#" type="button" class="btn btn-primary next-step">Save and continue</a></li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane" role="tabpanel" id="step2">
-                                <h3>Step 2</h3>
-                                <p>Club or Academy information (if any)</p>
-                                <div class="row">
-                                    <div class="col-md-6 col-md-offset-3">
-                                        {{> afQuickField name='position' options="allowed"}}
-                                        {{> afQuickField name='club'}}
-                                        {{> afQuickField name='division' options="allowed"}}
-                                        {{> afQuickField name='originCountry'}}
-                                        {{> afQuickField name='previousClub'}}
-                                        {{> afQuickField name='transferStatus' options="allowed"}}
+                                            <!--</div>-->
                                         </div>
                                     </div>
 
-                                <ul class="list-inline pull-right">
-                                    <li><a href="#" type="button" class="btn btn-default prev-step">Previous</a></li>
-                                    <li><a href="#" type="button" class="btn btn-primary next-step">Save and continue</a></li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane" role="tabpanel" id="step3">
-                                <h3>Step 3</h3>
-                                <p>Physique information</p>
-                                <div class="row">
-                                    <div class="col-md-6 col-md-offset-3">
-                                {{> afQuickField name='height'}}
-                                {{> afQuickField name='weight'}}
-                                    </div>
+                                    <ul class="list-inline pull-right">
+                                        <li><a type="button" class="btn btn-primary next-step">Save and continue</a></li>
+                                    </ul>
                                 </div>
+                                <div class="tab-pane" role="tabpanel" id="step2">
+                                    <h3>Step 2</h3>
+                                    <p>Club or Academy information (if any)</p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-md-offset-3">
+                                            {{> afQuickField name='position' options="allowed"}}
+                                            {{> afQuickField name='club'}}
+                                            {{> afQuickField name='division' options="allowed"}}
+                                            {{> afQuickField name='originCountry'}}
+                                            {{> afQuickField name='previousClub'}}
+                                            {{> afQuickField name='transferStatus' options="allowed"}}
+                                        </div>
+                                    </div>
 
-                                <ul class="list-inline pull-right">
-                                    <li><a href="#" type="button" class="btn btn-default prev-step">Previous</a></li>
-                                    <li><a href="#" type="button" class="btn btn-default next-step">Skip</a></li>
-                                    <li><a href="#" type="button" class="btn btn-primary btn-info-full next-step">Save and continue</a></li>
-                                </ul>
-                            </div>
-                            <div class="tab-pane" role="tabpanel" id="complete">
-                                <h3>Complete</h3>
+                                    <ul class="list-inline pull-right">
+                                        <li><a type="button" class="btn btn-default prev-step">Previous</a></li>
+                                        <li><a type="button" class="btn btn-primary next-step">Save and continue</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" role="tabpanel" id="step3">
+                                    <h3>Step 3</h3>
+                                    <p>Physique information</p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-md-offset-3">
+                                            {{> afQuickField name='height'}}
+                                            {{> afQuickField name='weight'}}
+                                        </div>
+                                    </div>
 
-                                <p>Please verify your information before saving <br/>
+                                    <ul class="list-inline pull-right">
+                                        <li><a  type="button" class="btn btn-default prev-step">Previous</a></li>
+                                        <li><a  type="button" class="btn btn-default next-step">Skip</a></li>
+                                        <li><a  type="button" class="btn btn-primary btn-info-full next-step">Save and continue</a></li>
+                                    </ul>
+                                </div>
+                                <div class="tab-pane" role="tabpanel" id="complete">
+                                    <h3>Complete</h3>
+
+                                    <p>Please verify your information before saving <br/>
                                     </p>
-                                <p>
-                                <div class="row">
-                                    <div class="col-md-9 col-md-offset-3">
+                                    <p>
+                                        <div class="row">
+                                            <div class="col-md-9 col-md-offset-3">
 
 
-                                    </div>
+                                            </div>
+                                        </div>
+                                    </p>
+
+
                                 </div>
-                                </p>
-
-
+                                <div class="clearfix"></div>
                             </div>
-                            <div class="clearfix"></div>
-                        </div>
-                    </form>
-        </div>
+                        </form>
+                    </div>
 
-</fieldset>
-    <p align="center">
-        <button class="btn btn-primary" type="submit" id="submit">Save Detail</button>
-    </p>
-{{/autoForm}}
+                </fieldset>
+                <p align="center">
+                    <a class="btn btn-primary" type="submit" id="submit">Save Detail</a>
+                </p>
+                {{/autoForm}}
 
             </section>
         </div>

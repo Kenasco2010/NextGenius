@@ -27,9 +27,9 @@ Template.updatePlayerProfile.helpers({
 
 
 
-Template.insertPlayerDetail.rendered = function () {
+Template.insertPlayerDetail.rendered = function() {
     //Initialize tooltips
-    //$('.nav-tabs > li a[title]').tooltip();
+    // $('.nav-tabs > li a[title]').tooltip();
 
     //Wizard
     $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
@@ -42,10 +42,10 @@ Template.insertPlayerDetail.rendered = function () {
     });
 
     $(".next-step").click(function (e) {
-
         var $active = $('.wizard .nav-tabs li.active');
         $active.next().removeClass('disabled');
         nextTab($active);
+        console.log("inside");
 
     });
     $(".prev-step").click(function (e) {
@@ -63,3 +63,29 @@ function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
 }
 
+// if (!window.allScriptsLoaded) {
+//     var scripts = [
+//       // list of JS files to be loaded.
+//       'js/formtabs.js'
+//       ];
+
+//       function loadNext() {
+//         var src = scripts.shift();
+//         if (typeof src === 'undefined')
+//           return;
+
+//       var s = document.createElement("script");
+
+//       s.setAttribute('src', src);
+//       if (s.addEventListener) {
+//           s.addEventListener("load", loadNext, false);
+//       } else if (s.readyState) {
+//           s.onreadystatechange = loadNext;
+//       }
+//       document.body.appendChild(s);
+//   };
+
+//   loadNext();
+//   window.allScriptsLoaded = true;
+// };
+// }
