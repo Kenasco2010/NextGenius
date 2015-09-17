@@ -13,7 +13,7 @@
 					<p>Name: {{firstName}}&nbsp; {{lastName}}</p>		
 					<p>Gender: {{gender}}</p>
 					<p>License: {{license}}</p>
-					<a href="" type="button" class="btn btn-warning btn-lg" id="deleteAgentAccount">Delete Account</a>
+					<a href="" type="button" class="btn btn-warning btn-lg AgentButton" id="deleteAgentAccount">Delete Account</a>
 					</div>	
 					<div class="col-3-4 last">
 						<div class="col-1-1">
@@ -25,7 +25,7 @@
 							<p>Type of agent: {{typeOfAgent}}</p>
 						</div>
 						
-						<button class="btn btn-primary AgentButton" href="{{pathFor 'updateAgentAndScoutDetail'}}">Edit profile</button>
+						<a class="btn btn-primary AgentButton" href="{{pathFor 'updateAgentAndScoutDetail'}}">Edit profile</a>
 					</div>
 				</div>
 	    	</div>
