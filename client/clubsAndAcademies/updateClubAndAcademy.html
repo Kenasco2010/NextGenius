@@ -6,7 +6,23 @@
             <div class="col-1-1 form-group">
                 <div class="clearfix">
                     <div class="col-1-4">
-                        {{> afFieldInput name = 'picture'}}
+                        <!--{{> afFieldInput name = 'picture'}}-->
+                        <input type="file" class="updateClub-file_bag">
+                        <!-- <button class="upload">Upload</button> -->
+                        {{#each files}}
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">
+                                    {{percent_uploaded}}%
+                                </div>
+                            </div>
+
+                            <div id="imageThumbnail">
+                                <img src="{{url}}"  width="100"  height="100" class="img-thumbnail resetimage" alt="thumbnail" />
+                            </div>
+                            {{#if complete}}
+                                <a href="#" data-action="remove-image" class="resetimage"><i class="fa fa-times"></i>Remove</a>
+                            {{/if}}
+                        {{/each}}
                         {{> afQuickField name='clubName'}}
                         {{> afQuickField name = 'agentName'}}
                     </div>  

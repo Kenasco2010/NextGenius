@@ -99,9 +99,31 @@ Template.viewPlayerDetails.rendered = function () {
         $('.followPlayerButton').show();
         $('.unFollowPlayerButton').hide();
     }
-     //if (Players.findOne({owner: this.userId})){
-     //    $('.followPlayerButton').hide();
-     //    $('.unFollowPlayerButton').hide();
-     //}
+
 };
 
+//Code is for Player Profile image upload to S3
+Template.insertPlayerDetail.helpers({
+    "files": function(){
+        if (Session.get('fileExists')) {
+            return S3.collection.find();
+        };
+    },
+    'complete': function() {
+        if (this.status == 'complete') {
+            return true;
+        };
+    }
+});
+Template.updatePlayerProfile.helpers({
+    "files": function(){
+        if (Session.get('fileExists')) {
+            return S3.collection.find();
+        };
+    },
+    'complete': function() {
+        if (this.status == 'complete') {
+            return true;
+        };
+    }
+});

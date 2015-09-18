@@ -39,5 +39,29 @@ Meteor.methods({
 
         })
     },
+    insertPlayer: function(doc) {
+        Players.insert(doc, function(err, id){
+        });
+    },
+    editPlayer: function(playerId, doc) {
+        Players.update({_id: playerId}, doc, function(err, success){
+        });
+    },
 
+    insertClub: function(doc) {
+    Clubs.insert(doc, function(err, id){
+    });
+},
+    editClub: function(clubId, doc) {
+        Clubs.update({_id: clubId}, doc, function(err, success){
+        });
+    },
+    insertAgentAndScout: function(doc) {
+        Agents.insert(doc, function(err, id){
+        });
+    },
+    editAgent: function(agentId, doc) {
+        Agents.update({_id: agentId}, doc, function(err, success){
+        });
+    },
 });

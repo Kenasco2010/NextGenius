@@ -97,3 +97,90 @@ Template.viewClubAndAcademyDetails.events({
         })
     },
 });
+
+
+Template.insertClubsAndAcademy.events({
+    "change .clubPictureFile_bag": function(event, template){
+        var files = $("input.clubPictureFile_bag")[0].files
+        S3.upload({
+            files:files,
+            path:"ClubImages",
+            unique_name: false,
+            acl: "public-read"
+        },function(error, success){
+            if (error) {
+                swal('we are sorry, something went wrong');
+            }
+            else {
+                Session.set('fileExists', true);
+                Session.set('clubAbsoluteImageUrl', success.url);
+                Session.set('clubRelativeImageUrl', success.relative_url);
+                Session.set('percent_uploaded', success.percent_uploaded);
+            }
+        });
+    },
+    "click [data-action='remove-club-image']": function() {
+        var relative_url = this.relative_url;
+        S3.delete(
+            relative_url,
+            function(error, success) {
+                if (error) {
+                    console.log(error);
+                }
+                else {
+                    this.status = 'removed';
+                    reset_form_element( $('.clubPictureFile_bag') );
+                    $("#imageThumbnail img").attr("src", "");
+                    $('.img-thumbnail').hide();
+                    $("[data-action='remove-club-image']").hide();
+                    $(".progress").remove();
+                }
+            });
+
+    },
+});
+
+Template.updateClubAndAcademy.events({
+    "change .updateClub-file_bag": function(event, template){
+        var files = $("input.updateClub-file_bag")[0].files
+        S3.upload({
+            files:files,
+            path:"ClubImages",
+            unique_name: false,
+            acl: "public-read"
+        },function(error, success){
+            if (error) {
+                swal('we are sorry, something went wrong');
+            }
+            else {
+                Session.set('fileExists', true);
+                Session.set('clubAbsoluteImageUrl', success.url);
+                Session.set('clubRelativeImageUrl', success.relative_url);
+                Session.set('percent_uploaded', success.percent_uploaded);
+            }
+        });
+    },
+    "click [data-action='remove-image']": function(e, t) {
+        var relative_url = this.relative_url;
+        S3.delete(
+            relative_url,
+            function(error, success) {
+                if (error) {
+                    console.log(error);
+                }
+                else {
+                    this.status = 'removed';
+                    reset_form_element( $('.updateClub-file_bag') );
+                    $("#imageThumbnail img").attr("src", "");
+                    $('.img-thumbnail').hide();
+                    $("[data-action='remove-image']").hide();
+                    $(".progress").remove();
+                }
+            });
+    }
+});
+
+reset_form_element = function(e) {
+    e.wrap('<form>').parent('form').trigger('reset');
+    e.unwrap();
+};

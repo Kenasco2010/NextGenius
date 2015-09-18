@@ -7,9 +7,11 @@
             </div> 
             <div class="panel-body">
               <div class="row">
-              {{#with FS.GetFile 'images' picture}}
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{this.url}}" class="img-circle img-responsive"> </div>
-              {{/with}}
+              <!--{{#with FS.GetFile 'images' picture}}-->
+                <!--<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{this.url}}" class="img-circle img-responsive"> </div>-->
+                  <img class="img-thumbnail" width="160px" height="300px" src="{{clubAbsoluteImageUrl}}" alt="" >
+
+              <!--{{/with}}-->
                 <div class=" col-md-9 col-lg-9 "> 
                   <table class="table table-user-information">
                     <tbody>

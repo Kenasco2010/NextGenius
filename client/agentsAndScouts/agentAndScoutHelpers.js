@@ -63,3 +63,31 @@ Template.myFeed.helpers({
 		//return agentPlayerFollows;
 	}
 });
+
+
+
+//Code is for Player Profile image upload to S3
+Template.insertAgentAndScoutDetail.helpers({
+	"files": function(){
+		if (Session.get('fileExists')) {
+			return S3.collection.find();
+		};
+	},
+	'complete': function() {
+		if (this.status == 'complete') {
+			return true;
+		};
+	}
+});
+Template.updateAgentAndScoutDetail.helpers({
+	"files": function(){
+		if (Session.get('fileExists')) {
+			return S3.collection.find();
+		};
+	},
+	'complete': function() {
+		if (this.status == 'complete') {
+			return true;
+		};
+	}
+});
