@@ -1,50 +1,76 @@
-
-	<template name="agentProfile">
-	<legend>Please edit your profile</legend>
-			
-		{{#with agent}}
-					
+<template name="agentProfile">
+	<legend>Please edit your profile</legend>{{#with agent}}
 	<div class="outter-wrapper body-wrapper">
-	    <div class="wrapper ad-pad clearfix">
+		<div class="wrapper ad-pad clearfix">
 			<div class="col-1-1 form-group">
 				<div class="clearfix">
-					<div class="col-1-4">
-					{{#with FS.GetFile 'agentimages' picture}}	<img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>
-					{{/with}}
-					<p>Name: {{firstName}}&nbsp; {{lastName}}</p>		
-					<p>Gender: {{gender}}</p>
-					<p>License: {{license}}</p>
-					<a href="" type="button" class="btn btn-warning btn-lg AgentButton" id="deleteAgentAccount">Delete Account</a>
-					</div>	
+					<div class="col-1-4">{{#with FS.GetFile 'agentimages' picture}}
+						<img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>{{/with}}
+						<p>Name: {{firstName}}&nbsp; {{lastName}}</p>
+						<p>Gender: {{gender}}</p>
+						<p>License: {{license}}</p>
+						<a href="#" class="btn btn-primary AgentButton">{{countAgentFollowings}} - Following(s)</a>
+						<a href="" type="button" class="btn btn-warning btn-lg AgentButton" id="deleteAgentAccount">Delete Account</a>
+					</div>
 					<div class="col-3-4 last">
 						<div class="col-1-1">
-							<p>Bio: {{bio}}</p>
-							<p>Nationality: {{nationality}}</p>
-							<hr>
-							<p>Region: {{region}}</p>
-							<hr>
-							<p>Type of agent: {{typeOfAgent}}</p>
+							<div class="panel panel-info">
+								<div class="panel-heading toppad">
+									<h3 class="panel-title">{{firstName}}&nbsp;{{lastName}}</h3>
+								</div>
+								<div class="panel-body">
+									<div class="row">
+										<div class=" col-md-9 col-lg-9 ">
+											<table class="table ">
+												<tbody>
+													<tr>
+														<td>Gender:</td>
+														<td>{{gender}}</td>
+													</tr>
+													<tr>
+														<td>License</td>
+														<td>{{license}}</td>
+													</tr>
+													<tr>
+														<td>Bio:</td>
+														<td>{{bio}}</td>
+													</tr>
+													<tr>
+														<td>Country:</td>
+														<td>{{nationality}}</td>
+													</tr>
+													<tr>
+														<td>Region of Operation:</td>
+														<td>{{region}}</td>
+													</tr>
+													<tr>
+														<td>Type of Agent</td>
+														<td>{{typeOfAgent}}</td>
+													</tr>
+												</tbody>
+									        </table>
+										</div>
+									</div>
+								</div>
+								<div class="panel-footer">
+									<a data-original-title="Broadcast Message" href="{{pathFor 'myFeed'}}" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary">
+										<i class="glyphicon glyphicon-envelope"></i>My Feeds
+									</a>
+									<span class="pull-right">
+										<a href="{{pathFor 'updateAgentAndScoutDetail'}}" data-original-title="Edit Your Profile" id="update" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning">
+											<i class="glyphicon glyphicon-edit"></i>&nbsp;Update Profile
+										</a>
+										<a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger">
+											<i class="glyphicon glyphicon-remove"></i>
+										</a>
+									</span>
+								</div>
+							</div>
 						</div>
-
-						
-					
 					</div>
-
-                        {{countAgentFollowings}} - Following(s)
-						<a  class="btn btn-primary AgentButton" href="{{pathFor 'updateAgentAndScoutDetail'}}">Edit profile</a>
-                        <a class="btn btn-primary" href="{{pathFor 'myFeed'}}">My Feed</a>
-
-                    </div>
-
 				</div>
-	    	</div>
+			</div>
 		</div>
-		
-				<br/>
-	
-
-		{{/with}}
-		
-
-	
-</template>	
+	</div>
+	<br/>{{/with}}
+</template>
