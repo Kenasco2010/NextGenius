@@ -1,19 +1,27 @@
 <template name="playerProfile">
 	{{#with playerProfile}} 
-
- <div class="col-xs-12 col-sm-12 col-md-6 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-1 toppad" >
+    <div style="margin-top:20px" class="col-xs-12 col-sm-12 col-md-6 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-1" >
           <div class="panel panel-info">
-            <div class="panel-heading">
+            <div class="panel-heading toppad">
               <h3 class="panel-title">{{firstName}}&nbsp;{{lastName}}</h3>
             </div> 
             <div class="panel-body">
               <div class="row">
+
               <!--{{#with FS.GetFile 'images' picture}}-->
                 <!--<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{this.url}}" class="img-circle img-responsive"> </div>-->
-                  <img class="img-thumbnail" width="160px" height="300px" src="{{playerAbsoluteImageUrl}}" alt="" >
+                  <!--<img class="img-thumbnail" width="160px" height="300px" src="{{playerAbsoluteImageUrl}}" alt="" >-->
               <!--{{/with}}-->
-                <div class=" col-md-9 col-lg-9 ">
-                  <table class="table table-user-information">
+                <!--<div class=" col-md-9 col-lg-9 ">-->
+                  <!--<table class="table table-user-information">-->
+
+              <!--{{#with FS.GetFile 'images' picture}}-->
+                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{playerAbsoluteImageUrl}}" class="img-circle img-responsive">
+                </div>
+              <!--{{/with}}-->
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table ">
+
                     <tbody>
                       <tr>
                         <td>Name:</td>
@@ -23,6 +31,7 @@
                         <td>Date of Birth:</td>
                         <td>{{dateOfBirth}}</td>
                       </tr>
+
                         <tr>
                           <td>Gender</td>
                           <td>{{gender}}</td>
@@ -39,10 +48,6 @@
                         	 <td>Play Position</td>
                           <td>{{position}}</td>
                         </tr>
-                         
-                     
-                     
-                     
                         <tr>
                           <td>Club:</td>
                           <td>{{club}}</td>
@@ -75,7 +80,9 @@
                   </div>
             
           </div>
-        </div>
+    </div>
+
+     
  {{/with}}
     {{> uploadVideos}}
     {{> viewPlayerVideos}}

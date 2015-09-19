@@ -8,7 +8,7 @@
 
 Template.clubAndAcademyProfile.events({
     "click #deleteClubAccount":function() {
-        console.log("hellow click me la")
+        //console.log("hellow click me la")
         Meteor.call('deleteAccount', Meteor.userId(), function (e) {
             if (!e) {
                 alert("Next Genius is sad to see you go...")
@@ -37,7 +37,9 @@ Template.viewClubAndAcademyDetails.events({
         var clubId = this._id;
         Meteor.call('insertClubFollowers', clubId, followers, function (e) {
             if (!e) {
-                alert("you are following this club");
+                //alert("you are following this club");
+                sAlert.success('you are following this club');
+
                 //$('.followClubButton').attr('disabled', 'disabled');
                 $('.followClubButton').hide();
                 $('.unFollowClubButton').show();
@@ -53,7 +55,7 @@ Template.viewClubAndAcademyDetails.events({
 
         Meteor.call('insertAgentFollowing', agentId, following, function(e){
             if (!e) {
-                alert("data saved in agents");
+                //alert("data saved in agents");
                 //$('.followPlayerButton').attr('disabled', 'disabled');
                 $('.followClubButton').hide();
                 $('.unFollowClubButton').show();
@@ -69,7 +71,9 @@ Template.viewClubAndAcademyDetails.events({
         var clubId = this._id;
         Meteor.call('deleteClubFollowers', clubId, followers, function (e) {
             if (!e) {
-                alert("you have unfollowed this club");
+                //alert("you have unfollowed this club");
+                sAlert.warning('you have unfollowed this club');
+
                 //$('.unFollowClubButton').attr('disabled', 'disabled');
                 $('.followClubButton').show();
                 $('.unFollowClubButton').hide();
@@ -85,7 +89,7 @@ Template.viewClubAndAcademyDetails.events({
 
         Meteor.call('deleteAgentFollowing', agentId, following, function(e){
             if (!e) {
-                alert("data removed in agents");
+                //alert("data removed in agents");
                 //$('.unFollowClubButton').attr('disabled', 'disabled');
                 $('.followClubButton').show();
                 $('.unFollowClubButton').hide();
@@ -102,6 +106,7 @@ Template.viewClubAndAcademyDetails.events({
 Template.insertClubsAndAcademy.events({
     "change .clubPictureFile_bag": function(event, template){
         var files = $("input.clubPictureFile_bag")[0].files
+        sAlert.info('Please wait while we upload your club profile picture');
         S3.upload({
             files:files,
             path:"ClubImages",
@@ -116,10 +121,12 @@ Template.insertClubsAndAcademy.events({
                 Session.set('clubAbsoluteImageUrl', success.url);
                 Session.set('clubRelativeImageUrl', success.relative_url);
                 Session.set('percent_uploaded', success.percent_uploaded);
+                sAlert.success('You have successfully uploaded you club profile picture');
             }
         });
     },
     "click [data-action='remove-club-image']": function() {
+        sAlert.warning('You have removed the club profile picture');
         var relative_url = this.relative_url;
         S3.delete(
             relative_url,
@@ -143,6 +150,7 @@ Template.insertClubsAndAcademy.events({
 Template.updateClubAndAcademy.events({
     "change .updateClub-file_bag": function(event, template){
         $('.displayClubProfilePicture').hide();
+        sAlert.info('Please wait while we update your club profile picture');
         var files = $("input.updateClub-file_bag")[0].files
         S3.upload({
             files:files,
@@ -158,10 +166,13 @@ Template.updateClubAndAcademy.events({
                 Session.set('clubAbsoluteImageUrl', success.url);
                 Session.set('clubRelativeImageUrl', success.relative_url);
                 Session.set('percent_uploaded', success.percent_uploaded);
+                sAlert.success('You have successfully updated you club profile picture');
+
             }
         });
     },
     "click [data-action='remove-image']": function(e, t) {
+        sAlert.warning('You have removed the club profile picture');
         var relative_url = this.relative_url;
         S3.delete(
             relative_url,
