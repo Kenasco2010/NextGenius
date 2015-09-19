@@ -141,7 +141,10 @@ Template.insertPlayerDetail.events({
 Template.updatePlayerProfile.events({
     "change .updatePlayer-file_bag": function(event, template){
         $('.displayPlayerProfilePicture').hide();
+<<<<<<< HEAD
         sAlert.info('Please wait while we update your profile picture');
+=======
+>>>>>>> 3c7e959... changed club, players and agent profile image path to s3
         var files = $("input.updatePlayer-file_bag")[0].files
         S3.upload({
             files:files,

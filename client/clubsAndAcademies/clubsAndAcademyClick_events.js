@@ -150,7 +150,10 @@ Template.insertClubsAndAcademy.events({
 Template.updateClubAndAcademy.events({
     "change .updateClub-file_bag": function(event, template){
         $('.displayClubProfilePicture').hide();
+<<<<<<< HEAD
         sAlert.info('Please wait while we update your club profile picture');
+=======
+>>>>>>> 3c7e959... changed club, players and agent profile image path to s3
         var files = $("input.updateClub-file_bag")[0].files
         S3.upload({
             files:files,
