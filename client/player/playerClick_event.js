@@ -1,4 +1,3 @@
-
 Template.playerProfile.events({
     "click #deletePlayerAccount":function() {
         Meteor.call('deleteAccount', Meteor.userId(), function (e) {
@@ -11,5 +10,8 @@ Template.playerProfile.events({
 
             }
         });
-    }
+    },
+ //    "click #submit1":function(){
+ //     return Router.go()
+ // }
 });

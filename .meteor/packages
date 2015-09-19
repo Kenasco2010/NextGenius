@@ -22,8 +22,6 @@ yogiben:autoform-file
 twbs:bootstrap
 useraccounts:bootstrap
 useraccounts:core
-rajit:bootstrap3-datepicker
-aldeed:autoform-bs-datepicker
 aldeed:delete-button
 lepozepo:s3
 kevohagan:sweetalert

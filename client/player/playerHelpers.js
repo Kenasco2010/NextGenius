@@ -1,4 +1,3 @@
-
 Template.updatePlayerProfile.helpers({
     isOwner: function() {
         return this.owner === Meteor.userId();
@@ -25,67 +24,51 @@ Template.updatePlayerProfile.helpers({
     }
 });
 
+Template.playerDetail2.helpers({
+    aPlayer: function() {
+        var id = Meteor.userId();
+        return Players.findOne({ "owner": id });
+    }
+});
+
+Template.playerDetail3.helpers({
+    aPlayer: function() {
+        var id = Meteor.userId();
+        return Players.findOne({ "owner": id });
+    }
+});
 
 
-Template.insertPlayerDetail.rendered = function() {
-    //Initialize tooltips
-    // $('.nav-tabs > li a[title]').tooltip();
 
-    //Wizard
-    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+Template.playerDetail1.rendered = function() {
+  if (!window.allScriptsLoaded) {
+    var scripts = [
+      // list of JS files to be loaded.
+      'js/script.js'
+      ];
 
-        var $target = $(e.target);
+      function loadNext() {
+        var src = scripts.shift();
+        if (typeof src === 'undefined')
+          return;
 
-        if ($target.parent().hasClass('disabled')) {
-            return false;
-        }
-    });
+      var s = document.createElement("script");
 
-    $(".next-step").click(function (e) {
-        var $active = $('.wizard .nav-tabs li.active');
-        $active.next().removeClass('disabled');
-        nextTab($active);
-        console.log("inside");
+      s.setAttribute('src', src);
+      if (s.addEventListener) {
+          s.addEventListener("load", loadNext, false);
+      } else if (s.readyState) {
+          s.onreadystatechange = loadNext;
+      }
+      document.body.appendChild(s);
+  };
 
-    });
-    $(".prev-step").click(function (e) {
-
-        var $active = $('.wizard .nav-tabs li.active');
-        prevTab($active);
-
-    });
+  loadNext();
+  window.allScriptsLoaded = true;
 };
 
-function nextTab(elem) {
-    $(elem).next().find('a[data-toggle="tab"]').click();
+var date = $('#datepicker').html();
+console.log("the date is" + date);
+
+$(".btn-default").attr('id', 'registerClubbtn');
 }
-function prevTab(elem) {
-    $(elem).prev().find('a[data-toggle="tab"]').click();
-}
-
-// if (!window.allScriptsLoaded) {
-//     var scripts = [
-//       // list of JS files to be loaded.
-//       'js/formtabs.js'
-//       ];
-
-//       function loadNext() {
-//         var src = scripts.shift();
-//         if (typeof src === 'undefined')
-//           return;
-
-//       var s = document.createElement("script");
-
-//       s.setAttribute('src', src);
-//       if (s.addEventListener) {
-//           s.addEventListener("load", loadNext, false);
-//       } else if (s.readyState) {
-//           s.onreadystatechange = loadNext;
-//       }
-//       document.body.appendChild(s);
-//   };
-
-//   loadNext();
-//   window.allScriptsLoaded = true;
-// };
-// }
