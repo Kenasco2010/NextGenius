@@ -1,4 +1,3 @@
-
 Template.playerProfile.events({
     "click #deletePlayerAccount":function() {
         Meteor.call('deleteAccount', Meteor.userId(), function (e) {
@@ -90,6 +89,7 @@ Template.viewPlayerDetails.events({
             }
         })
     },
+
 });
 
 Template.insertPlayerDetail.events({

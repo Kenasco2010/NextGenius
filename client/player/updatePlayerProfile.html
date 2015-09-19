@@ -1,10 +1,11 @@
 <template name="updatePlayerProfile">
-		<legend>Please edit your profile</legend>
-			
-				{{#autoForm collection="Players" doc=updateDoc id="updatePlayerDetail" type="update"}}
-					
+
+	<legend>Please edit your profile</legend>
+
+	{{#autoForm collection="Players" doc=updateDoc id="updatePlayerDetail" type="update"}}
+
 	<div class="outter-wrapper body-wrapper">
-	    <div class="wrapper ad-pad clearfix">
+		<div class="wrapper ad-pad clearfix">
 			<div class="col-1-1 form-group">
 				<div class="clearfix">
 					<div class="col-1-4">
@@ -39,7 +40,7 @@
 						{{> afQuickField name='lastName'}}
 						{{> afQuickField name = 'height'}}
 						{{> afQuickField name = 'weight'}}
-						{{> afQuickField name='dateOfBirth' type="bootstrap-datepicker" buttonClasses="glyphicon glyphicon-calendar"}}
+						{{> afQuickField name='dateOfBirth' id='datepicker'}}
 						
 					</div>	
 					<div class="col-3-4 last">
@@ -53,14 +54,16 @@
 							{{> afQuickField name='transferStatus' options="allowed"}}
 						</div>
 						
-					</div>
-                </div>
-                <a class="btn btn-primary" type="submit">Update</a>
-            </div>
-		</div>
-				<br/>
-	</div>
-			{{/autoForm}}
 
+						<ul class="text-center">
+							<button class="btn btn-primary ngButtrn" align="center" type="submit">Update</button>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br/>
+	</div>	
+	{{/autoForm}}
 
 </template>
