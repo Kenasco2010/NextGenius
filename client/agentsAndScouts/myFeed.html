@@ -1,6 +1,6 @@
 <template name="myFeed">
     <h3>My Feed</h3>
-    {{#each playerFeed}}
+    {{#each agentPlayerFeed}}
 
         <blockquote>
             <p>FirstName: {{firstName}}</p>
@@ -10,5 +10,7 @@
             <p>Country of origin: {{originCountry}}</p><i class="icon-map-marker"></i>
             <p>Height: {{height}}</p>
         </blockquote>
+        <a href="{{pathFor 'feedDetails' _id=_id}}" type="button" class="btn btn-primary">View More</a>
 {{/each}}
+
 </template>

@@ -142,6 +142,7 @@ Template.insertClubsAndAcademy.events({
 
 Template.updateClubAndAcademy.events({
     "change .updateClub-file_bag": function(event, template){
+        $('.displayClubProfilePicture').hide();
         var files = $("input.updateClub-file_bag")[0].files
         S3.upload({
             files:files,

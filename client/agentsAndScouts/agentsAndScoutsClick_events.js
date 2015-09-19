@@ -57,6 +57,7 @@ Template.insertAgentAndScoutDetail.events({
 
 Template.updateAgentAndScoutDetail.events({
     "change .updateAgent-file_bag": function(event, template){
+        $(".displayAgentProfilePicture").hide();
         var files = $("input.updateAgent-file_bag")[0].files
         S3.upload({
             files:files,

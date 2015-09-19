@@ -1,0 +1,33 @@
+<template name="feedDetails">
+    <h3>Feed details</h3>
+    {{#with onePlayerFeed}}
+
+        <blockquote>
+            <p>FirstName: {{firstName}}</p>
+            <p>LastName: {{lastName}}</p>
+            <p>Date of Birth: {{dateOfBirth}}</p>
+            <p>Sex: {{gender}}</p>
+            <p>Country of origin: {{originCountry}}</p><i class="icon-map-marker"></i>
+            <p>Height: {{height}}</p>
+        </blockquote>
+        <a href="" type="button" class="btn btn-primary">View More</a>
+    {{/with}}
+    <div class="row">
+        <div class="col-md-5 col md-offset-3">
+            <p>
+            <hr/>
+            {{#each playerVideos}}
+                <video width="600" height="300" controls>
+                    <source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
+
+                </video>
+                <!--{{> favoriteButton _id=_id}} - {{favoriteCount _id}}-->
+
+            {{/each}}
+            </p>
+        </div>
+    </div>
+        <!--{{#each playerVideos}}-->
+    <!---->
+        <!--{{/each}}-->
+</template>

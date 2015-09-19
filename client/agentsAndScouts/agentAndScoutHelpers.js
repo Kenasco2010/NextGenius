@@ -49,7 +49,7 @@ Template.agentProfile.helpers({
 });
 
 Template.myFeed.helpers({
-	playerFeed: function () {
+	agentPlayerFeed: function () {
 		//return "hello this is me";
 
 		var agentId = Agents.findOne({owner: Meteor.userId()});
@@ -61,10 +61,46 @@ Template.myFeed.helpers({
 		return agentPlayerFollows;
 		//console.log (agentPlayerFollows);
 		//return agentPlayerFollows;
+	},
+	playerVideos: function () {
+		var agentId = Agents.findOne({owner: Meteor.userId()});
+		//console.log(agentId);
+		//return agentId;
+		var agentOwner = agentId.owner;
+		//console.log(agentOwner)
+		var playerObject = Players.findOne({followers: agentOwner});
+		var playerId = playerObject._id;
+		var playerVideos = UploadVideos.find({myId: playerId}).fetch();
+		return playerVideos;
 	}
 });
 
+Template.feedDetails.helpers({
+	onePlayerFeed: function () {
+		//return "hello this is me";
 
+		var agentId = Agents.findOne({owner: Meteor.userId()});
+		//console.log(agentId);
+		//return agentId;
+		var agentOwner = agentId.owner;
+		//console.log(agentOwner)
+		var agentPlayerFollows = Players.findOne({followers: agentOwner});
+		return agentPlayerFollows;
+		//console.log (agentPlayerFollows);
+		//return agentPlayerFollows;
+	},
+	playerVideos: function () {
+		var agentId = Agents.findOne({owner: Meteor.userId()});
+		//console.log(agentId);
+		//return agentId;
+		var agentOwner = agentId.owner;
+		//console.log(agentOwner)
+		var playerObject = Players.findOne({followers: agentOwner});
+		var playerId = playerObject._id;
+		var playerVideos = UploadVideos.find({myId: playerId}).fetch();
+		return playerVideos;
+	}
+});
 
 //Code is for Player Profile image upload to S3
 Template.insertAgentAndScoutDetail.helpers({

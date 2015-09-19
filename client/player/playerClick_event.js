@@ -131,6 +131,7 @@ Template.insertPlayerDetail.events({
 
 Template.updatePlayerProfile.events({
     "change .updatePlayer-file_bag": function(event, template){
+        $('.displayPlayerProfilePicture').hide();
         var files = $("input.updatePlayer-file_bag")[0].files
         S3.upload({
             files:files,
