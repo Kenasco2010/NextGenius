@@ -20,7 +20,7 @@ Template.updatePlayerProfile.helpers({
 
 Template.updatePlayerProfile.helpers({
     updateDoc: function(){
-        return Players.findOne();
+        return Players.findOne({ "owner": id });
     }
 });
 
@@ -72,3 +72,32 @@ console.log("the date is" + date);
 
 $(".btn-default").attr('id', 'registerClubbtn');
 }
+
+Template.updatePlayerProfile.rendered = function () {
+    if (!window.allScriptsLoaded) {
+        var scripts = [
+      // list of JS files to be loaded.
+      'js/script.js'
+      ];
+
+      function loadNext() {
+        var src = scripts.shift();
+        if (typeof src === 'undefined')
+          return;
+
+      var s = document.createElement("script");
+
+      s.setAttribute('src', src);
+      if (s.addEventListener) {
+          s.addEventListener("load", loadNext, false);
+      } else if (s.readyState) {
+          s.onreadystatechange = loadNext;
+      }
+      document.body.appendChild(s);
+  };
+
+  loadNext();
+  window.allScriptsLoaded = true;
+};
+$(".btn-default").attr('id', 'registerClubbtn');
+};
