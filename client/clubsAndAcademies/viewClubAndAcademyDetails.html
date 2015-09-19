@@ -1,33 +1,92 @@
 <template name="viewClubAndAcademyDetails">
-    {{#with viewClubProfile}}
-        Club Name:    {{clubName}}<br>
-        Agent Name:  {{agentName}}<br>
-        Year Of Establishment:      {{yearOfEstablishmen}}<br>
-        Location:     {{location}}<br>
-        Address:    {{address}}<br>
-        League:    {{league}}<br>
-        License:    {{license}}<br>
-        Country:  {{country}}<br>
-        Province:   {{province}}<br>
+{{#with viewClubProfile}}
+    <div class="outter-wrapper body-wrapper">
+        <div class="wrapper ad-pad clearfix">
+            <!-- Start Main Column -->
+            <div class="col-1-1 form-group">
+                <!-- Start Gallery Section -->
+                <div class="clearfix">
+                    <div class="col-1-4">
+                        <h3>Club Profile</h3>
+                        
+                        <ul class="list-4 widget-list option-set" id="filter" data-option-key="filter">{{#with FS.GetFile 'images' picture}}
+                            <br/>
+                            <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>{{/with}}
+                            <li>
+                                <a href="gallery-1.html#show-all" data-option-value="*" class="selected">{{clubName}}</a>
+                            </li>
+                             <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <a href="#" class="btn btn-primary unFollowClubButton" name="unFollowClubButton">Unfollow</a>
+                                    <a href="#" class="btn btn-primary followClubButton" name="followClubButton">Follow</a>
+                                    <span class="followers">- {{countClubFollowers}} Follower(s)</span>
+                                    <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
+                                </div>
+                            </div>
+                        </div> 
+                        </ul>
+                       
+                    </div>
 
-    {{/with}}
-
+                    <div class="col-3-4 last" style="margin-top:30px;">
+                        <div class="col-1-1">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Name:</td>
+                                        <td>{{clubName}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Name of Agent:</td>
+                                        <td>{{agentName}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Year of Establishment</td>
+                                        <td>{{yearOfEstablishmen}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Location</td>
+                                        <td>{{address}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Current League Division:</td>
+                                        <td>{{league}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Club License:</td>
+                                        <td>{{license}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Province</td>
+                                        <td>{{province}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+{{/with}}
+    <!--<span class="followers">- {{countClubFollowers}} Follower(s)</span>-->
     <div class="row">
-        <div class="col-md-5 col md-offset-3">
-            <p>
-            <hr/>
-
-            {{#each viewClubVideo}}
-                <video width="600" height="300" controls>
-                    <source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
-
+        <div class="container">
+        {{#if viewPlayerVideo}}
+             {{#each viewPlayerVideo}}
+            <div class="col-md-4">
+                <video width="600" height="300" controls class="embed-responsive-item" >
+                    <source src="{{absoluteVideoUrl}}" type="video/mp4">
                 </video>
-                <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
+
+            </div>
+                 <!--<a href="#" class="btn btn-primary unFollowClubButton" name="unFollowClubButton">Unfollow</a>-->
+
+                 <!--<a href="#" class="btn btn-primary followClubButton" name="followClubButton">Follow</a>-->
 
             {{/each}}
-
-            <a href="" class="owner">click me</a>
-            </p>
+        {{/if}}
         </div>
     </div>
 </template>

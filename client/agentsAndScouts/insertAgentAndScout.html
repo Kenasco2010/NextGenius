@@ -60,7 +60,7 @@
                                         </div>
 
                                         <ul class="list-inline pull-right">
-                                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                                            <li><button  type="button" class="btn btn-primary AgentButton next-step">Save and continue</button></li>
                                         </ul>
                                     </div>
                                     <div class="tab-pane" role="tabpanel" id="step2">
@@ -69,14 +69,14 @@
                                         <div class="row">
                                             <div class="col-md-6 col-md-offset-3">
                                                 {{> afQuickField name='license'}}
-                                                {{> afQuickField name='bio'}}
+                                                {{> afQuickField name='bio' rows=3}}
                                                 {{> afQuickField name='nationality'}}
                                             </div>
                                         </div>
 
                                         <ul class="list-inline pull-right">
-                                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                                            <li><button type="button" class="btn btn-primary next-step">Save and continue</button></li>
+                                            <li><button type="button" class="btn btn-default prev-step AgentButton">Previous</button></li>
+                                            <li><button type="button" class="btn btn-primary next-step AgentButton">Save and continue</button></li>
                                         </ul>
                                     </div>
                                     <div class="tab-pane" role="tabpanel" id="step3">
@@ -89,9 +89,9 @@
                                             </div>
                                         </div>
                                         <ul class="list-inline pull-right">
-                                            <li><button type="button" class="btn btn-default prev-step">Previous</button></li>
-                                            <li><button type="button" class="btn btn-default next-step">Skip</button></li>
-                                            <li><button type="button" class="btn btn-primary btn-info-full next-step">Save and continue</button></li>
+                                            <li><button type="button" class="btn btn-default prev-step AgentButton">Previous</button></li>
+                                            <li><button type="button" class="btn btn-default next-step AgentButton">Skip</button></li>
+                                            <li><button type="button" class="btn btn-primary btn-info-full AgentButton next-step">Save and continue</button></li>
                                         </ul>
                                     </div>
                                     <div class="tab-pane" role="tabpanel" id="complete">
@@ -106,7 +106,7 @@
                             </form>
                         </div>
                     </fieldset>
-                    <button class="btn btn-primary" type="submit" id="submit">Save Detail</button>
+                    <button class="btn btn-primary AgentButton" type="submit" id="submit">Save Detail</button>
 
                 {{/autoForm}}
 

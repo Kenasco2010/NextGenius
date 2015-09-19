@@ -28,7 +28,7 @@ Template.updateClubAndAcademy.helpers({
 
 Template.insertClubsAndAcademy.rendered = function () {
     //Initialize tooltips
-    $('.nav-tabs > li a[title]').tooltip();
+    // $('.nav-tabs > li a[title]').tooltip();
 
     //Wizard
     $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
@@ -63,19 +63,49 @@ function prevTab(elem) {
     $(elem).prev().find('a[data-toggle="tab"]').click();
 }
 
-Template.myFavoriteButtonFavorited.replaces("favoriteButtonFavorited");
-
-Template.myFavoriteButtonNotFavorited.replaces("favoriteButtonNotFavorited");
+//Template.myFavoriteButtonFavorited.replaces("favoriteButtonFavorited");
+//
+//Template.myFavoriteButtonNotFavorited.replaces("favoriteButtonNotFavorited");
 
 
 //Template.clubAndAcademyProfile.rendered = function () {
 //    $('a[class="favorite-button"]').text("Follow");
 //}
 Template.viewClubAndAcademyDetails.helpers({
-    videoOwner: function() {
+    videoOwner: function () {
         return UploadVideos.find({});
         //var owner = this._id
         //console.log(this.viewClubProfile.owner)
+    },
+    countClubFollowers: function () {
+      return this.followers.length;
     }
 
 });
+
+Template.viewClubAndAcademyDetails.rendered = function () {
+        //console.log(Agents.findOne({owner:Meteor.userId()})._id == Players.findOne({owner: Meteor.userId()}).followers)
+        var agentId = Agents.findOne({owner: Meteor.userId()});
+        var agentOwner = agentId.owner;
+        //var agentFollowing = agentId.following;
+        var followClubId = Clubs.findOne({followers: agentId.owner});
+        //console.log(followClubId);
+        var ClubFollowers;
+        if (followClubId && followClubId.followers) {
+            ClubFollowers = followClubId.followers;
+        }
+        var connection = _.contains(ClubFollowers, agentOwner);
+        //console.log(connection);
+        if (connection) {
+            //console.log("inside if loop");
+            $('.followClubButton').hide();
+            $('.unFollowClubButton').show();
+        }
+        else {
+            //console.log("inside else loop");
+            $('.followClubButton').show();
+            $('.unFollowClubButton').hide();
+        }
+
+    };
+

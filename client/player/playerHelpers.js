@@ -1,12 +1,18 @@
 Template.updatePlayerProfile.helpers({
-    isOwner: function() {
+    isOwner: function () {
         return this.owner === Meteor.userId();
     },
     onError: function () {
-        return function (error) { alert("Sorry! This operation was not successful"); console.log(error); };
+        return function (error) {
+            alert("Sorry! This operation was not successful");
+            console.log(error);
+        };
     },
     onSuccess: function () {
-        return function (result) { alert("You have successfully deleted this record"); console.log(result); };
+        return function (result) {
+            alert("You have successfully deleted this record");
+            console.log(result);
+        };
     },
     beforeRemove: function () {
         return function (collection, id) {
@@ -19,6 +25,7 @@ Template.updatePlayerProfile.helpers({
 });
 
 Template.updatePlayerProfile.helpers({
+
     updateDoc: function(){
         return Players.findOne({ "owner": id });
     }
@@ -37,6 +44,13 @@ Template.playerDetail3.helpers({
         return Players.findOne({ "owner": id });
     }
 });
+
+Template.viewPlayerDetails.helpers({
+    countPlayerFollowers: function () {
+        return this.followers.length;
+    }
+});
+
 
 
 
@@ -73,6 +87,7 @@ console.log("the date is" + date);
 $(".btn-default").attr('id', 'registerClubbtn');
 }
 
+
 Template.updatePlayerProfile.rendered = function () {
     if (!window.allScriptsLoaded) {
         var scripts = [
@@ -101,3 +116,39 @@ Template.updatePlayerProfile.rendered = function () {
 };
 $(".btn-default").attr('id', 'registerClubbtn');
 };
+
+
+//Template.insertPlayerDetail.rendered=function() {
+//    $('.my-datepicker').datepicker();
+//}
+
+Template.viewPlayerDetails.rendered = function () {
+    //console.log(Agents.findOne({owner:Meteor.userId()})._id == Players.findOne({owner: Meteor.userId()}).followers)
+    var agentId = Agents.findOne({owner: Meteor.userId()});
+    var agentOwner = agentId.owner;
+    //var agentFollowing = agentId.following;
+    var followPlayerId = Players.findOne({followers: agentId.owner});
+    //console.log(followPlayerId);
+    var playerFollowers;
+    if (followPlayerId && followPlayerId.followers) {
+        playerFollowers = followPlayerId.followers;
+    }
+    var connection = _.contains(playerFollowers, agentOwner);
+    //console.log(connection);
+    if (connection) {
+        //console.log("inside if loop");
+        $('.followPlayerButton').hide();
+        $('.unFollowPlayerButton').show();
+    }
+    else {
+        //console.log("inside else loop");
+        $('.followPlayerButton').show();
+        $('.unFollowPlayerButton').hide();
+    }
+     //if (Players.findOne({owner: this.userId})){
+     //    $('.followPlayerButton').hide();
+     //    $('.unFollowPlayerButton').hide();
+     //}
+ };
+
+

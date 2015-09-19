@@ -7,7 +7,8 @@
 //})
 
 Template.clubAndAcademyProfile.events({
-    "click #deleteAgentAccount":function() {
+    "click #deleteClubAccount":function() {
+        console.log("hellow click me la")
         Meteor.call('deleteAccount', Meteor.userId(), function (e) {
             if (!e) {
                 alert("Next Genius is sad to see you go...")
@@ -28,3 +29,71 @@ Template.clubAndAcademyProfile.events({
 //    }
 //
 //});
+
+
+Template.viewClubAndAcademyDetails.events({
+    "click .followClubButton": function () {
+        var followers = Meteor.userId();
+        var clubId = this._id;
+        Meteor.call('insertClubFollowers', clubId, followers, function (e) {
+            if (!e) {
+                alert("you are following this club");
+                //$('.followClubButton').attr('disabled', 'disabled');
+                $('.followClubButton').hide();
+                $('.unFollowClubButton').show();
+            }
+            else {
+                return alert("Couldn't follow this player");
+
+            }
+            //console.log(myId.count())
+        });
+        var following = this._id;
+        var agentId = Agents.findOne({owner:Meteor.userId()})._id;
+
+        Meteor.call('insertAgentFollowing', agentId, following, function(e){
+            if (!e) {
+                alert("data saved in agents");
+                //$('.followPlayerButton').attr('disabled', 'disabled');
+                $('.followClubButton').hide();
+                $('.unFollowClubButton').show();
+            }
+            else {
+                return alert("Couldn't follow this player");
+
+            }
+        })
+    },
+    "click .unFollowClubButton": function () {
+        var followers = Meteor.userId();
+        var clubId = this._id;
+        Meteor.call('deleteClubFollowers', clubId, followers, function (e) {
+            if (!e) {
+                alert("you have unfollowed this club");
+                //$('.unFollowClubButton').attr('disabled', 'disabled');
+                $('.followClubButton').show();
+                $('.unFollowClubButton').hide();
+            }
+            else {
+                return alert("Couldn't follow this player");
+
+            }
+            //console.log(myId.count())
+        });
+        var following = this._id;
+        var agentId = Agents.findOne({owner:Meteor.userId()})._id;
+
+        Meteor.call('deleteAgentFollowing', agentId, following, function(e){
+            if (!e) {
+                alert("data removed in agents");
+                //$('.unFollowClubButton').attr('disabled', 'disabled');
+                $('.followClubButton').show();
+                $('.unFollowClubButton').hide();
+            }
+            else {
+                return alert("Couldn't follow this player");
+
+            }
+        })
+    },
+});

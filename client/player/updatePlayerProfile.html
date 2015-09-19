@@ -1,28 +1,42 @@
 <template name="updatePlayerProfile">
-	
-	<div class="row">	
-		<div class="container">
-			<legend>Please edit your profile</legend>
 
-			{{#autoForm collection="Players" doc=updateDoc id="updatePlayerDetail" type="update"}}
-			{{> afQuickField name='firstName'}}
-			{{> afQuickField name='lastName'}}
-			{{> afQuickField name='dateOfBirth' id='datepicker'}}
-			{{> afQuickField name='gender' options="allowed"}}
-			{{> afQuickField name='position' options="allowed"}}
-			{{> afQuickField name='club'}}
-			{{> afQuickField name='division' options="allowed"}}
-			{{> afQuickField name='originCountry'}}
-			{{> afQuickField name='previousClub'}}
-			{{> afQuickField name='transferStatus' options="allowed"}}
-			{{> afQuickField name='height'}}
-			{{> afQuickField name='weight'}}
-			{{> afFieldInput name='picture'}}
-			<br/>
-			<ul class="text-center">
-				<button class="btn btn-primary ngButton" align="center" type="submit">Update</button>
-			</ul>
-			{{/autoForm}}
+	<legend>Please edit your profile</legend>
+
+	{{#autoForm collection="Players" doc=updateDoc id="updatePlayerDetail" type="update"}}
+
+	<div class="outter-wrapper body-wrapper">
+		<div class="wrapper ad-pad clearfix">
+			<div class="col-1-1 form-group">
+				<div class="clearfix">
+					<div class="col-1-4">
+						{{> afFieldInput name = 'picture'}}
+						{{> afQuickField name='firstName'}}
+						{{> afQuickField name='lastName'}}
+						{{> afQuickField name = 'height'}}
+						{{> afQuickField name = 'weight'}}
+						{{> afQuickField name='dateOfBirth' id='datepicker'}}
+						
+					</div>	
+					<div class="col-3-4 last">
+						<div class="col-1-1">
+							{{> afQuickField name='gender' options="allowed"}}
+							{{> afQuickField name='position' options="allowed"}}
+							{{> afQuickField name='club'}}
+							{{> afQuickField name='division' options="allowed"}}
+							{{> afQuickField name='originCountry'}}
+							{{> afQuickField name='previousClub'}}
+							{{> afQuickField name='transferStatus' options="allowed"}}
+						</div>
+						
+						<ul class="text-center">
+							<button class="btn btn-primary ngButton" align="center" type="submit">Update</button>
+						</ul>
+					</div>
+				</div>
+			</div>
 		</div>
-	</div>
+		<br/>
+	</div>	
+	{{/autoForm}}
+	
 </template>
