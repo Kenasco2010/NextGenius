@@ -36,4 +36,16 @@ Template.myFeed.helpers({
 		//return agentPlayerFollows;
 	}
 });
+Template.agentDetail2.helpers({
+	anAgent: function() {
+		var id = Meteor.userId();
+		return Agents.findOne({ "owner": id });
+	}
+});
 
+Template.agentDetail3.helpers({
+	anAgent: function() {
+		var id = Meteor.userId();
+		return Agents.findOne({ "owner": id });
+	}
+});

@@ -118,10 +118,6 @@ $(".btn-default").attr('id', 'registerClubbtn');
 };
 
 
-//Template.insertPlayerDetail.rendered=function() {
-//    $('.my-datepicker').datepicker();
-//}
-
 Template.viewPlayerDetails.rendered = function () {
     //console.log(Agents.findOne({owner:Meteor.userId()})._id == Players.findOne({owner: Meteor.userId()}).followers)
     var agentId = Agents.findOne({owner: Meteor.userId()});

@@ -1,13 +1,21 @@
 AutoForm.hooks({
-    insertAgentDetail: {
-        // Called when any operation succeeds, where operation will be
-        // "insert", "update", "submit", or the method name.
-        onSuccess: function(operation, result, template) {
-            //console.log("done");
-            Router.go('agentProfile');
+    insertAgentDetail1:{
+        onSuccess: function(operation, result, template){
+            Router.go('agentDetail2');
+            // console.log(result);
         },
-        onError: function(operation, result, template){
-            Console.log("Not inserted")
+        onError: function(formType, error) {
+            console.log(error);
+        },
+    },
+    insertAgentDetail2:{
+        onSuccess: function(operation, result, template){
+            Router.go('agentDetail3');
+        }
+    },
+    insertAgentDetail3:{
+        onSuccess: function(operation, result, template){
+            Router.go('agentDetail4');
         }
     },
     updateAgentDetail: {
@@ -18,7 +26,7 @@ AutoForm.hooks({
 
         },
         onError: function(operation, error, template) {
-            //return sAlert.error(error);
+            console.log(error);
         }
     }
 });
