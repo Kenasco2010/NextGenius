@@ -10,33 +10,22 @@
 		            <div class="well well-sm">
 		                <div class="row">
 		                    <div class="col-sm-6 col-md-4">
-							{{#with FS.GetFile 'images' picture}}
-				                <img src="{{this.url}}" alt="" class="img-rounded img-responsive" />
-							{{/with}}   
+    							<img src="{{playerAbsoluteImageUrl}}" alt="" class="img-rounded img-responsive"/>
 		                        <h4>{{firstName}}&nbsp;{{lastName}} </h4>
 							     <p>{{originCountry}}</p>
 		                        <p>{{position}}</p>            
 		                    </div>
 		                    <div class="col-sm-6 col-md-8">
-		                       <!--  <h4>{{firstName}}&nbsp;{{lastName}} </h4> -->
-		                       <!--  <small><cite title="San Francisco, USA">{{originCountry}} <i class="glyphicon glyphicon-map-marker">
-		                        </i></cite></small> -->
-		                      <!--   <p>{{originCountry}}</p>
-		                        <p>{{position}}</p> -->
-		   <!--   {{#if viewPlayerVideo}}
-              {{#each viewPlayerVideo}} -->
+		                   
               
                <video controls  loop>
                  <source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">
               </video>
-            
-              <!--   {{/each}}
-              {{/if}}
-		                -->       			
+        			
 		                      	<a class="btn btn-default" href="{{pathFor 'viewPlayerDetails' _id=_id}}">Show More</a>
 		                       
 		                        </div>
-		                       <!--  <a class="btn btn-default" href="{{pathFor 'viewPlayerDetails' _id=_id}}">Show More</a> -->
+		                     
 		                    </div>
 		            </div>
 		        

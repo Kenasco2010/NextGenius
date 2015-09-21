@@ -1,5 +1,7 @@
 <template name="viewClubAndAcademyDetails">
-{{#with viewClubProfile}}
+    <!--{{> sAlert}}-->
+
+    {{#with viewClubProfile}}
     <div class="outter-wrapper body-wrapper">
         <div class="wrapper ad-pad clearfix">
             <!-- Start Main Column -->
@@ -9,9 +11,11 @@
                     <div class="col-1-4">
                         <h3>Club Profile</h3>
                         
-                        <ul class="list-4 widget-list option-set" id="filter" data-option-key="filter">{{#with FS.GetFile 'images' picture}}
+                        <ul class="list-4 widget-list option-set" id="filter" data-option-key="filter">
+                            <!--{{#with FS.GetFile 'images' picture}}-->
                             <br/>
-                            <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>{{/with}}
+                            <img src="{{clubAbsoluteImageUrl}}" alt="" class="img-rounded" height="200" width="200"/>
+                            <!--{{/with}}-->
                             <li>
                                 <a href="gallery-1.html#show-all" data-option-value="*" class="selected">{{clubName}}</a>
                             </li>

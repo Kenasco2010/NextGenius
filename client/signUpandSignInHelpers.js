@@ -11,7 +11,7 @@ var mySubmitFunc = function(error, state){
             Router.go('/');
         }
         if (state === "signUp" && Meteor.user().profile.userType === "player") {
-            Router.go('/insert-player-detail');
+            Router.go('/playerDetail1');
 
         } else if(state === "signUp" && Meteor.user().profile.userType === "agentorscout") {
             Router.go('/insert-agent-detail');

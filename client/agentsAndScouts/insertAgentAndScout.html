@@ -54,7 +54,23 @@
                                                 {{> afQuickField name='firstName'}}
                                                 {{> afQuickField name='lastName'}}
                                                 {{> afQuickField name='gender' options='allowed'}}
-                                                {{> afFieldInput name='picture'}}
+                                                <!--{{> afFieldInput name='picture'}}-->
+                                                <input type="file" class="agentPictureFile_bag">
+                                                <!-- <button class="upload">Upload</button> -->
+                                                {{#each files}}
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">
+                                                            {{percent_uploaded}}%
+                                                        </div>
+                                                    </div>
+
+                                                    <div id="imageThumbnail">
+                                                        <img src="{{url}}"  width="100"  height="100" class="img-thumbnail resetagentimage" alt="thumbnail" />
+                                                    </div>
+                                                    {{#if complete}}
+                                                        <a href="#" data-action="remove-agent-image" data-id="{{relative_url}}" class="resetagentimage"><i class="fa fa-times"></i>Remove</a>
+                                                    {{/if}}
+                                                {{/each}}
 
                                             </div>
                                         </div>
