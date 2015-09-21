@@ -51,7 +51,6 @@ Template.myFeed.helpers({
 Template.feedDetails.helpers({
 	onePlayerFeed: function () {
 		//return "hello this is me";
-<<<<<<< HEAD
 
 		var agentId = Agents.findOne({owner: Meteor.userId()});
 		//console.log(agentId);
@@ -75,31 +74,8 @@ Template.feedDetails.helpers({
 		return playerVideos;
 	}
 });
-=======
->>>>>>> 3c7e959... changed club, players and agent profile image path to s3
 
-		var agentId = Agents.findOne({owner: Meteor.userId()});
-		//console.log(agentId);
-		//return agentId;
-		var agentOwner = agentId.owner;
-		//console.log(agentOwner)
-		var agentPlayerFollows = Players.findOne({followers: agentOwner});
-		return agentPlayerFollows;
-		//console.log (agentPlayerFollows);
-		//return agentPlayerFollows;
-	},
-	playerVideos: function () {
-		var agentId = Agents.findOne({owner: Meteor.userId()});
-		//console.log(agentId);
-		//return agentId;
-		var agentOwner = agentId.owner;
-		//console.log(agentOwner)
-		var playerObject = Players.findOne({followers: agentOwner});
-		var playerId = playerObject._id;
-		var playerVideos = UploadVideos.find({myId: playerId}).fetch();
-		return playerVideos;
-	}
-});
+
 
 //Code is for Player Profile image upload to S3
 Template.insertAgentAndScoutDetail.helpers({
