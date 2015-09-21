@@ -2,7 +2,7 @@
 var mySubmitFunc = function(error, state){
     if (!error) {
         if (state === "signIn" && Meteor.user().profile.userType === "player") {
-            Router.go('/');
+            Router.go('/player-profile');
 
         } else if(state === "signIn" && Meteor.user().profile.userType === "agentorscout") {
             Router.go('/agent-profile');
