@@ -109,3 +109,28 @@ Template.viewClubAndAcademyDetails.rendered = function () {
 
     };
 
+//Code is for Club Profile image upload to S3
+Template.insertClubsAndAcademy.helpers({
+    "files": function(){
+        if (Session.get('fileExists')) {
+            return S3.collection.find();
+        };
+    },
+    'complete': function() {
+        if (this.status == 'complete') {
+            return true;
+        };
+    }
+});
+Template.updateClubAndAcademy.helpers({
+    "files": function(){
+        if (Session.get('fileExists')) {
+            return S3.collection.find();
+        };
+    },
+    'complete': function() {
+        if (this.status == 'complete') {
+            return true;
+        };
+    }
+});

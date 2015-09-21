@@ -12,10 +12,10 @@
                        <br/>
                        <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>{{/with}} -->
                            <ul class="list-4 widget-list option-set" id="filter" data-option-key="filter">
-                               {{#with FS.GetFile 'images' picture}}
+                               <!--{{#with FS.GetFile 'images' picture}}-->
                                    <br/>
-                                   <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>
-                               {{/with}}
+                                   <img src="{{playerAbsoluteImageUrl}}" alt="" class="img-rounded" height="200" width="200"/>
+                               <!--{{/with}}-->
                                <li>
                                    <a href="gallery-1.html#show-all" data-option-value="*" class="selected">{{firstName}}&nbsp;{{lastName}}</a>
                                </li>
@@ -115,6 +115,7 @@
 <div class="row">
 <div class="container">
 {{#if viewPlayerVideo}}
+
    {{#each viewPlayerVideo}}
            <div class="col-md-4">
                <video width="360" height="240" controls class="embed-responsive-item" >
@@ -122,6 +123,7 @@
                     <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
            </div>
    {{/each}}
+
     {{else}}
         <h2>No videos uploaded</h2>
               
@@ -136,4 +138,6 @@
    </div>
    </div>
 
+
    </template>
+

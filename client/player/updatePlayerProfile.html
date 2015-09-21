@@ -9,7 +9,33 @@
 			<div class="col-1-1 form-group">
 				<div class="clearfix">
 					<div class="col-1-4">
-						{{> afFieldInput name = 'picture'}}
+
+                        <div class="displayPlayerProfilePicture">
+                            {{#with playerProfile}}
+                                <img class="img-thumbnail" width="160px" height="300px" src="{{playerAbsoluteImageUrl}}" alt="" ><br>
+                                Change Profile.
+                                <!--<a href="#" data-action="remove-image" class="resetimage"><i class="fa fa-times"></i>Remove</a>-->
+                            {{/with}}
+                        </div>
+
+                        {{#each files}}
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">
+                                    {{percent_uploaded}}%
+                                </div>
+                            </div>
+
+                            <div id="imageThumbnail">
+                                <img src="{{url}}"  width="100"  height="100" class="img-thumbnail resetimage" alt="thumbnail" />
+                            </div>
+                            {{#if complete}}
+                                <a href="#" data-action="remove-image" class="resetimage"><i class="fa fa-times"></i>Remove</a>
+                            {{/if}}
+                        {{/each}}
+                        <input type="file" class="updatePlayer-file_bag">
+                        <!-- <button class="upload">Upload</button> -->
+
+
 						{{> afQuickField name='firstName'}}
 						{{> afQuickField name='lastName'}}
 						{{> afQuickField name = 'height'}}
@@ -28,8 +54,9 @@
 							{{> afQuickField name='transferStatus' options="allowed"}}
 						</div>
 						
+
 						<ul class="text-center">
-							<button class="btn btn-primary ngButton" align="center" type="submit">Update</button>
+							<button class="btn btn-primary ngButtrn" align="center" type="submit">Update</button>
 						</ul>
 					</div>
 				</div>
@@ -38,5 +65,5 @@
 		<br/>
 	</div>	
 	{{/autoForm}}
-	
+
 </template>
