@@ -1,8 +1,7 @@
 Template.uploadVideos.events({
     "change .upload-players-video-file_bag": function(event, template){
-        sAlert.info('please wait while we load your video. we will notify you once its done!');
-        //alert("please wait while we load your video. we will notify you once its done!");
-        //$("#videoDisplay").hide();
+        alert("please wait while we load your video. we will notify you once its done!");
+        $("#videoDisplay").hide();
         //console.log("hellooeoe")
         var files = $("input.upload-players-video-file_bag")[0].files
         S3.upload({
@@ -20,8 +19,6 @@ Template.uploadVideos.events({
                 Session.set('relativeVideoUrl', success.relative_url);
                 Session.set('percent_uploaded', success.percent_uploaded);
                 $("#videoDisplay").show();
-                sAlert.success('You have successfully uploaded a video.');
-
 
             }
         });

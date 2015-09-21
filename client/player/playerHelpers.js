@@ -174,12 +174,3 @@ Template.updatePlayerProfile.helpers({
         };
     }
 });
-
-//Template.allPlayers.helpers({
-//    "showPlayerVideo": function () {
-//        players = Players.find().fetch();
-//        playerId = players._id;
-//        console.log(playerId);
-//
-//    }
-//});
