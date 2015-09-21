@@ -16,6 +16,7 @@ Template.agentProfile.events({
 
 Template.insertAgentAndScoutDetail.events({
     "change .agentPictureFile_bag": function(event, template){
+        sAlert.info('Please wait while we upload your profile picture');
         var files = $("input.agentPictureFile_bag")[0].files
         S3.upload({
             files:files,

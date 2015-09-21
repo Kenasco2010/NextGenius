@@ -82,7 +82,7 @@ Template.playerDetail1.rendered = function() {
 };
 
 var date = $('#datepicker').html();
-console.log("the date is" + date);
+//console.log("the date is" + date);
 
 $(".btn-default").attr('id', 'registerClubbtn');
 }

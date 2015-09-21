@@ -6,7 +6,7 @@ AutoForm.hooks({
 			// console.log(result);
 		},
 		onError: function(formType, error) {
-			console.log("problem");
+			console.log(error);
 		},
 	},
 	insertPlayerDetail2:{

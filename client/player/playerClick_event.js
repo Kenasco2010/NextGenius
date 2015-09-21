@@ -95,6 +95,7 @@ Template.viewPlayerDetails.events({
 Template.insertPlayerDetail.events({
     "change .playerPictureFile_bag": function(event, template){
         sAlert.info('Please wait while we upload your profile picture');
+        //alert("helloooooo")
         var files = $("input.playerPictureFile_bag")[0].files
         S3.upload({
             files:files,
@@ -141,9 +142,7 @@ Template.insertPlayerDetail.events({
 Template.updatePlayerProfile.events({
     "change .updatePlayer-file_bag": function(event, template){
         $('.displayPlayerProfilePicture').hide();
-
         sAlert.info('Please wait while we update your profile picture');
-
         var files = $("input.updatePlayer-file_bag")[0].files
         S3.upload({
             files:files,

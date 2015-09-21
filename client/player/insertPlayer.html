@@ -75,12 +75,23 @@
                 {{> afQuickField name='lastName'}}
                 {{> afQuickField name='dateOfBirth' id='datepicker'}}
                 {{> afQuickField name='gender' options="allowed"}}
-                <!--<div class="row">-->
-                <!--<div class=" col-md-offset-1">-->
-                    <!--{{> afFieldInput name='picture' }}-->
-                <!--</div>-->
-                <!--</div>-->
 
+                <input type="file" class="playerPictureFile_bag">
+                <!-- <button class="upload">Upload</button> -->
+                {{#each files}}
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">
+                            {{percent_uploaded}}%
+                        </div>
+                    </div>
+
+                    <div id="imageThumbnail">
+                        <img src="{{url}}"  width="100"  height="100" class="img-thumbnail resetplayerimage" alt="thumbnail" />
+                    </div>
+                    {{#if complete}}
+                        <a href="#" data-action="remove-player-image" data-id="{{relative_url}}" class="resetplayerimage"><i class="fa fa-times"></i>Remove</a>
+                    {{/if}}
+                {{/each}}
             </div>
         </div>
 
