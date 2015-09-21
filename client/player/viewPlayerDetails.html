@@ -1,98 +1,100 @@
 <template name="viewPlayerDetails">
-{{#with viewPlayerProfile}}
-       <div class="outter-wrapper body-wrapper">
-           <div class="wrapper ad-pad clearfix">
-               <!-- Start Main Column -->
-               <div class="col-1-1">
-                   <!-- Start Gallery Section -->
-                   <div class="clearfix">
-                       <div class="col-1-4">
-                           <h3>Player Profile</h3>
+  {{#with viewPlayerProfile}}
+  <div class="outter-wrapper body-wrapper">
+   <div class="wrapper ad-pad clearfix">
+     <!-- Start Main Column -->
+
+
+     <div class="col-1-1">
+       <!-- Start Gallery Section -->
+       <div class="clearfix">
+         <div class="col-1-4">
+           <h3>Player Profile</h3>
                            <!-- {{#with FS.GetFile 'images' picture}}
                        <br/>
                        <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>{{/with}} -->
-                           <ul class="list-4 widget-list option-set" id="filter" data-option-key="filter">
-                               {{#with FS.GetFile 'images' picture}}
-                                   <br/>
-                                   <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>
-                               {{/with}}
-                               <li>
-                                   <a href="gallery-1.html#show-all" data-option-value="*" class="selected">{{firstName}}&nbsp;{{lastName}}</a>
-                               </li>
-                               <li>
-                                   <a href="gallery-1.html#cat-1" data-option-value=".cat-1">{{gender}}</a>
-                               </li>
-                               <li>
-                                   <a href="gallery-1.html#cat-2" data-option-value=".cat-2">{{originCountry}}</a>
-                               </li>
-                               <a href="#" class="btn btn-primary unFollowPlayerButton" name="unFollowPlayerButton">Unfollow</a>
-                                       <a href="#" class="btn btn-primary followPlayerButton" name="followPlayerButton">Follow</a>
-                           </ul>
-                       </div>
+                       <ul class="list-4 widget-list option-set" id="filter" data-option-key="filter">
+                         {{#with FS.GetFile 'images' picture}}
+                         <br/>
+                         <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>
+                         {{/with}}
+                         <li>
+                           <a href="gallery-1.html#show-all" data-option-value="*" class="selected">{{firstName}}&nbsp;{{lastName}}</a>
+                         </li>
+                         <li>
+                           <a href="gallery-1.html#cat-1" data-option-value=".cat-1">{{gender}}</a>
+                         </li>
+                         <li>
+                           <a href="gallery-1.html#cat-2" data-option-value=".cat-2">{{originCountry}}</a>
+                         </li>
+                         <a href="#" class="btn btn-primary unFollowPlayerButton" name="unFollowPlayerButton">Unfollow</a>
+                         <a href="#" class="btn btn-primary followPlayerButton" name="followPlayerButton">Follow</a>
+                       </ul>
+                     </div>
 
-                       <div class="col-3-4 last">
-                           <div class="col-1-1">
-                               <div class="col-xs-12 col-sm-12 col-md-6 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-1" >
-                                   <div class="panel panel-info">
-                                       <div class="panel-heading toppad">
-                                           <h3 class="panel-title"></h3>
-                                       </div>
-                                       <div class="panel-body">
-                                           <div class="row">
-                                               <div class=" col-md-9 col-lg-9 ">
-                                                   <table class="table ">
-                                                       <tbody>
-                                                       <tr>
-                                                           <td>Date of Birth:</td>
-                                                           <td>{{dateOfBirth}}</td>
-                                                       </tr>
-                                                       <tr>
-                                                           <td>Date of Birth</td>
-                                                           <td>{{dateOfBirth}}</td>
-                                                       </tr>
-                                                       <tr>
-                                                           <td>Height:</td>
-                                                           <td>{{height}}</td>
-                                                       </tr>
-                                                       <tr>
-                                                           <td>Play Position</td>
-                                                           <td>{{position}}</td>
-                                                       </tr>
-                                                       <tr>
-                                                           <td>Club:</td>
-                                                           <td>{{club}}</td>
-                                                       </tr>
-                                                       <tr>
-                                                           <td>Division:</td>
-                                                           <td>{{division}}</td>
-                                                       </tr>
-                                                       <tr>
-                                                           <td>Previous Club:</td>
-                                                           <td>{{previousClub}}</td>
-                                                       </tr>
-                                                       <tr>
-                                                           <td>Weight</td>
-                                                           <td>{{weight}}</td>
-                                                       </tr>
-                                                       </tbody>
-                                                   </table>
-                                                     <div class="container">
+                     <div class="col-3-4 last">
+                       <div class="col-1-1">
+                         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-1" >
+                           <div class="panel panel-info">
+                             <div class="panel-heading toppad">
+                               <h3 class="panel-title"></h3>
+                             </div>
+                             <div class="panel-body">
                                <div class="row">
-                                   <div class="col-md-6">
+                                 <div class=" col-md-9 col-lg-9 ">
+                                   <table class="table ">
+                                     <tbody>
+                                       <tr>
+                                         <td>Date of Birth</td>
+                                         <td>{{dateOfBirth}}</td>
+                                       </tr>
+                                        <tr>
+                                         <td>Foot:</td>
+                                         <td>{{foot}}</td>
+                                       </tr>
+                                       <tr>
+                                         <td>Height:</td>
+                                         <td>{{height}}</td>
+                                       </tr>
+                                       <tr>
+                                         <td>Play Position</td>
+                                         <td>{{position}}</td>
+                                       </tr>
+                                       <tr>
+                                         <td>Club:</td>
+                                         <td>{{club}}</td>
+                                       </tr>
+                                       <tr>
+                                         <td>Division:</td>
+                                         <td>{{division}}</td>
+                                       </tr>
+                                       <tr>
+                                         <td>Previous Club:</td>
+                                         <td>{{previousClub}}</td>
+                                       </tr>
+                                       <tr>
+                                         <td>Weight</td>
+                                         <td>{{weight}}</td>
+                                       </tr>
+                                     </tbody>
+                                   </table>
+                                   <div class="container">
+                                     <div class="row">
+                                       <div class="col-md-6">
                                       <!--  <a href="#" class="btn btn-primary unFollowPlayerButton" name="unFollowPlayerButton">Unfollow</a>
-                                       <a href="#" class="btn btn-primary followPlayerButton" name="followPlayerButton">Follow</a> -->
-                                       <span class="playerFollowers">
+                                      <a href="#" class="btn btn-primary followPlayerButton" name="followPlayerButton">Follow</a> -->
+                                      <span class="playerFollowers">
                                        <a href="#" class="btn btn-primary AgentButton">{{countPlayerFollowers}} Follower(s)</a></span>
                                        <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
+                                     </div>
                                    </div>
+                                 </div>
                                </div>
+                             </div>
                            </div>
-                                               </div>
-                                           </div>
-                                       </div>
-                                   </div>
-                               </div>
-                           </div>
+                         </div>
+                       </div>
+                     </div>
 
                            <!-- <div class="container">
                                <div class="row">
@@ -103,37 +105,102 @@
                                        <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
                                    </div>
                                </div>
-                           </div> -->
+                             </div> -->
 
+                           </div>
+                         </div>
                        </div>
+                     </div>
                    </div>
-               </div>
-           </div>
-       </div>
-{{/with}}
+                   {{/with}}
+<!-- 
+                   <div class="row">
+                    <div class="container">
+                      {{#if viewPlayerVideo}}
+                      {{#each viewPlayerVideo}}
+                      <div class="col-md-4">
+                       <video width="360" height="240" controls class="embed-responsive-item" >
+                         <source src="{{absoluteVideoUrl}}" type="video/mp4"/></video>
+                         <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
+                       </div>
+                       {{/each}}
+                       {{else}}
+                       <h2>No videos uploaded</h2>
 
-<div class="row">
+                       {{/if}}
+                       {{#if currentUser}}
+                       {{else}}
+                       <a href="#" class="btn btn-primary">Likes</a>
+                       <span class="likes"></span>
+                       {{/if}}
+
+
+                     </div>
+                   </div> -->
+
 <div class="container">
-{{#if viewPlayerVideo}}
-   {{#each viewPlayerVideo}}
-           <div class="col-md-4">
-               <video width="360" height="240" controls class="embed-responsive-item" >
-                   <source src="{{absoluteVideoUrl}}" type="video/mp4"/></video>
-                    <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
-           </div>
-   {{/each}}
-    {{else}}
-        <h2>No videos uploaded</h2>
-              
-    {{/if}}
-   {{#if currentUser}}
-   {{else}}
-           <a href="#" class="btn btn-primary">Likes</a>
-           <span class="likes"></span>
-   {{/if}}
-
-     
-   </div>
-   </div>
-
-   </template>
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class="carousel slide media-carousel" id="media">
+        <div class="carousel-inner">
+          <div class="item  active">
+          
+            <div class="item">
+            <div class="row">
+            {{#if viewPlayerVideo}}
+              {{#each viewPlayerVideo}}
+              <div class="col-md-4">
+                <a class="thumbnail" href="#"><video controls  loop>
+                 <source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">
+              </video></a>
+              </div> 
+                {{/each}}
+             <!--  <div class="col-md-4">
+                 <a class="thumbnail" href="#"><video controls  loop>
+                 <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" width="1024" height="552" type="video/mp4">
+              </video></a>
+              </div>
+              <div class="col-md-4">
+                <a class="thumbnail" href="#"><video controls  loop>
+                 <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" width="1024" height="552" type="video/mp4">
+              </video></a>
+              </div>  -->
+              {{else}}
+          <h2>No Videos for this player</h2>
+          {{/if}}    
+            </div>
+          </div>
+         
+            
+          </div>
+          {{#if currentUser}}
+          {{else}}
+            <a href="#" class="btn btn-primary">Likes</a>
+                       <span class="likes"></span>
+          {{/if}}
+          
+        <!--   <div class="item">
+            <div class="row">
+              <div class="col-md-4">
+                <a class="thumbnail" href="#"><video controls  loop>
+                 <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" width="1024" height="552" type="video/mp4">
+              </video></a>
+              </div>          
+              <div class="col-md-4">
+                <a class="thumbnail" href="#"><img alt="" src=" https://youtu.be/Psv5dmrs3U0"></a>
+              </div>
+              <div class="col-md-4">
+                <a class="thumbnail" href="#"><video controls  loop>
+                 <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" width="1024" height="552" type="video/mp4">
+              </video></a>
+              </div>      
+            </div>
+          </div> -->
+        </div>
+        <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+        <a data-slide="next" href="#media" class="right carousel-control">›</a>
+      </div>                          
+    </div>
+  </div>
+</div>
+</template>
