@@ -31,7 +31,7 @@
 </template>
 
 <template name="viewPlayerVideos">
-    <div class="row">
+   <!--  <div class="row">
         <div class="col-md-5 col md-offset-3">
             <p>
             <hr/>
@@ -45,8 +45,46 @@
             {{/each}}
             </p>
         </div>
+    </div> -->
+
+
+<div class="container">
+  <div class='row'>
+    <div class='col-md-12'>
+      <div class="carousel slide media-carousel" id="media">
+        <div class="carousel-inner">
+          <div class="item  active">
+          
+            <div class="item">
+            <div class="row">
+            {{#each playerVideos}}
+              <div class="col-md-4">
+              
+                <a class="thumbnail" href="#"><video controls loop>
+                   <source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">
+                </video>{{> favoriteButton _id=_id}} - {{favoriteCount _id}}
+                </a>
+              
+              </div>
+           {{/each}}
+            </div>
+              <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+              <a data-slide="next" href="#media" class="right carousel-control">›</a>
+            </div>                          
+          </div>
+      </div>
     </div>
+  </div>
+</div>
+</div>
 </template>
+
+
+
+
+
+
+
 <template name="viewClubVideos">
     <div class="row">
         <div class="col-md-5 col md-offset-3">

@@ -14,7 +14,7 @@ var mySubmitFunc = function(error, state){
             Router.go('/playerDetail1');
 
         } else if(state === "signUp" && Meteor.user().profile.userType === "agentorscout") {
-            Router.go('/insert-agent-detail');
+            Router.go('/agentDetail1');
 
 
         } else if (state === "signUp" && Meteor.user().profile.userType === "clubsOracademy"){

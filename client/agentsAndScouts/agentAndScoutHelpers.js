@@ -1,11 +1,3 @@
-Template.updateAgentAndScoutDetail.helpers({
-	updateAgent: function() {
-		var id = Meteor.userId();
-		return Agents.findOne({ "owner": id });
-	}
-});
-
-
 Template.insertAgentAndScoutDetail.rendered = function () {
 	function nextTab(elem) {
 		$(elem).next().find('a[data-toggle="tab"]').click();
@@ -48,6 +40,22 @@ Template.myFeed.helpers({
 	}
 });
 
+//for the agent unboarding
+Template.agentDetail2.helpers({
+	anAgent: function() {
+		var id = Meteor.userId();
+		return Agents.findOne({ "owner": id });
+	}
+});
+
+
+Template.agentDetail3.helpers({
+	anAgent: function() {
+		var id = Meteor.userId();
+		return Agents.findOne({ "owner": id });
+	}
+});
+
 Template.feedDetails.helpers({
 	onePlayerFeed: function () {
 		//return "hello this is me";
@@ -75,10 +83,10 @@ Template.feedDetails.helpers({
 	}
 });
 
-
+//integrate this kento's code with the agentDetail1 template
 
 //Code is for Player Profile image upload to S3
-Template.insertAgentAndScoutDetail.helpers({
+Template.agentDetail1.helpers({
 	"files": function(){
 		if (Session.get('fileExists')) {
 			return S3.collection.find();
@@ -100,5 +108,10 @@ Template.updateAgentAndScoutDetail.helpers({
 		if (this.status == 'complete') {
 			return true;
 		};
+
+	},
+	updateAgent: function() {
+		var id = Meteor.userId();
+		return Agents.findOne({ "owner": id });
 	}
 });

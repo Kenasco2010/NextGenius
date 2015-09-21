@@ -1,5 +1,12 @@
 AutoForm.hooks({
-    insertAgentDetail: {
+    insertAgentDetail1:{
+        onSuccess: function(operation, result, template){
+            Router.go('agentDetail2');
+            // console.log(result);
+        },
+        onError: function(formType, error) {
+            console.log(error);
+        },
         formToDoc: function(doc, ss, formId) {
             doc.agentRelativeImageUrl = Session.get('agentRelativeImageUrl');
             doc.agentAbsoluteImageUrl = Session.get('agentAbsoluteImageUrl');
@@ -26,12 +33,15 @@ AutoForm.hooks({
         },
         // Called when any operation succeeds, where operation will be
         // "insert", "update", "submit", or the method name.
-        onSuccess: function(operation, result, template) {
-            //console.log("done");
-            Router.go('agentProfile');
-        },
-        onError: function(operation, result, template){
-            Console.log("Not inserted")
+    },
+    insertAgentDetail2:{
+        onSuccess: function(operation, result, template){
+            Router.go('agentDetail3');
+        }
+    },
+    insertAgentDetail3:{
+        onSuccess: function(operation, result, template){
+            Router.go('agentDetail4');
         }
     },
     updateAgentDetail: {
@@ -67,43 +77,11 @@ AutoForm.hooks({
 
         },
         onError: function(operation, error, template) {
-            //return sAlert.error(error);
+            console.log(error);
         }
 
-});
+    });
 
-
-
-
-//
-//AutoForm.hooks({
-//    insertPlayerDetail: {
-//        formToDoc: function(doc, ss, formId) {
-//            doc.playerRelativeImageUrl = Session.get('playerRelativeImageUrl');
-//            doc.playerAbsoluteImageUrl = Session.get('playerAbsoluteImageUrl');
-//            doc.delivery_status = "not-delivered"
-//            //doc.owner = Meteor.userId();
-//            return doc;
-//        },
-//        onSubmit: function (insertDoc, updateDoc, currentDoc) {
-//            Meteor.call('insertPlayer', insertDoc, function (error, result) {
-//                if (error) {
-//                    this.done(new Error(error));
-//                }
-//                else {
-//                    reset_form_element( $('.playerPictureFile_bag') );
-//                    $(".progress").remove();
-//                    $(".resetplayerimage").remove();
-//                    //$('#createEvent').modal('hide');
-//                    // return $('#eventSuccess').modal('show');
-//                    //swal("Good job!", "You have successfully added a historical place", "success");
-//
-//                }
-//            });
-//            return false;
-//        },
-//    },
-//});
 
 
 AutoForm.hooks({

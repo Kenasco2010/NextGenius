@@ -118,10 +118,6 @@ $(".btn-default").attr('id', 'registerClubbtn');
 };
 
 
-//Template.insertPlayerDetail.rendered=function() {
-//    $('.my-datepicker').datepicker();
-//}
-
 Template.viewPlayerDetails.rendered = function () {
     //console.log(Agents.findOne({owner:Meteor.userId()})._id == Players.findOne({owner: Meteor.userId()}).followers)
     var agentId = Agents.findOne({owner: Meteor.userId()});
@@ -150,7 +146,7 @@ Template.viewPlayerDetails.rendered = function () {
 
 
 //Code is for Player Profile image upload to S3
-Template.insertPlayerDetail.helpers({
+Template.playerDetail1.helpers({
     "files": function(){
         if (Session.get('fileExists')) {
             return S3.collection.find();

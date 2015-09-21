@@ -92,7 +92,7 @@ Template.viewPlayerDetails.events({
 
 });
 
-Template.insertPlayerDetail.events({
+Template.playerDetail1.events({
     "change .playerPictureFile_bag": function(event, template){
         sAlert.info('Please wait while we upload your profile picture');
         //alert("helloooooo")
