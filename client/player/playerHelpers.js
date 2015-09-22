@@ -81,11 +81,11 @@ Template.playerDetail1.rendered = function() {
       window.allScriptsLoaded = true;
     };
 
-    <<<<<<< HEAD
-    =======
+    // <<<<<<< HEAD
+    // =======
     var date = $('#datepicker').html();
 //console.log("the date is" + date);
->>>>>>> c44b76de9aa95a21b0b1bc87f67bcc603d4731d4
+// >>>>>>> c44b76de9aa95a21b0b1bc87f67bcc603d4731d4
 
 $(".btn-default").attr('id', 'registerClubbtn');
 }

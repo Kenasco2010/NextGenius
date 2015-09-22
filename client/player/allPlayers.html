@@ -10,7 +10,7 @@
 		            <div class="well well-sm">
 		                <div class="row">
 		                    <div class="col-sm-6 col-md-4">
-    							<img src="{{playerAbsoluteImageUrl}}" alt="" class="img-rounded img-responsive"/>
+    							<img src="{{playerAbsoluteImageUrl}}" alt="" class="img-rounded img-responsive" height="42-" width="42"/>
 		                        <h4>{{firstName}}&nbsp;{{lastName}} </h4>
 							     <p>{{originCountry}}</p>
 		                        <p>{{position}}</p>            
@@ -18,9 +18,9 @@
 		                    <div class="col-sm-6 col-md-8">
 		                   
               
-               <video controls  loop>
-                 <source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">
-              </video>
+				              <!--  <video controls  loop>
+				                 <source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">
+				              </video> -->
         			
 		                      	<a class="btn btn-default" href="{{pathFor 'viewPlayerDetails' _id=_id}}">Show More</a>
 		                       
