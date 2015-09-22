@@ -1,7 +1,7 @@
 S3.config = {
-	key: 'AKIAJ2TBKDSOORF2J5FA',
-	secret: '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',
+
+	key: 'AKIAJAKERZD5NGF6U4CA',
+	secret: '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',
 	bucket: 'nextgeniusvids'
 };
-//rootkey2
-
+//rootkey3

@@ -1,60 +1,77 @@
-<template name="insertClubsAndAcademy">
+<!-- <template name="insertClubsAndAcademy">
     <div class="container">
         <div class="row">
             <section>
                 {{#autoForm collection="Clubs" id="insertClubDetail" type="insert"}}
-                    <fieldset>
-                        <legend>Please complete your Club profile</legend>
+                <fieldset>
+                    <legend>Please complete your Club profile</legend>
 
-                        <div class="wizard">
-                            <div class="wizard-inner">
-                                <div class="connecting-line"></div>
-                                <ul class="nav nav-tabs" role="tablist">
+                    <div class="wizard">
+                        <div class="wizard-inner">
+                            <div class="connecting-line"></div>
+                            <ul class="nav nav-tabs" role="tablist">
 
-                                    <li role="presentation" class="active">
-                                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-folder-open"></i>
-                            </span>
-                                        </a>
-                                    </li>
+                                <li role="presentation" class="active">
+                                    <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                                        <span class="round-tab">
+                                            <i class="glyphicon glyphicon-folder-open"></i>
+                                        </span>
+                                    </a>
+                                </li>
 
-                                    <li role="presentation" class="disabled">
-                                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-pencil"></i>
-                            </span>
-                                        </a>
-                                    </li>
-                                    <li role="presentation" class="disabled">
-                                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-picture"></i>
-                            </span>
-                                        </a>
-                                    </li>
+                                <li role="presentation" class="disabled">
+                                    <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                                        <span class="round-tab">
+                                            <i class="glyphicon glyphicon-pencil"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                                <li role="presentation" class="disabled">
+                                    <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                                        <span class="round-tab">
+                                            <i class="glyphicon glyphicon-picture"></i>
+                                        </span>
+                                    </a>
+                                </li>
 
-                                    <li role="presentation" class="disabled">
-                                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-ok"></i>
-                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                                <li role="presentation" class="disabled">
+                                    <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                                        <span class="round-tab">
+                                            <i class="glyphicon glyphicon-ok"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
 
-                            <form role="form">
-                                <div class="tab-content">
-                                    <div class="tab-pane active" role="tabpanel" id="step1">
-                                        <h3>Step 1</h3>
-                                        <p>Personal Information</p>
-                                        <div class="row">
-                                            <div class="col-md-6 col-md-offset-3">
-                                                {{> afQuickField name='clubName'}}
-                                                {{> afQuickField name='agentName'}}
-                                                {{> afQuickField name='yearOfEstablishment'}}
-                                                {{> afQuickField name='address'}}
+                        <form role="form">
+                            <div class="tab-content">
+                                <div class="tab-pane active" role="tabpanel" id="step1">
+                                    <h3>Step 1</h3>
+                                    <p>Personal Information</p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-md-offset-3">
+                                            {{> afQuickField name='clubName'}}
+                                            {{> afQuickField name='agentName'}}
+                                            {{> afQuickField name='yearOfEstablishment'}}
+                                            {{> afQuickField name='address'}}
+                                            <div class=" col-md-offset-1">
+                                                <input type="file" class="clubPictureFile_bag">
+                                                
+                                                {{#each files}}
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">
+                                                        {{percent_uploaded}}%
+                                                    </div>
+                                                </div>
+
+                                                <div id="imageThumbnail">
+                                                    <img src="{{url}}"  width="100"  height="100" class="img-thumbnail resetclubimage" alt="thumbnail" />
+                                                </div>
+                                                {{#if complete}}
+                                                <a href="#" data-action="remove-club-image" data-id="{{relative_url}}" class="resetclubimage"><i class="fa fa-times"></i>Remove</a>
+                                                {{/if}}
+                                                {{/each}}
 
                                             </div>
                                         </div>
@@ -85,26 +102,7 @@
                                             <div class="col-md-6 col-md-offset-3">
                                                 {{> afQuickField name='country'}}
                                                 {{> afQuickField name='province'}}
-                                                <!--{{> afFieldInput name='picture'}}-->
 
-                                                <div class=" col-md-offset-1">
-                                                    <input type="file" class="clubPictureFile_bag">
-                                                    <!-- <button class="upload">Upload</button> -->
-                                                    {{#each files}}
-                                                        <div class="progress">
-                                                            <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">
-                                                                {{percent_uploaded}}%
-                                                            </div>
-                                                        </div>
-
-                                                        <div id="imageThumbnail">
-                                                            <img src="{{url}}"  width="100"  height="100" class="img-thumbnail resetclubimage" alt="thumbnail" />
-                                                        </div>
-                                                        {{#if complete}}
-                                                            <a href="#" data-action="remove-club-image" data-id="{{relative_url}}" class="resetclubimage"><i class="fa fa-times"></i>Remove</a>
-                                                        {{/if}}
-                                                    {{/each}}
-                                                </div>
 
                                             </div>
                                         </div>
@@ -120,21 +118,318 @@
                                         <p>You have successfully completed all steps.
                                             Please verify for correct information</p>
 
+                                        </div>
+                                        <div class="clearfix"></div>
                                     </div>
+                                </form>
+                            </div>
+                        </fieldset>
+
+                        <button class="btn btn-primary AgentButton" type="submit" id="submit">Save Detail</button>
+
+
+                        {{/autoForm}}
+
+                    </section>
+                </div>
+            </div>
+        </template> -->
+
+
+        <template name="insertClubsAndAcademy">
+            {{> navigation}}
+
+            <div class="container">
+                <div class="row">
+                    <section>
+                        <legend>Please complete your profile</legend>
+                        <div class="wizard">
+                            <form role="form">
+                                <div class="tab-content">
+
+
+                                    {{> yield}}
+
+
                                     <div class="clearfix"></div>
                                 </div>
                             </form>
                         </div>
-                    </fieldset>
+                    </section>
+                </div>
+            </div>
 
-                    <!--<button class="btn btn-primary insertClub" type="submit" id="submit">Save Detail</button>-->
+            {{> footer}}
+        </template>
 
-                    <button class="btn btn-primary AgentButton" type="submit" id="submit">Save Detail</button>
+        <template name="insertClubsAndAcademy1">
 
 
+            <div class="wizard-inner">
+                <ul class="nav nav-tabs"  role="tablist">
+
+                    <li role="presentation" class="active">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-folder-open"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="tab-pane active" role="tabpanel" id="step1">
+                <h3>Step 1</h3>
+                <p>Personal Information</p>
+                {{#autoForm collection="Clubs" id="insertClubDetail1" type="insert"}}
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        {{> afQuickField name='clubName'}}
+                        {{> afQuickField name='agentName'}}
+                        {{> afQuickField name='yearOfEstablishment' id='datepicker'}}
+                        {{> afQuickField name='address'}}
+                        <div class=" col-md-offset-1">
+                            <input type="file" class="clubPictureFile_bag">
+
+                            {{#each files}}
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">
+                                    {{percent_uploaded}}%
+                                </div>
+                            </div>
+
+                            <div id="imageThumbnail">
+                                <img src="{{url}}"  width="100"  height="100" class="img-thumbnail resetclubimage" alt="thumbnail" />
+                            </div>
+                            {{#if complete}}
+                            <a href="#" data-action="remove-club-image" data-id="{{relative_url}}" class="resetclubimage"><i class="fa fa-times"></i>Remove</a>
+                            {{/if}}
+                            {{/each}}
+
+                        </div>
+                    </div>
+                </div>
+
+                <ul class="list-inline pull-right">
+                    <button type="submit" class="btn btn-primary ngButton">Save and continue</button>
+                </ul>
                 {{/autoForm}}
+            </div>
+        </template>
 
-            </section>
+
+        <template name="insertClubsAndAcademy2">
+
+
+            <div class="wizard-inner">
+                <ul class="nav nav-tabs"  role="tablist">
+
+                    <li role="presentation" class=" disabled">
+                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-folder-open"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="active">
+                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-pencil"></i>
+                            </span>
+                        </a>
+                    </li>
+                    <li role="presentation" class="disabled">
+                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-picture"></i>
+                            </span>
+                        </a>
+                    </li>
+
+                    <li role="presentation" class="disabled">
+                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                            <span class="round-tab">
+                                <i class="glyphicon glyphicon-ok"></i>
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="tab-pane active" role="tabpanel" id="step1">
+               <div class="tab-pane" role="tabpanel" id="step2">
+                <h3>Step 2</h3>
+                <p>Club or Academy information (if any)</p>
+                {{#autoForm collection="Clubs" doc=aClub id="insertClubDetail2" type="update"}}
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        {{> afQuickField name='league' options="allowed"}}
+                        {{> afQuickField name='license' options="allowed"}}
+                    </div>
+                </div>
+
+                <ul class="list-inline pull-right">
+                    <!-- <li><a type="button" class="btn btn-default ngButton">Previous</a></li> -->
+                    <li><button type="submit" class="btn btn-primary ngButton">Save and continue</button></li>
+                </ul>
+                {{/autoForm}}
+            </div>
+        </div>
+    </template>
+
+    <template name="insertClubsAndAcademy3">
+
+        <div class="wizard-inner">
+            <ul class="nav nav-tabs"  role="tablist">
+
+                <li role="presentation" class="disabled">
+                    <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                        <span class="round-tab">
+                            <i class="glyphicon glyphicon-folder-open"></i>
+                        </span>
+                    </a>
+                </li>
+
+                <li role="presentation" class="disabled">
+                    <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                        <span class="round-tab">
+                            <i class="glyphicon glyphicon-pencil"></i>
+                        </span>
+                    </a>
+                </li>
+                <li role="presentation" class="active">
+                    <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                        <span class="round-tab">
+                            <i class="glyphicon glyphicon-picture"></i>
+                        </span>
+                    </a>
+                </li>
+
+                <li role="presentation" class="disabled">
+                    <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                        <span class="round-tab">
+                            <i class="glyphicon glyphicon-ok"></i>
+                        </span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="tab-pane active" role="tabpanel" id="step1">
+           <div class="tab-pane" role="tabpanel" id="step3">
+            <h3>Step 3</h3>
+            <p>Region of activity</p>
+            {{#autoForm collection="Clubs" doc=aClub id="insertClubDetail3" type="update"}}
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3">
+                    {{> afQuickField name='country'}}
+                    {{> afQuickField name='province'}}
+                </div>
+            </div>
+            <ul class="list-inline pull-right">
+                <li><a  type="button" href="{{pathFor insertClubsAndAcademy2}}" class="btn btn-default prev-step">Previous</a></li>
+                <!-- <li><a  type="button" class="btn btn-default next-step">Skip</a></li> -->
+                <li><button  type="submit" class="btn btn-primary ngButton">Save and continue</button></li>
+            </ul>
+            {{/autoForm}}
         </div>
     </div>
+
+
+</template>
+<template name="insertClubsAndAcademy4">
+
+    <div class="wizard-inner">
+        <ul class="nav nav-tabs"  role="tablist">
+
+            <li role="presentation" class="disabled">
+                <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+                    <span class="round-tab">
+                        <i class="glyphicon glyphicon-folder-open"></i>
+                    </span>
+                </a>
+            </li>
+
+            <li role="presentation" class="disabled">
+                <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+                    <span class="round-tab">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </span>
+                </a>
+            </li>
+            <li role="presentation" class="disabled">
+                <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+                    <span class="round-tab">
+                        <i class="glyphicon glyphicon-picture"></i>
+                    </span>
+                </a>
+            </li>
+
+            <li role="presentation" class="active">
+                <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+                    <span class="round-tab">
+                        <i class="glyphicon glyphicon-ok"></i>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    {{#with clubProfile}}
+    <div class="tab-pane active" role="tabpanel" id="step1">
+      <div class="tab-pane" role="tabpanel" id="complete">
+        <h3>Complete</h3>
+
+        <p>Please verify your information before saving <br/>
+        </p>
+        <div class="row">
+            <div align="center">
+                <p class="text-center">Clubname: {{clubName}}</p>
+                <p class="text-center">agentName: {{lastName}}</p>
+                <p class="text-center">Year of establishment: {{yearOfEstablishment}}</p>
+                <p class="text-center">Address: {{address}}</p>
+                <p class="text-center">League: {{league}}</p>
+                <p class="text-center">Is club licensed: {{license}}</p>
+                <p class="text-center">Country: {{country}}</p>
+                <p class="text-center">Province: {{province}}</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+{{/with}}
+<ul class="text-center" >
+    <a id="registerClubbtn" href="{{pathFor 'updateClubAndAcademy'}}" class="btn btn-primary">Edit</a>
+    <a type="submit" href="{{pathFor 'clubAndAcademyProfile'}}" class="btn btn-primary ngButton">Finish</a>
+</ul>
+
+
 </template>

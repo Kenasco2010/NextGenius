@@ -85,7 +85,7 @@ Template.feedDetails.helpers({
 
 //integrate this kento's code with the agentDetail1 template
 //Code is for Player Profile image upload to S3
-Template.insertAgentAndScoutDetail.helpers({
+Template.agentDetail1.helpers({
 	"files": function(){
 		if (Session.get('fileExists')) {
 			return S3.collection.find();

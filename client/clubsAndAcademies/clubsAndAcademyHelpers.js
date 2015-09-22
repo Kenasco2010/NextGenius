@@ -26,42 +26,22 @@ Template.updateClubAndAcademy.helpers({
 });
 
 
-Template.insertClubsAndAcademy.rendered = function () {
-    //Initialize tooltips
-    // $('.nav-tabs > li a[title]').tooltip();
 
-    //Wizard
-    $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+Template.insertClubsAndAcademy2.helpers({
+    aClub: function() {
+        var id = Meteor.userId();
+        return Agents.findOne({ "owner": id });
+    }
+});
 
-        var $target = $(e.target);
 
-        if ($target.parent().hasClass('disabled')) {
-            return false;
-        }
-    });
+Template.insertClubsAndAcademy3.helpers({
+    aClub: function() {
+        var id = Meteor.userId();
+        return Agents.findOne({ "owner": id });
+    }
+});
 
-    $(".next-step").click(function (e) {
-
-        var $active = $('.wizard .nav-tabs li.active');
-        $active.next().removeClass('disabled');
-        nextTab($active);
-
-    });
-    $(".prev-step").click(function (e) {
-
-        var $active = $('.wizard .nav-tabs li.active');
-        prevTab($active);
-
-    });
-
-};
-
-function nextTab(elem) {
-    $(elem).next().find('a[data-toggle="tab"]').click();
-}
-function prevTab(elem) {
-    $(elem).prev().find('a[data-toggle="tab"]').click();
-}
 
 //Template.myFavoriteButtonFavorited.replaces("favoriteButtonFavorited");
 //
@@ -79,7 +59,7 @@ Template.viewClubAndAcademyDetails.helpers({
     },
     countClubFollowers: function () {
       return this.followers.length;
-    }
+  }
 
 });
 
@@ -110,7 +90,7 @@ Template.viewClubAndAcademyDetails.rendered = function () {
     };
 
 //Code is for Club Profile image upload to S3
-Template.insertClubsAndAcademy.helpers({
+Template.insertClubsAndAcademy1.helpers({
     "files": function(){
         if (Session.get('fileExists')) {
             return S3.collection.find();
@@ -134,3 +114,33 @@ Template.updateClubAndAcademy.helpers({
         };
     }
 });
+Template.insertClubsAndAcademy1.rendered = function () {
+   if (!window.allScriptsLoaded) {
+    var scripts = [
+      // list of JS files to be loaded.
+      'js/script.js'
+      ];
+
+      function loadNext() {
+        var src = scripts.shift();
+        if (typeof src === 'undefined')
+          return;
+
+      var s = document.createElement("script");
+
+      s.setAttribute('src', src);
+      if (s.addEventListener) {
+          s.addEventListener("load", loadNext, false);
+      } else if (s.readyState) {
+          s.onreadystatechange = loadNext;
+      }
+      document.body.appendChild(s);
+  };
+
+  loadNext();
+  window.allScriptsLoaded = true;
+};
+
+
+$(".btn-default").attr('id', 'registerClubbtn');
+};

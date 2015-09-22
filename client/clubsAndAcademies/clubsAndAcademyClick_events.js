@@ -1,11 +1,3 @@
-//Template.clubAndAcademyProfile.events({
-//    'click .editClubProfile': function(e,t){
-//        //alert("helloo you ")
-//        Session.set('editclub', this._id)
-//        //console.log(this._id)
-//    }
-//})
-
 Template.clubAndAcademyProfile.events({
     "click #deleteClubAccount":function() {
         //console.log("hellow click me la")
@@ -21,15 +13,6 @@ Template.clubAndAcademyProfile.events({
         });
     }
 });
-
-//Template.viewClubAndAcademyDetails.events({
-//    "click .owner": function() {
-//        //var owner = this._id
-//        console.log(this.viewClubProfile.owner)
-//    }
-//
-//});
-
 
 Template.viewClubAndAcademyDetails.events({
     "click .followClubButton": function () {
@@ -103,7 +86,7 @@ Template.viewClubAndAcademyDetails.events({
 });
 
 
-Template.insertClubsAndAcademy.events({
+Template.insertClubsAndAcademy1.events({
     "change .clubPictureFile_bag": function(event, template){
         var files = $("input.clubPictureFile_bag")[0].files
         sAlert.info('Please wait while we upload your club profile picture');

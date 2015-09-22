@@ -18,7 +18,7 @@ var mySubmitFunc = function(error, state){
 
 
         } else if (state === "signUp" && Meteor.user().profile.userType === "clubsOracademy"){
-            Router.go('/insert-club-detail');
+            Router.go('/insertClubsAndAcademy1');
 
         }
     }
