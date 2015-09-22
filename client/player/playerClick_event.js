@@ -21,9 +21,9 @@ Template.playerProfile.events({
 
 Template.viewPlayerDetails.events({
     "click .followPlayerButton": function () {
-        var followers = Meteor.userId();
+        var agentId = Meteor.userId();
         var playerId = this._id;
-        Meteor.call('insertPlayerFollowers', playerId, followers, function (e) {
+        Meteor.call('insertPlayerFollowers', playerId, agentId, function (e) {
             if (!e) {
                 //alert("data saved in players");
                 sAlert.success('you have following this player');
@@ -38,11 +38,11 @@ Template.viewPlayerDetails.events({
             }
             //console.log(myId.count())
         });
-        var following = this._id;
-        var agentId = Agents.findOne({owner:Meteor.userId()})._id;
+        //var playerId = this._id;
+        //var agentId = Agents.findOne({owner:Meteor.userId()})._id;
 
 
-        Meteor.call('insertAgentFollowing', agentId, following, function(e){
+        Meteor.call('insertAgentFollowing', agentId, playerId, function(e){
             if (!e) {
                 //alert("data saved in agents");
                 $('.followPlayerButton').hide();

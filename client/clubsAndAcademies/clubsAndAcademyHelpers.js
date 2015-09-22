@@ -84,17 +84,14 @@ Template.viewClubAndAcademyDetails.helpers({
 });
 
 Template.viewClubAndAcademyDetails.rendered = function () {
-        //console.log(Agents.findOne({owner:Meteor.userId()})._id == Players.findOne({owner: Meteor.userId()}).followers)
-        var agentId = Agents.findOne({owner: Meteor.userId()});
-        var agentOwner = agentId.owner;
-        //var agentFollowing = agentId.following;
-        var followClubId = Clubs.findOne({followers: agentId.owner});
-        //console.log(followClubId);
+        var agentId = Meteor.userId();
+        var currentClub = Router.current().data().viewClubProfile;
+        var followClubId = Clubs.findOne({followers: agentId});
         var ClubFollowers;
         if (followClubId && followClubId.followers) {
             ClubFollowers = followClubId.followers;
         }
-        var connection = _.contains(ClubFollowers, agentOwner);
+        var connection = _.contains(currentClub.followers, agentId);
         //console.log(connection);
         if (connection) {
             //console.log("inside if loop");
