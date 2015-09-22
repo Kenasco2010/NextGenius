@@ -7,16 +7,20 @@
 		{{#each allPlayers}}
 		        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 animated bounceInUp">
 
-		            <div class="well well-sm">
+		            <div class="well well-sm card">
 		                <div class="row">
 		                    <div class="col-sm-6 col-md-4">
-    							<img src="{{playerAbsoluteImageUrl}}" alt="" class="img-rounded img-responsive" height="42-" width="42"/>
-		                        <h4>{{firstName}}&nbsp;{{lastName}} </h4>
-							     <p>{{originCountry}}</p>
-		                        <p>{{position}}</p>            
+		                    {{#if playerAbsoluteImageUrl}}
+    							<img src="{{playerAbsoluteImageUrl}}" alt="" class="img-rounded img-responsive" />
+    						{{else}}
+								<img src="http://img2.wikia.nocookie.net/__cb20130511180903/legendmarielu/images/b/b4/No_image_available.jpg" alt="" class="img-rounded img-responsive"/>
+    						{{/if}}
+		                               
 		                    </div>
 		                    <div class="col-sm-6 col-md-8">
-		                   
+		                    <h4>{{firstName}}&nbsp;{{lastName}} </h4>
+							     <p>{{originCountry}}</p>
+		                        <p>{{position}}</p>    
               
 				              <!--  <video controls  loop>
 				                 <source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">
