@@ -7,23 +7,14 @@
             </div> 
             <div class="panel-body">
               <div class="row">
-
-              <!--{{#with FS.GetFile 'images' picture}}-->
-                <!--<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{this.url}}" class="img-circle img-responsive"> </div>-->
-                  <!--<img class="img-thumbnail" width="160px" height="300px" src="{{playerAbsoluteImageUrl}}" alt="" >-->
-              <!--{{/with}}-->
-                <!--<div class=" col-md-9 col-lg-9 ">-->
-                  <!--<table class="table table-user-information">-->
-
-              <!--{{#with FS.GetFile 'images' picture}}-->
-                <div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{playerAbsoluteImageUrl}}" class="img-circle img-responsive">
+              
+                <div class="col-md-3 col-lg-3 " align="center">
+              {{#if playerAbsoluteImageUrl}}
+                 <img alt="User Pic" src="{{playerAbsoluteImageUrl}}" class="img-responsive img-thumbnail">
+              {{else}}
+                <img src="http://img2.wikia.nocookie.net/__cb20130511180903/legendmarielu/images/b/b4/No_image_available.jpg" alt="" class="img-rounded img-responsive"/>
+              {{/if}}
                 </div>
-              <!--{{/with}}-->
-
-                <!--<div class=" col-md-9 col-lg-9 "> -->
-                  <!--<table class="table ">-->
-
-
                 <div class=" col-md-9 col-lg-9 ">
                   <table class="table table-user-information">
 

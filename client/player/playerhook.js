@@ -56,30 +56,30 @@ AutoForm.hooks({
 });
 
 
-AutoForm.hooks({
-	updatePlayerDetail: {
-		formToDoc: function(doc, ss, formId) {
-			doc.playerRelativeImageUrl = Session.get('playerRelativeImageUrl');
-			doc.playerAbsoluteImageUrl = Session.get('playerAbsoluteImageUrl');
-			return doc;
-		},
-		onSubmit: function (insertDoc, updateDoc, currentDoc) {
-			Meteor.call('editPlayer', currentDoc._id, updateDoc, function (error, result) {
-				if (error) {
-					this.done(new Error(error));
-				};
-			});
-			this.done();
-			return false;
-		},
-		onSuccess: function(formType, result) {
-			reset_form_element( $('.updatePlayer-file_bag') );
-			$(".progress").remove();
-			$(".resetimage").remove();
-			//$('#editEvent').modal('hide');
-			// return $('#EventPicturesSuccess').modal('show');
-			//swal("Great Job!", "You have successfully updated this post", "success");
+// AutoForm.hooks({
+// 	updatePlayerDetail: {
+// 		formToDoc: function(doc, ss, formId) {
+// 			doc.playerRelativeImageUrl = Session.get('playerRelativeImageUrl');
+// 			doc.playerAbsoluteImageUrl = Session.get('playerAbsoluteImageUrl');
+// 			return doc;
+// 		},
+// 		onSubmit: function (insertDoc, updateDoc, currentDoc) {
+// 			Meteor.call('editPlayer', currentDoc._id, updateDoc, function (error, result) {
+// 				if (error) {
+// 					this.done(new Error(error));
+// 				};
+// 			});
+// 			this.done();
+// 			return false;
+// 		},
+// 		onSuccess: function(formType, result) {
+// 			reset_form_element( $('.updatePlayer-file_bag') );
+// 			$(".progress").remove();
+// 			$(".resetimage").remove();
+// 			//$('#editEvent').modal('hide');
+// 			// return $('#EventPicturesSuccess').modal('show');
+// 			//swal("Great Job!", "You have successfully updated this post", "success");
 
-		}
-	}
-});
+// 		}
+// 	}
+// });

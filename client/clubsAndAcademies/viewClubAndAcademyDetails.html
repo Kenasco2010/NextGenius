@@ -19,16 +19,7 @@
                             <li>
                                 <a href="gallery-1.html#show-all" data-option-value="*" class="selected">{{clubName}}</a>
                             </li>
-                             <div class="container">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <a href="#" class="btn btn-primary unFollowClubButton" name="unFollowClubButton">Unfollow</a>
-                                    <a href="#" class="btn btn-primary followClubButton" name="followClubButton">Follow</a>
-                                    <span class="followers">- {{countClubFollowers}} Follower(s)</span>
-                                    <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
-                                </div>
-                            </div>
-                        </div> 
+                           
                         </ul>
                        
                     </div>
@@ -68,6 +59,16 @@
                                 </tbody>
                             </table>
                         </div>
+                         <div class="container">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <a href="#" class="btn btn-primary unFollowClubButton" name="unFollowClubButton">Unfollow</a>
+                                        <a href="#" class="btn btn-primary followClubButton" name="followClubButton">Follow</a>
+                                        <span class="followers">- {{countClubFollowers}} Follower(s)</span>
+                                        <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
+                                    </div>
+                                </div>
+                            </div> 
                     </div>  
                 </div>
             </div>

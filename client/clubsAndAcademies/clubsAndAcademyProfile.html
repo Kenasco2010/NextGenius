@@ -1,91 +1,93 @@
 <template name="clubAndAcademyProfile">
-     {{#with clubProfile}}
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-1 toppad" >
-          <div class="panel panel-info">
-            <div class="panel-heading">
-              <h3 class="panel-title" style="color:#fff">{{clubName}}</h3>
-            </div> 
-            <div class="panel-body">
-              <div class="row">
-              <!--{{#with FS.GetFile 'images' picture}}-->
-                <!--<div class="col-md-3 col-lg-3 " align="center"> <img alt="User Pic" src="{{this.url}}" class="img-circle img-responsive"> </div>-->
-                  <img class="img-thumbnail" width="160px" height="300px" src="{{clubAbsoluteImageUrl}}" alt="" >
+ {{#with clubProfile}}
+ <div class="col-xs-12 col-sm-12 col-md-6 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-1" style="margin-top: 25px;" >
+  <div class="panel panel-info">
+    <div class="panel-heading toppad">
+      <h3 class="panel-title" style="color:#fff">{{clubName}}</h3>
+    </div> 
+    <div class="panel-body">
+      <div class="row">
 
-              <!--{{/with}}-->
-                <div class=" col-md-9 col-lg-9 "> 
-                  <table class="table table-user-information">
-                    <tbody>
-                      <tr>
-                        <td>Club Name:</td>
-                        <td>{{clubName}}</td>
-                      </tr>
-                      <tr>
-                        <td>Agent Name:</td>
-                        <td>{{agentName}}</td>
-                      </tr>
-                      <tr>
-                        <td>Date of Establishment</td>
-                        <td>{{yearOfEstablishment}}</td>
-                      </tr>
-                   
-                     
-                        <tr>
-                          <td>Address</td>
-                          <td>{{address}}</td>
-                        </tr>
-                          <tr>
-                          <td>Current League Division:</td>
-                          <td>{{license}}</td>
-                        </tr>
-                        <tr>
-                          <td>License: </td>
-                          <td>{{height}}</td>
-                        </tr>
-                        <tr>
-                            <td>Country</td>
-                          <td>{{country}}</td>
-                        </tr>
-                        <tr>
-                          <td>Province:</td>
-                          <td>{{province}}</td>
-                        </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-                  <div class="panel-footer">
-                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
-                        <span class="pull-right">
-                            <a href="{{pathFor 'updateClubAndAcademy'}}" data-original-title="Edit Your Profile" id="update" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i>&nbsp;Update Profile</a>
-                            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" id="deleteClubAccount"><i class="glyphicon glyphicon-remove"></i></a>
-                        </span>
-                        <div class="followButton">
-                          {{> favoriteButton _id=_id}} - {{favoriteCount _id}}
-
-                          Favorite(s)
-                        </div>
-                  </div>
-            
+         <div class="col-md-3 col-lg-3 " align="center">
+         {{#if clubAbsoluteImageUrl}}
+           <img class="img-thumbnail" src="{{clubAbsoluteImageUrl}}" alt="" >
+          {{else}}
+            <img src="http://img2.wikia.nocookie.net/__cb20130511180903/legendmarielu/images/b/b4/No_image_available.jpg" alt="" class="img-rounded img-responsive"/>
+          {{/if}}
           </div>
-        </div>         
-     {{/with}}
 
-    {{> uploadVideos}}
-    <br/>
-    <div class="row">
-        <div class="col-md-5 col-md-offset-4">
-            {{> viewClubVideos}}
+        <div class=" col-md-9 col-lg-9 "> 
+          <table class="table table-user-information">
+            <tbody>
+              <tr>
+                <td>Club Name:</td>
+                <td>{{clubName}}</td>
+              </tr>
+              <tr>
+                <td>Agent Name:</td>
+                <td>{{agentName}}</td>
+              </tr>
+              <tr>
+                <td>Date of Establishment</td>
+                <td>{{yearOfEstablishment}}</td>
+              </tr>
+              
+              
+              <tr>
+                <td>Address</td>
+                <td>{{address}}</td>
+              </tr>
+              <tr>
+                <td>Current League Division:</td>
+                <td>{{league}}</td>
+              </tr>
+              <tr>
+                <td>License: </td>
+                <td>{{license}}</td>
+              </tr>
+              <tr>
+                <td>Country</td>
+                <td>{{country}}</td>
+              </tr>
+              <tr>
+                <td>Province:</td>
+                <td>{{province}}</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
+      </div>
     </div>
+
+    <div class="panel-footer">
+      <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
+      <span class="pull-right">
+        <a href="{{pathFor 'updateClubAndAcademy'}}" data-original-title="Edit Your Profile" id="update" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i>&nbsp;Update Profile</a>
+        <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" id="deleteClubAccount"><i class="glyphicon glyphicon-remove"></i></a>
+      </span>
+      <div class="followButton">
+        {{> favoriteButton _id=_id}} - {{favoriteCount _id}}
+
+        Favorite(s)
+      </div>
+    </div>
+    
+  </div>
+</div>         
+{{/with}}
+
+{{> uploadVideos}}
+<br/>
+
+    {{> viewClubVideos}}
+  
 
 
 </template>
 <template name="myFavoriteButtonFavorited">
-    <a class="favorite-button" doc="{{_id}}"></a>
+  <a class="favorite-button" doc="{{_id}}"></a>
 </template>
 
 <template name="myFavoriteButtonNotFavorited">
-    <a class="favorite-button" doc="{{_id}}"></a>
+  <a class="favorite-button" doc="{{_id}}"></a>
 </template>
