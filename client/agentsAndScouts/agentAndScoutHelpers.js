@@ -84,6 +84,7 @@ Template.feedDetails.helpers({
 });
 
 //integrate this kento's code with the agentDetail1 template
+
 //Code is for Player Profile image upload to S3
 Template.agentDetail1.helpers({
 	"files": function(){

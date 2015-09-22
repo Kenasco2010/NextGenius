@@ -81,14 +81,19 @@ Template.playerDetail1.rendered = function() {
       window.allScriptsLoaded = true;
     };
 
+    <<<<<<< HEAD
+    =======
+    var date = $('#datepicker').html();
+//console.log("the date is" + date);
+>>>>>>> c44b76de9aa95a21b0b1bc87f67bcc603d4731d4
 
-    $(".btn-default").attr('id', 'registerClubbtn');
-  }
+$(".btn-default").attr('id', 'registerClubbtn');
+}
 
 
-  Template.updatePlayerProfile.rendered = function () {
-    if (!window.allScriptsLoaded) {
-      var scripts = [
+Template.updatePlayerProfile.rendered = function () {
+  if (!window.allScriptsLoaded) {
+    var scripts = [
       // list of JS files to be loaded.
       'js/script.js'
       ];
@@ -144,7 +149,8 @@ Template.playerDetail1.rendered = function() {
 
 
 //Code is for Player Profile image upload to S3
-Template.insertPlayerDetail.helpers({
+
+Template.playerDetail1.helpers({
   "files": function(){
     if (Session.get('fileExists')) {
       return S3.collection.find();
@@ -155,6 +161,7 @@ Template.insertPlayerDetail.helpers({
       return true;
     };
   }
+
 });
 Template.updatePlayerProfile.helpers({
   "files": function(){

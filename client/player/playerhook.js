@@ -6,7 +6,7 @@ AutoForm.hooks({
 			// console.log(result);
 		},
 		onError: function(formType, error) {
-			console.log("problem");
+			console.log(error);
 		},
 	},
 	insertPlayerDetail2:{
@@ -27,7 +27,7 @@ AutoForm.hooks({
 });
 
 AutoForm.hooks({
-	insertPlayerDetail: {
+	insertPlayerDetail1: {
 		formToDoc: function(doc, ss, formId) {
 			doc.playerRelativeImageUrl = Session.get('playerRelativeImageUrl');
 			doc.playerAbsoluteImageUrl = Session.get('playerAbsoluteImageUrl');
@@ -82,4 +82,4 @@ AutoForm.hooks({
 
 		}
 	}
-})
+});
