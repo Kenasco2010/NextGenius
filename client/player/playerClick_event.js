@@ -22,7 +22,9 @@ Template.playerProfile.events({
 Template.viewPlayerDetails.events({
     "click .followPlayerButton": function () {
         var agentId = Meteor.userId();
+
         var playerId = this._id;
+
         Meteor.call('insertPlayerFollowers', playerId, agentId, function (e) {
             if (!e) {
                 //alert("data saved in players");

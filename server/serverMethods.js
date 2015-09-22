@@ -34,13 +34,13 @@ Meteor.methods({
 
         })
     },
-    deleteAgentFollowing: function(agentId, following) {
-        Agents.update(agentId ,{$pull:{following:following}}, function(err, id){
+    deleteAgentFollowing: function(agentId, clubId) {
+        Agents.update(agentId ,{$pull:{following:clubId}}, function(err, id){
 
         });
     },
-    deleteClubFollowers: function( clubId, followers) {
-        Clubs.update(clubId ,{$pull:{followers:followers}}, function(err, id){
+    deleteClubFollowers: function( clubId, agentId) {
+        Clubs.update(clubId ,{$pull:{followers:agentId}}, function(err, id){
 
         })
     },

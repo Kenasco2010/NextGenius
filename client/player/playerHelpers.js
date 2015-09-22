@@ -137,14 +137,11 @@ Template.viewPlayerDetails.rendered = function () {
       playerFollowers = followPlayerId.followers;
     }
     var connection = _.contains(currentPlayer.followers, agentId);
-    console.log(connection);
     if (connection) {
-        //console.log("inside if loop");
         $('.followPlayerButton').hide();
         $('.unFollowPlayerButton').show();
       }
       else {
-        //console.log("inside else loop");
         $('.followPlayerButton').show();
         $('.unFollowPlayerButton').hide();
       }

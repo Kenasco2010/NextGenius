@@ -7,11 +7,16 @@ Template.insertAgentAndScoutDetail.rendered = function () {
 	}
 }
 
-Template.agentProfile.helpers({
-	countAgentFollowings: function () {
-		return this.following.length;
-	}
-});
+//Template.agentProfile.helpers({
+//	countAgentFollowings: function () {
+//	var agentinfo = Router.current().data().agent;
+//		var count = agentinfo.following;
+//		var mycount = count.length;
+//		console.log(mycount);
+//		//return count;
+//
+//	}
+//});
 
 Template.myFeed.helpers({
 	agentPlayerFeed: function () {
