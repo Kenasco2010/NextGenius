@@ -9,18 +9,23 @@ Meteor.methods({
         UploadVideos.insert(doc, function(err, id){
         });
     },
-    insertPlayerFollowers: function( playerId, followers) {
-        Players.update(playerId ,{$addToSet:{followers:followers}}, function(err, id){
+    insertPlayerFollowers: function( playerId, agentId) {
+        Players.update(playerId ,{$addToSet:{followers:agentId}}, function(err, id){
 
         })
     },
-    insertAgentFollowing: function(agentId, following) {
-        Agents.update(agentId ,{$addToSet:{following:following}}, function(err, id){
+    insertAgentFollowing: function(agentId, playerId) {
+        Agents.update(agentId ,{$addToSet:{following:playerId}}, function(err, id){
 
         });
     },
-    insertClubFollowers: function( clubId, followers) {
-        Clubs.update(clubId ,{$addToSet:{followers:followers}}, function(err, id){
+    insertClubAgentFollowing: function(agentId, clubId) {
+        Agents.update(agentId ,{$addToSet:{following:clubId}}, function(err, id){
+
+        });
+    },
+    insertClubFollowers: function( clubId, agentId) {
+        Clubs.update(clubId ,{$addToSet:{followers:agentId}}, function(err, id){
 
         })
     },

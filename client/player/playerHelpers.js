@@ -121,19 +121,23 @@ Template.updatePlayerProfile.rendered = function () {
   };
 
 
-  Template.viewPlayerDetails.rendered = function () {
-    //console.log(Agents.findOne({owner:Meteor.userId()})._id == Players.findOne({owner: Meteor.userId()}).followers)
-    var agentId = Agents.findOne({owner: Meteor.userId()});
-    var agentOwner = agentId.owner;
-    //var agentFollowing = agentId.following;
-    var followPlayerId = Players.findOne({followers: agentId.owner});
-    //console.log(followPlayerId);
-    var playerFollowers;
+//  loadNext();
+//  window.allScriptsLoaded = true;
+//};
+//$(".btn-default").attr('id', 'registerClubbtn');
+//};
+
+//
+Template.viewPlayerDetails.rendered = function () {
+  var agentId = Meteor.userId();
+  var currentPlayer = Router.current().data().viewPlayerProfile;
+  var followPlayerId = Players.findOne({followers: agentId});
+  var playerFollowers;
     if (followPlayerId && followPlayerId.followers) {
       playerFollowers = followPlayerId.followers;
     }
-    var connection = _.contains(playerFollowers, agentOwner);
-    //console.log(connection);
+    var connection = _.contains(currentPlayer.followers, agentId);
+    console.log(connection);
     if (connection) {
         //console.log("inside if loop");
         $('.followPlayerButton').hide();
@@ -161,17 +165,17 @@ Template.playerDetail1.helpers({
       return true;
     };
   }
-
 });
+
 Template.updatePlayerProfile.helpers({
   "files": function(){
     if (Session.get('fileExists')) {
       return S3.collection.find();
-    };
+    }
   },
   'complete': function() {
     if (this.status == 'complete') {
       return true;
-    };
+    }
   }
 });

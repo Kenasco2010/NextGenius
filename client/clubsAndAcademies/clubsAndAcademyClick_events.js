@@ -16,9 +16,9 @@ Template.clubAndAcademyProfile.events({
 
 Template.viewClubAndAcademyDetails.events({
     "click .followClubButton": function () {
-        var followers = Meteor.userId();
+        var agentId = Meteor.userId();
         var clubId = this._id;
-        Meteor.call('insertClubFollowers', clubId, followers, function (e) {
+        Meteor.call('insertClubFollowers', clubId, agentId, function (e) {
             if (!e) {
                 //alert("you are following this club");
                 sAlert.success('you are following this club');
@@ -33,10 +33,10 @@ Template.viewClubAndAcademyDetails.events({
             }
             //console.log(myId.count())
         });
-        var following = this._id;
-        var agentId = Agents.findOne({owner:Meteor.userId()})._id;
+        //var following = this._id;
+        //var agentId = Agents.findOne({owner:Meteor.userId()})._id;
 
-        Meteor.call('insertAgentFollowing', agentId, following, function(e){
+        Meteor.call('insertClubAgentFollowing', agentId, clubId, function(e){
             if (!e) {
                 //alert("data saved in agents");
                 //$('.followPlayerButton').attr('disabled', 'disabled');

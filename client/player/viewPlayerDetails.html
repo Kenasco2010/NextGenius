@@ -10,13 +10,11 @@
        <div class="clearfix">
          <div class="col-1-4">
            <h3>Player Profile</h3>
-                           <!-- {{#with FS.GetFile 'images' picture}}
-                       <br/>
-                       <img src="{{this.url}}" alt="" class="img-rounded" height="200" width="200"/>{{/with}} -->
 
                            <ul class="list-4 widget-list option-set" id="filter" data-option-key="filter">
-                               <!--{{#with FS.GetFile 'images' picture}}-->
+
                                    <br/>
+
                                    {{#if playerAbsoluteImageUrl}}
                                    <img src="{{playerAbsoluteImageUrl}}" alt="" class="img-responsive img-thumbnail" height="200" width="200"/>
                                    {{else}}
@@ -24,6 +22,7 @@
                                    {{/if}}
                                <!--{{/with}}-->
                                <br/>
+
                                <li>
                                    <a href="gallery-1.html#show-all" data-option-value="*" class="selected">{{firstName}}&nbsp;{{lastName}}</a>
                                </li>
@@ -34,7 +33,7 @@
                                    <a href="gallery-1.html#cat-2" data-option-value=".cat-2">{{originCountry}}</a>
                                </li>
                                <a href="#" class="btn btn-primary unFollowPlayerButton" name="unFollowPlayerButton">Unfollow</a>
-                                       <a href="#" class="btn btn-primary followPlayerButton" name="followPlayerButton">Follow</a>
+                               <a href="#" class="btn btn-primary followPlayerButton" name="followPlayerButton">Follow</a>
                            </ul>
                        </div>
 
