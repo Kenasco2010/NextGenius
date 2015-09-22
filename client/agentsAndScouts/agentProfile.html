@@ -1,5 +1,5 @@
 <template name="agentProfile">
-	<legend>Please edit your profile</legend>{{#with agent}}
+	{{#with agent}}
 	<div class="outter-wrapper body-wrapper">
 		<div class="wrapper ad-pad clearfix">
 			<div class="col-1-1 form-group">
@@ -7,14 +7,18 @@
 
 					<div class="col-1-4">
                         <!--{{#with FS.GetFile 'agentimages' picture}}-->
+                        {{#if agentAbsoluteImageUrl}}
 						<img src="{{agentAbsoluteImageUrl}}" alt="" class="img-rounded" height="200" width="200"/>
+						{{else}}
+						<img src="http://img2.wikia.nocookie.net/__cb20130511180903/legendmarielu/images/b/b4/No_image_available.jpg" alt="" class="img-thumbnail img-responsive"/>
+						{{/if}}
                         <!--{{/with}}-->
 						<p>Name: {{firstName}}&nbsp; {{lastName}}</p>
 
 						<p>Gender: {{gender}}</p>
 						<p>License: {{license}}</p>
 						<a href="#" class="btn btn-primary AgentButton">{{countAgentFollowings}} - Following(s)</a>
-						<a href="" type="button" class="btn btn-warning btn-lg AgentButton" id="deleteAgentAccount">Delete Account</a>
+						
 					</div>
 
 					<div class="col-3-4 last">
@@ -26,8 +30,8 @@
 								<div class="panel-body">
 									<div class="row">
 										<div class=" col-md-9 col-lg-9 ">
-											<table class="table ">
-												<tbody>0
+											<table class="table table-user-information">
+												<tbody>
 													<tr>
 														<td>Gender:</td>
 														<td>{{gender}}</td>
@@ -65,8 +69,8 @@
 										<a href="{{pathFor 'updateAgentAndScoutDetail'}}" data-original-title="Edit Your Profile" id="update" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning">
 											<i class="glyphicon glyphicon-edit"></i>&nbsp;Update Profile
 										</a>
-										<a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger">
-											<i class="glyphicon glyphicon-remove"></i>
+										<a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger" id="deleteAgentAccount">
+											<i class="glyphicon glyphicon-remove">Delete Account</i>
 										</a>
 									</span>
 								</div>
@@ -74,8 +78,8 @@
 						</div>
 
                         <!--{{countAgentFollowings}} - Following(s)-->
-						<a  class="btn btn-primary AgentButton" href="{{pathFor 'updateAgentAndScoutDetail'}}">Edit profile</a>
-                        <a class="btn btn-primary" href="{{pathFor 'myFeed' _id = _id}}">My Feed</a>
+					
+                       <!--  <a class="btn btn-primary" href="{{pathFor 'myFeed' _id = _id}}">My Feed</a> -->
 
                     </div>
 

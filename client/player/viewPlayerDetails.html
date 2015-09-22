@@ -87,8 +87,6 @@
                                    <div class="container">
                                      <div class="row">
                                        <div class="col-md-6">
-                                      <!--  <a href="#" class="btn btn-primary unFollowPlayerButton" name="unFollowPlayerButton">Unfollow</a>
-                                      <a href="#" class="btn btn-primary followPlayerButton" name="followPlayerButton">Follow</a> -->
                                       <span class="playerFollowers">
                                        <a href="#" class="btn btn-primary AgentButton">{{countPlayerFollowers}} Follower(s)</a></span>
                                        <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
@@ -102,73 +100,12 @@
                        </div>
                      </div>
 
-                           <!-- <div class="container">
-                               <div class="row">
-                                   <div class="col-md-6">
-                                       <a href="#" class="btn btn-primary unFollowPlayerButton" name="unFollowPlayerButton">Unfollow</a>
-                                       <a href="#" class="btn btn-primary followPlayerButton" name="followPlayerButton">Follow</a>
-                                       <span class="playerFollowers">- {{countPlayerFollowers}} Follower(s)</span>
-                                       <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
-                                   </div>
-                               </div>
-                             </div> -->
-
                            </div>
                          </div>
                        </div>
                      </div>
                    </div>
                    {{/with}}
-<!-- 
-                   <div class="row">
-                    <div class="container">
-                      {{#if viewPlayerVideo}}
-                      {{#each viewPlayerVideo}}
-                      <div class="col-md-4">
-                       <video width="360" height="240" controls class="embed-responsive-item" >
-                         <source src="{{absoluteVideoUrl}}" type="video/mp4"/></video>
-                         <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
-                       </div>
-                       {{/each}}
-                       {{else}}
-                       <h2>No videos uploaded</h2>
-
-                       {{/if}}
-                       {{#if currentUser}}
-                       {{else}}
-                       <a href="#" class="btn btn-primary">Likes</a>
-                       <span class="likes"></span>
-                       {{/if}}
-
-<<<<<<< HEAD
-=======
-<div class="row">
-<div class="container">
-{{#if viewPlayerVideo}}
-
-   {{#each viewPlayerVideo}}
-           <div class="col-md-4">
-               <video width="360" height="240" controls class="embed-responsive-item" >
-                   <source src="{{absoluteVideoUrl}}" type="video/mp4"/></video>
-                    <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
-           </div>
-   {{/each}}
-
-    {{else}}
-        <h2>No videos uploaded</h2>
-              
-    {{/if}}
-   {{#if currentUser}}
-   {{else}}
-           <a href="#" class="btn btn-primary">Likes</a>
-           <span class="likes"></span>
-   {{/if}}
->>>>>>> 0d522e3a39e502bb2d97ed8b0aec973ba24984b9
-
-                     </div>
-                   </div> -->
-
-
 <div class="container">
   <div class='row'>
     <div class='col-md-12'>
@@ -186,18 +123,8 @@
               </video></a>
               </div> 
                 {{/each}}
-             <!--  <div class="col-md-4">
-                 <a class="thumbnail" href="#"><video controls  loop>
-                 <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" width="1024" height="552" type="video/mp4">
-              </video></a>
-              </div>
-              <div class="col-md-4">
-                <a class="thumbnail" href="#"><video controls  loop>
-                 <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" width="1024" height="552" type="video/mp4">
-              </video></a>
-              </div>  -->
               {{else}}
-          <h2>No Videos for this player</h2>
+          <h2>&nbsp;No Videos for this player</h2>
           {{/if}}    
             </div>
           </div>
@@ -209,24 +136,6 @@
             <a href="#" class="btn btn-primary">Likes</a>
                        <span class="likes"></span>
           {{/if}}
-          
-        <!--   <div class="item">
-            <div class="row">
-              <div class="col-md-4">
-                <a class="thumbnail" href="#"><video controls  loop>
-                 <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" width="1024" height="552" type="video/mp4">
-              </video></a>
-              </div>          
-              <div class="col-md-4">
-                <a class="thumbnail" href="#"><img alt="" src=" https://youtu.be/Psv5dmrs3U0"></a>
-              </div>
-              <div class="col-md-4">
-                <a class="thumbnail" href="#"><video controls  loop>
-                 <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4" width="1024" height="552" type="video/mp4">
-              </video></a>
-              </div>      
-            </div>
-          </div> -->
         </div>
         <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
         <a data-slide="next" href="#media" class="right carousel-control">›</a>
