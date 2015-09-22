@@ -15,8 +15,9 @@ Meteor.methods({
         })
     },
     insertAgentFollowing: function(agentId, playerId) {
+        //console.log(agentId);
+        //console.log(playerId);
         Agents.update(agentId ,{$addToSet:{following:playerId}}, function(err, id){
-
         });
     },
     insertClubAgentFollowing: function(agentId, clubId) {

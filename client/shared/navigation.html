@@ -36,40 +36,38 @@
 					<div class="main-header-right right adjust-right">
 						<nav class="megamenu_container">
 						<ul id="nav" class="right megamenu">
-						{{#if Meteor.user}}
-							<li class="nav-parent"><a href="../skin1.1#">Home Pages</a>
-						    	<ul>
+						{{#if currentUser}}
+							<li class="nav-parent"><a href="../skin1.1#">Profile</a>
+						    	<!-- <ul>
 						    		<li><a href="index.html">Home 1 - Ken Burns Slider</a></li>
 						    		<li><a href="index-2.html">Home 2 - Full Screen Slider</a></li>
 						    		<li><a href="index-3.html">Home 3 - Video Header</a></li>
-						    		<li><a href="index-4.html">Home 4 - Boxed Slider</a></li>
-						    		 
-						    	</ul>	
+						    		<li><a href="index-4.html">Home 4 - Boxed Slider</a></li> 
+						    	</ul>	 -->
 						    </li>
+
+							<li class="nav-parent">
+								<a href="">Feeds</a>
+							</li>
+
 						    <li class="nav-parent">
-						    	<a href="../skin1.1#">Feature Pages</a>
+						    	<a href="../skin1.1#" class="megamenu_drop">Find<em class="fa">&#xf107;</em></a>
 						    	<ul>
-						    		<li><a href="about.html">Standard Pages &nbsp; <em class="fa">&#xf105;</em></a>
-						    			<ul>
+						    		<li><a href="{{pathFor 'allPlayers'}}">All Player</a>
+						    			<!-- <ul>
 						    				<li><a href="about.html">Standard Feature</a></li>
 						    				<li><a href="full-feature.html">Full Feature</a></li>
 						    				<li><a href="parallax-feature.html">Parallax Feature</a></li>
 						    				<li><a href="no-feature.html">No Feature Page</a></li>
 						    				<li><a href="full-content.html">Full Content</a></li>
-						    				 
-						    			</ul>
+						    			</ul> -->
 						    		</li>
 						    		
-						    		<li><a href="galleries.html">Our Galleries &nbsp; <em class="fa">&#xf105;</em></a>
-						    			<ul>
-						    				<li><a href="gallery-1.html">Isotope Gallery</a></li>
-						    				<li><a href="gallery-2.html">Slider Gallery</a></li>
-						    				<li><a href="gallery-3.html">Singles Gallery</a></li>
-						    				<li><a href="gallery-4.html">Masonry Gallery</a></li>
-						    			</ul>
+						    		<li><a href="{{pathFor 'allClubAndAcademy'}}">All Clubs</a>
 						    		</li>
-						    		<li><a href="team.html">Team Page</a></li>
-						    		<li><a href="member.html">Member Page</a></li>
+						    		<li><a href="{{pathFor 'allAgents'}}">All Scouts</a></li>
+
+						    		<!-- <li><a href="member.html">Member Page</a></li>
 						    		<li><a href="event-calender.html">Events Calendar</a></li>
 						    		<li><a href="event.html">Single Event</a></li>
 						    		<li><a href="timetable.html">TimeTable</a></li>
@@ -83,16 +81,20 @@
 						    		<li><a href="404.html">404 Page</a></li>
 						    		<li><a href="results.html">Search Results</a></li>
 						    		<li><a href="styles.html">Typography</a></li>
-						    		<li><a href="widgets.html">Available Widgets</a></li>
+						    		<li><a href="widgets.html">Available Widgets</a></li> -->
 						    		
+
 						    	</ul>
+
 						    </li>
+						    	<li><a href="{{pathFor 'signout'}}">Sign Out</a></li>
 						    
 						    
-						    <li><a href="../skin1.1#" class="megamenu_drop">Mega Menu <em class="fa">&#xf107;</em></a><!-- Begin Mega Item -->
-						    <div class="dropdown_fullwidth"><!-- Begin Item Container -->
+						   <!--  <li><a href="../skin1.1#" class="megamenu_drop">Mega Menu <em class="fa">&#xf107;</em></a> -->
+						    <!-- Begin Mega Item -->
+						   <!--  <div class="dropdown_fullwidth"> --><!-- Begin Item Container -->
 			                    
-			                    <div class="clearfix">
+			                   <!--  <div class="clearfix">
 			                    	<div class="col-2-3 clearfix">
 			                    		<h3 class="mega-title">Featured post</h3>
 			                    		<a class="col-1-2" href="post.html"><img src="img/fill-8.jpg" alt="Mock" /></a>
@@ -112,14 +114,14 @@
 			                    			<li><a href="contact.php">Contact Us</a></li>
 			                    		</ul>
 			                    	</div>
-			                    </div>
+			                    </div> -->
 
-		                    </div><!-- End Item Container -->
-		                    </li><!-- End Mega Item -->
+		                    <!-- /div> --><!-- End Item Container -->
+		                   <!--  </li> --><!-- End Mega Item -->
 						                
 						                
 						                
-						    <li class="nav-parent">
+						    <!-- <li class="nav-parent">
 						    	<a href="../skin1.1#">Header Variations</a>
 						    	<ul>
 						    		<li><a href="header-1.html">Header Layout 1</a></li>
@@ -143,7 +145,7 @@
 						    		<li><a href="post.html">Single Post</a></li>
 						    		<li><a href="author.html">Author Page</a></li>
 						    	</ul>		
-						    </li>
+						    </li> -->
 						{{else}}
 							<li><a href="{{pathFor 'signUp'}}">SignUp</a></li>
 							<li><a href="{{pathFor 'signIn'}}">SignIn</a></li>
@@ -163,11 +165,11 @@
 
 
 	<!-- Post Header Area -->
-	<div class="outter-wrapper nav-container post-header-area header-style-5 page-sticky">
+	<!-- <div class="outter-wrapper nav-container post-header-area header-style-5 page-sticky">
 		<div class="wrapper clearfix">
 
 			<div class="post-header-left left stay">
-				<!-- Social Icons -->
+				
 				<ul class="social-links boxy">
 					<li><a class="fa" title="Facebook" href="../skin1.1#">&#xf09a;</a></li>
 					<li><a class="fa" title="Twitter" href="../skin1.1#">&#xf099;</a></li>
@@ -181,6 +183,6 @@
 			</div>
 
 		</div>
-	</div>
+	</div> -->
 </template>
 

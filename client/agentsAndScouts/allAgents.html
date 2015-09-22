@@ -1,17 +1,14 @@
-<template name="allPlayers">
-
-<!-- {{#each allPlayers}} -->
-	
+<template name="allAgents">
 	<div class="container" style="margin-top:20px;">
 		<div class="row">
-		{{#each allPlayers}}
+		{{#each allAgents}}
 		        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6 animated bounceInUp">
 
 		            <div class="well well-sm card">
 		                <div class="row">
 		                    <div class="col-sm-6 col-md-4 !important">
-		                    {{#if playerAbsoluteImageUrl}}
-    							<img src="{{playerAbsoluteImageUrl}}" alt="" class="img-thumbnail img-responsive" />
+		                    {{#if agentAbsoluteImageUrl}}
+    							<img src="{{agentAbsoluteImageUrl}}" alt="" class="img-thumbnail img-responsive" />
     						{{else}}
 								<img src="http://img2.wikia.nocookie.net/__cb20130511180903/legendmarielu/images/b/b4/No_image_available.jpg" alt="" class="img-thumbnail img-responsive"/>
     						{{/if}}
@@ -19,15 +16,8 @@
 		                    </div>
 		                    <div class="col-sm-6 col-md-8">
 		                    <h4>{{firstName}}&nbsp;{{lastName}} </h4>
-							     <p>{{originCountry}}</p>
-		                        <p>{{position}}</p>    
-              
-				              <!--  <video controls  loop>
-				                 <source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">
-				              </video> -->
-        			
-		                      	<a class="btn btn-default" href="{{pathFor 'viewPlayerDetails' _id=_id}}">Show More</a>
-		                       
+							     <p>{{nationality}}</p>
+		                        <p>Operating in {{region}}</p>    
 		                        </div>
 		                     
 		                    </div>
@@ -36,7 +26,5 @@
 		        </div>
 		        {{/each}}
 		</div>   
-	</div>		
-<!-- {{/each}} -->
+	</div>
 </template>
-

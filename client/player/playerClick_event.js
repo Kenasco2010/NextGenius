@@ -22,8 +22,9 @@ Template.playerProfile.events({
 Template.viewPlayerDetails.events({
     "click .followPlayerButton": function () {
         var agentId = Meteor.userId();
-
+        //console.log(agentId);
         var playerId = this._id;
+        //console.log(playerId);
 
         Meteor.call('insertPlayerFollowers', playerId, agentId, function (e) {
             if (!e) {
@@ -40,8 +41,8 @@ Template.viewPlayerDetails.events({
             }
             //console.log(myId.count())
         });
-        //var playerId = this._id;
-        //var agentId = Agents.findOne({owner:Meteor.userId()})._id;
+        var playerId = this._id;
+        var agentId = Agents.findOne({owner:Meteor.userId()})._id;
 
 
         Meteor.call('insertAgentFollowing', agentId, playerId, function(e){

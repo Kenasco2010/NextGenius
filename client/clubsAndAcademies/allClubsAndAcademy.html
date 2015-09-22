@@ -4,32 +4,22 @@
         <div class="row">
         {{#each allClubs}}
 
-                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 animated bounceInUp">
 
                     <div class="well well-sm">
                         <div class="row">
                             <div class="col-sm-6 col-md-4">
                             <!--{{#with FS.GetFile 'images' picture}}-->
+                            {{#if clubAbsoluteImageUrl}}
                                 <img src="{{clubAbsoluteImageUrl}}" alt="" class="img-rounded img-responsive" />
+                            {{else}}
                             <!--{{/with}}-->
-                                      
+                                 <img src="http://img2.wikia.nocookie.net/__cb20130511180903/legendmarielu/images/b/b4/No_image_available.jpg" alt="" class="img-rounded img-responsive"/>
+                            {{/if}}     
                             </div>
                             <div class="col-sm-6 col-md-8">
                                 <h4>{{clubName}}</h4>
                                 <p>{{country}}</p>
-                                <!-- <small><cite title="San Francisco, USA">{{country}} <i class="glyphicon glyphicon-map-marker">
-                                </i></cite></small>
-                                
-                                <p>
-                                <br>
-                                    <i class="glyphicon glyphicon-envelope"></i>{{address}}
-                                    <br>
-                                    <br />
-                                    <i class="glyphicon glyphicon-globe"></i><a href="http://www.jquery2dotnet.com">league</a>
-                                    <br>
-                                    <br />
-                                    <i class="glyphicon glyphicon-gift"></i>{{license}}</p> -->
-                                        
                                          <a class="btn btn-default" href="{{pathFor 'viewClubAndAcademyDetails' _id=_id}}">Show More</a>
                                
                                 </div>
@@ -39,9 +29,5 @@
                 </div>
                 {{/each}}
         </div>   
-    </div>       
-
-
-
-
+    </div> 
 </template>
