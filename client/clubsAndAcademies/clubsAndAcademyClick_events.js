@@ -16,9 +16,11 @@ Template.clubAndAcademyProfile.events({
 
 Template.viewClubAndAcademyDetails.events({
     "click .followClubButton": function () {
-        var followers = Meteor.userId();
+        var agentId = Meteor.userId();
+        console.log(agentId)
         var clubId = this._id;
-        Meteor.call('insertClubFollowers', clubId, followers, function (e) {
+        console.log(clubId)
+        Meteor.call('insertClubFollowers', clubId, agentId, function (e) {
             if (!e) {
                 //alert("you are following this club");
                 sAlert.success('you are following this club');
@@ -33,10 +35,10 @@ Template.viewClubAndAcademyDetails.events({
             }
             //console.log(myId.count())
         });
-        var following = this._id;
-        var agentId = Agents.findOne({owner:Meteor.userId()})._id;
+        //var following = this._id;
+        //var agentId = Agents.findOne({owner:Meteor.userId()})._id;
 
-        Meteor.call('insertAgentFollowing', agentId, following, function(e){
+        Meteor.call('insertClubAgentFollowing', agentId, clubId, function(e){
             if (!e) {
                 //alert("data saved in agents");
                 //$('.followPlayerButton').attr('disabled', 'disabled');
@@ -50,9 +52,9 @@ Template.viewClubAndAcademyDetails.events({
         })
     },
     "click .unFollowClubButton": function () {
-        var followers = Meteor.userId();
+        var agentId = Meteor.userId();
         var clubId = this._id;
-        Meteor.call('deleteClubFollowers', clubId, followers, function (e) {
+        Meteor.call('deleteClubFollowers', clubId, agentId, function (e) {
             if (!e) {
                 //alert("you have unfollowed this club");
                 sAlert.warning('you have unfollowed this club');
@@ -67,10 +69,10 @@ Template.viewClubAndAcademyDetails.events({
             }
             //console.log(myId.count())
         });
-        var following = this._id;
-        var agentId = Agents.findOne({owner:Meteor.userId()})._id;
+        //var following = this._id;
+        //var agentId = Agents.findOne({owner:Meteor.userId()})._id;
 
-        Meteor.call('deleteAgentFollowing', agentId, following, function(e){
+        Meteor.call('deleteAgentFollowing', agentId, clubId, function(e){
             if (!e) {
                 //alert("data removed in agents");
                 //$('.unFollowClubButton').attr('disabled', 'disabled');

@@ -9,18 +9,24 @@ Meteor.methods({
         UploadVideos.insert(doc, function(err, id){
         });
     },
-    insertPlayerFollowers: function( playerId, followers) {
-        Players.update(playerId ,{$addToSet:{followers:followers}}, function(err, id){
+    insertPlayerFollowers: function( playerId, agentId) {
+        Players.update(playerId ,{$addToSet:{followers:agentId}}, function(err, id){
 
         })
     },
-    insertAgentFollowing: function(agentId, following) {
-        Agents.update(agentId ,{$addToSet:{following:following}}, function(err, id){
+    insertAgentFollowing: function(agentId, playerId) {
+        //console.log(agentId);
+        //console.log(playerId);
+        Agents.update(agentId ,{$addToSet:{following:playerId}}, function(err, id){
+        });
+    },
+    insertClubAgentFollowing: function(agentId, clubId) {
+        Agents.update(agentId ,{$addToSet:{following:clubId}}, function(err, id){
 
         });
     },
-    insertClubFollowers: function( clubId, followers) {
-        Clubs.update(clubId ,{$addToSet:{followers:followers}}, function(err, id){
+    insertClubFollowers: function( clubId, agentId) {
+        Clubs.update(clubId ,{$addToSet:{followers:agentId}}, function(err, id){
 
         })
     },
@@ -29,13 +35,13 @@ Meteor.methods({
 
         })
     },
-    deleteAgentFollowing: function(agentId, following) {
-        Agents.update(agentId ,{$pull:{following:following}}, function(err, id){
+    deleteAgentFollowing: function(agentId, clubId) {
+        Agents.update(agentId ,{$pull:{following:clubId}}, function(err, id){
 
         });
     },
-    deleteClubFollowers: function( clubId, followers) {
-        Clubs.update(clubId ,{$pull:{followers:followers}}, function(err, id){
+    deleteClubFollowers: function( clubId, agentId) {
+        Clubs.update(clubId ,{$pull:{followers:agentId}}, function(err, id){
 
         })
     },

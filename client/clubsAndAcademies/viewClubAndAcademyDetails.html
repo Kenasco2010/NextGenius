@@ -14,7 +14,11 @@
                         <ul class="list-4 widget-list option-set" id="filter" data-option-key="filter">
                             <!--{{#with FS.GetFile 'images' picture}}-->
                             <br/>
-                            <img src="{{clubAbsoluteImageUrl}}" alt="" class="img-rounded" height="200" width="200"/>
+                            {{#if clubAbsoluteImageUrl}}
+                            <img src="{{clubAbsoluteImageUrl}}" alt="" class="img-thumbnail img-responsive"/>
+                            {{else}}
+                             <img src="http://img2.wikia.nocookie.net/__cb20130511180903/legendmarielu/images/b/b4/No_image_available.jpg" alt="" class="img-thumbnail img-responsive"/>
+                             {{/if}}
                             <!--{{/with}}-->
                             <li>
                                 <a href="gallery-1.html#show-all" data-option-value="*" class="selected">{{clubName}}</a>
