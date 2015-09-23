@@ -526,7 +526,7 @@
 /* 
 001. HEADER 1 ________________________________________________________________ */
 .header-style-1 .logo{
-	max-width: 151px;
+	max-width: 191px;
 	display: inline-block;
 }
 
@@ -610,7 +610,7 @@
 /* 
 005. HEADER 5 ________________________________________________________________ */
 .header-style-5 .logo, .sidr-class-logo{
-	max-width: 151px;
+	max-width: 185px;
 	display: inline-block;
 } 
 
