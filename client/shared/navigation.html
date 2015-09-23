@@ -27,7 +27,7 @@
 
 					<div class="main-header-left left adjust-left">
 						<a class="logo" href="index.html">
-							<img src="img/logo-white.png" alt="Scene" />
+							<img src="img/nextgenius-logo450slim.gif" alt="Scene" />
 						</a>
 					</div>
 
@@ -35,10 +35,17 @@
 
 					<div class="main-header-right right adjust-right">
 						<nav class="megamenu_container">
+<!-- <<<<<<< HEAD -->
 						<ul id="nav" class="right megamenu">
 						{{#if currentUser}}
 
 							<li class="nav-parent" id="profiles"><a >Profile</a>
+<!-- =======
+
+							<ul id="nav" class="right megamenu">
+								{{#if currentUser}}
+								<li class="nav-parent"><a href="../skin1.1#">Profile</a>
+>>>>>>> 3d4e9144f83e1be19cd0030532e2e9b493a4fceb -->
 						    	<!-- <ul>
 						    		<li><a href="index.html">Home 1 - Ken Burns Slider</a></li>
 						    		<li><a href="index-2.html">Home 2 - Full Screen Slider</a></li>
@@ -47,14 +54,14 @@
 						    	</ul>	 -->
 						    </li>
 
-							<li class="nav-parent">
-								<a href="">Feeds</a>
-							</li>
+						    <li class="nav-parent">
+						    	<a href="">Feeds</a>
+						    </li>
 
 						    <li class="nav-parent">
 						    	<a href="../skin1.1#" class="megamenu_drop">Find<em class="fa">&#xf107;</em></a>
 						    	<ul>
-						    		<li><a href="{{pathFor 'allPlayers'}}">All Player</a>
+						    		<li><a href="{{pathFor 'allPlayers'}}">Players</a>
 						    			<!-- <ul>
 						    				<li><a href="about.html">Standard Feature</a></li>
 						    				<li><a href="full-feature.html">Full Feature</a></li>
@@ -64,9 +71,9 @@
 						    			</ul> -->
 						    		</li>
 						    		
-						    		<li><a href="{{pathFor 'allClubAndAcademy'}}">All Clubs</a>
+						    		<li><a href="{{pathFor 'allClubAndAcademy'}}">Clubs</a>
 						    		</li>
-						    		<li><a href="{{pathFor 'allAgents'}}">All Scouts</a></li>
+						    		<li><a href="{{pathFor 'allAgents'}}">Scouts</a></li>
 
 						    		<!-- <li><a href="member.html">Member Page</a></li>
 						    		<li><a href="event-calender.html">Events Calendar</a></li>
@@ -88,13 +95,15 @@
 						    	</ul>
 
 						    </li>
+
 						    	<li><a href="{{pathFor 'signout'}}" class="">Sign Out</a></li>
+
 						    
 						    
-						   <!--  <li><a href="../skin1.1#" class="megamenu_drop">Mega Menu <em class="fa">&#xf107;</em></a> -->
+						    <!--  <li><a href="../skin1.1#" class="megamenu_drop">Mega Menu <em class="fa">&#xf107;</em></a> -->
 						    <!-- Begin Mega Item -->
-						   <!--  <div class="dropdown_fullwidth"> --><!-- Begin Item Container -->
-			                    
+						    <!--  <div class="dropdown_fullwidth"> --><!-- Begin Item Container -->
+
 			                   <!--  <div class="clearfix">
 			                    	<div class="col-2-3 clearfix">
 			                    		<h3 class="mega-title">Featured post</h3>
@@ -117,11 +126,11 @@
 			                    	</div>
 			                    </div> -->
 
-		                    <!-- /div> --><!-- End Item Container -->
-		                   <!--  </li> --><!-- End Mega Item -->
-						                
-						                
-						                
+			                    <!-- /div> --><!-- End Item Container -->
+			                    <!--  </li> --><!-- End Mega Item -->
+
+
+
 						    <!-- <li class="nav-parent">
 						    	<a href="../skin1.1#">Header Variations</a>
 						    	<ul>
@@ -147,25 +156,29 @@
 						    		<li><a href="author.html">Author Page</a></li>
 						    	</ul>		
 						    </li> -->
-						{{else}}
-							<li><a href="{{pathFor 'signUp'}}">SignUp</a></li>
-							<li><a href="{{pathFor 'signIn'}}">SignIn</a></li>
-							<li><a href="#">How To</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Contact</a></li>
-						{{/if}}
-						   
+						    {{else}}
+						    <li><a href="#">How To</a></li>
+						    <li><a href="#">About</a></li>
+						    <li><a href="#">Contact</a></li>
+						    <li><a href="{{pathFor 'signUp'}}">SignUp</a></li>
+						    <li><a href="{{pathFor 'signIn'}}">LogIn</a></li>
+						    {{/if}}
+
 						</ul>
-						</nav>
-					</div>
+					</nav>
 				</div>
-			</header>
-		</div>
-	</div>	    	
+			</div>
+		</header>
+	</div>
+</div>	    	
 
 
 
-	<!-- Post Header Area -->
+
+
+
+
+<!-- Post Header Area -->
 	<!-- <div class="outter-wrapper nav-container post-header-area header-style-5 page-sticky">
 		<div class="wrapper clearfix">
 
@@ -179,11 +192,73 @@
 				</ul>
 			</div>
 
-			<div class="post-header-right right stay">
-				<a href="404.html"><i class="fa">&#xf002;</i></a>
-			</div>
 
+
+									<li class="nav-parent">
+										<a href="../skin1.1#">Header Variations</a>
+										<ul>
+											<li><a href="header-1.html">Header Layout 1</a></li>
+											<li><a href="header-2.html">Header Layout 2</a></li>
+											<li><a href="header-3.html">Header Layout 3</a></li>
+											<li><a href="header-4.html">Header Layout 4</a></li>
+											<li><a href="header-5.html">Header Layout 5</a></li>
+											<li><a href="header-1-logotext.html">Logo as text option</a></li>
+											<li><a href="header-sticky.html">Sticky Header</a></li>
+										</ul>	
+									</li>
+									<li class="nav-parent">
+										<a href="../skin1.1#">Blog Options</a>
+										<ul>
+											<li><a href="blog-rsb.html">Blog Right Sidebar</a></li>
+											<li><a href="blog-lsb.html">Blog Left Sidebar</a></li>
+											<li><a href="blog.html">Blog Full Width</a></li>
+											<li><a href="blog-rlsb.html">Blog Double Sidebars</a></li>
+											<li><a href="blog-double.html">Blog Two Columns</a></li>
+											<li><a href="blog-double-rsb.html">Blog Two Columns Sidebar</a></li>
+											<li><a href="post.html">Single Post</a></li>
+											<li><a href="author.html">Author Page</a></li>
+										</ul>		
+									</li>
+									{{else}}
+									<li><a href="{{pathFor 'signUp'}}">SignUp</a></li>
+									<li><a href="{{pathFor 'signIn'}}">SignIn</a></li>
+									<li><a href="#">How To</a></li>
+									<li><a href="#">About</a></li>
+									<li><a href="#">Contact</a></li>
+									{{/if}}
+
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</header>
+			</div>
+		</div>	    	
+
+
+
+		<! Post Header Area -->
+		<!-- <div class="outter-wrapper nav-container post-header-area header-style-5 page-sticky">
+			<div class="wrapper clearfix">
+
+				<div class="post-header-left left stay">
+					<! Social Icons -->
+					<!-- <ul class="social-links boxy">
+						<li><a class="fa" title="Facebook" href="../skin1.1#">&#xf09a;</a></li>
+						<li><a class="fa" title="Twitter" href="../skin1.1#">&#xf099;</a></li>
+						<li><a class="fa" title="Google Plus" href="../skin1.1#">&#xf0d5;</a></li>
+						<li><a class="fa" title="RSS" href="../skin1.1#">&#xf09e;</a></li>
+					</ul>
+				</div>
+
+				<div class="post-header-right right stay">
+					<a href="404.html"><i class="fa">&#xf002;</i></a>
+				</div>
+
+			</div>
 		</div>
-	</div> -->
+		
+	</div>   -->
 </template>
+
 

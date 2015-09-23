@@ -9,7 +9,14 @@ Template.insertAgentAndScoutDetail.rendered = function () {
 
 Template.agentProfile.helpers({
 	countAgentFollowings: function () {
-		return this.following.length;
+	var agentinfo = Router.current().data().agent;
+		var agentFollowing = agentinfo.following;
+		var mycount = agentFollowing.length;
+			return mycount;
+
+		//console.log(mycount);
+		//return count;
+
 	}
 });
 

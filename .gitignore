@@ -1,4 +1,5 @@
 server/s3Uploads.js
+s3Uploads.js
 settings.json
 mup.json
 dev.sh
