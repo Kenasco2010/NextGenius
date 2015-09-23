@@ -25,9 +25,8 @@ Template.updatePlayerProfile.helpers({
 });
 
 Template.updatePlayerProfile.helpers({
-
   updateDoc: function(){
-    return Players.findOne({ "owner": id });
+    return Players.findOne();
   }
 });
 
