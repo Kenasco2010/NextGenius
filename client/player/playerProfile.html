@@ -1,90 +1,90 @@
 <template name="playerProfile">
 	{{#with playerProfile}} 
-    <div style="margin-top:20px" class="col-xs-12 col-sm-12 col-md-6 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-1" >
-          <div class="panel panel-info">
-            <div class="panel-heading toppad">
-              <h3 class="panel-title" style="color:#fff">{{firstName}}&nbsp;{{lastName}}</h3>
-            </div> 
-            <div class="panel-body">
-              <div class="row">
-              
-                <div class="col-md-3 col-lg-3 " align="center">
-              {{#if playerAbsoluteImageUrl}}
-                 <img alt="User Pic" src="{{playerAbsoluteImageUrl}}" class="img-responsive img-thumbnail">
-              {{else}}
-                <img src="http://img2.wikia.nocookie.net/__cb20130511180903/legendmarielu/images/b/b4/No_image_available.jpg" alt="" class="img-thumbnail img-responsive"/>
-              {{/if}}
-                </div>
-                <div class=" col-md-9 col-lg-9 ">
-                  <table class="table table-user-information">
+  <div style="margin-top:20px" class="col-xs-12 col-sm-12 col-md-6 col-lg-10 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-1" >
+    <div class="panel panel-info">
+      <div class="panel-heading toppad">
+        <h3 class="panel-title" style="color:#fff">{{firstName}}&nbsp;{{lastName}}</h3>
+      </div> 
+      <div class="panel-body">
+        <div class="row">
 
-                    <tbody>
-                      <tr>
-                        <td>Name:</td>
-                        <td>{{firstName}}&nbsp;{{lastName}}</td>
-                      </tr>
-                      <tr>
-                        <td>Date of Birth:</td>
-                        <td>{{dateOfBirth}}</td>
-                      </tr>
-
-                        <tr>
-                          <td>Gender</td>
-                          <td>{{gender}}</td>
-                        </tr>
-                          <tr>
-                          <td>Country:</td>
-                          <td>{{originCountry}}</td>
-                        </tr>
-                        <tr>
-                          <td>Height: </td>
-                          <td>{{height}}-m</td>
-                        </tr>
-                        <tr>
-                        	 <td>Play Position</td>
-                          <td>{{position}}</td>
-                        </tr>
-                        <tr>
-                          <td>Club:</td>
-                          <td>{{club}}</td>
-                        </tr>
-                         <tr>
-                          <td>Division:</td>
-                          <td>{{division}}</td>
-                        </tr>
-                        <tr>
-                          <td>Previous Club: </td>
-                          <td>{{previousClub}}</td>
-                        </tr>
-                        <tr>
-                          <td>Weight</td>
-                          <td>{{weight}}-lb</td>
-                        </tr>
-
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-
-                  <div class="panel-footer">
-                        <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
-                        <span class="pull-right">
-                            <a href="{{pathFor 'updatePlayerProfile'}}" data-original-title="Edit Your Profile" id="update" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i>&nbsp;Update Profile</a>
-                            <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
-                        </span>
-                  </div>
-            
+          <div class="col-md-3 col-lg-3 " align="center">
+            {{#if playerAbsoluteImageUrl}}
+            <img alt="User Pic" src="{{playerAbsoluteImageUrl}}" class="img-responsive img-thumbnail">
+            {{else}}
+            <img src="http://img2.wikia.nocookie.net/__cb20130511180903/legendmarielu/images/b/b4/No_image_available.jpg" alt="" class="img-thumbnail img-responsive"/>
+            {{/if}}
           </div>
+          <div class=" col-md-9 col-lg-9 ">
+            <table class="table table-user-information">
 
+              <tbody>
+                <tr>
+                  <td>Name:</td>
+                  <td>{{firstName}}&nbsp;{{lastName}}</td>
+                </tr>
+                <tr>
+                  <td>Date of Birth:</td>
+                  <td>{{dateOfBirth}}</td>
+                </tr>
+
+                <tr>
+                  <td>Gender</td>
+                  <td>{{gender}}</td>
+                </tr>
+                <tr>
+                  <td>Country:</td>
+                  <td>{{originCountry}}</td>
+                </tr>
+                <tr>
+                  <td>Height: </td>
+                  <td>{{height}}-m</td>
+                </tr>
+                <tr>
+                  <td>Play Position</td>
+                  <td>{{position}}</td>
+                </tr>
+                <tr>
+                  <td>Club:</td>
+                  <td>{{club}}</td>
+                </tr>
+                <tr>
+                  <td>Division:</td>
+                  <td>{{division}}</td>
+                </tr>
+                <tr>
+                  <td>Previous Club: </td>
+                  <td>{{previousClub}}</td>
+                </tr>
+                <tr>
+                  <td>Weight</td>
+                  <td>{{weight}}-lb</td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel-footer text-center">
+       <!--  <a data-original-title="Broadcast Message" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a> -->
+       <span class="">
+        <a href="{{pathFor 'updatePlayerProfile'}}" data-original-title="Edit Your Profile" id="update" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="glyphicon glyphicon-edit"></i>&nbsp;Update Profile</a>
+      </span>
+      <!--  <a data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a> -->
     </div>
 
- {{/with}}
+  </div>
+
+</div>
+
+{{/with}}
 
 
 
- {{> uploadVideos}}
- 
+{{> uploadVideos}}
+
 {{> viewPlayerVideos}}
 
 </template>
