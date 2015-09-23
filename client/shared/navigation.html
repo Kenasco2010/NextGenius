@@ -27,7 +27,7 @@
 
 					<div class="main-header-left left adjust-left">
 						<a class="logo" href="index.html">
-							<img src="img/nextgenius-logo450slim.gif" alt="NextGenius" />
+							<img src="img/nextgenius-logo450slim.gif" alt="Scene" />
 						</a>
 					</div>
 
@@ -35,10 +35,10 @@
 
 					<div class="main-header-right right adjust-right">
 						<nav class="megamenu_container">
-
 							<ul id="nav" class="right megamenu">
 								{{#if currentUser}}
-								<li class="nav-parent"><a href="../skin1.1#"><i class="fa fa-user"></i> Profile</a>
+
+								<li class="nav-parent" id="profiles"><a ><i class="fa fa-user"></i> Profile</a>
 
 								</li>
 
@@ -47,7 +47,7 @@
 								</li>
 
 								<li class="nav-parent">
-									<a href="../skin1.1#" class="megamenu_drop"><i class="fa fa-search"></i> Find<em class="fa">&#xf107;</em></a>
+									<a href="../skin1.1#" class="megamenu_drop"><i class="fa fa-search"></i> Find <em class="fa">&#xf107;</em></a>
 									<ul>
 										<li><a href="{{pathFor 'allPlayers'}}">Players</a>
 
@@ -56,11 +56,17 @@
 										<li><a href="{{pathFor 'allClubAndAcademy'}}">Clubs</a>
 										</li>
 										<li><a href="{{pathFor 'allAgents'}}">Scouts</a></li>
+
+
+										<li><a href="widgets.html">Available Widgets</a></li>
+
+
 									</ul>
 
 								</li>
 
-								<li><a href="{{pathFor 'signout'}}">Sign Out</a></li>
+								<li><a href="{{pathFor 'signout'}}" class="">Sign Out</a></li>
+
 								{{else}}
 								<li><a href="#">How To</a></li>
 								<li><a href="#">About</a></li>
@@ -75,7 +81,6 @@
 				</div>
 			</header>
 		</div>
-	</div>	    	
+	</div>	    
 </template>
-
 
