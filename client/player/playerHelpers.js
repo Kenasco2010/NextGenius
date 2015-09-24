@@ -46,7 +46,14 @@ Template.playerDetail3.helpers({
 
 Template.viewPlayerDetails.helpers({
   countPlayerFollowers: function () {
-    return this.followers.length;
+    var currentPlayer = Router.current().data().viewPlayerProfile;
+    var playerFollowers = currentPlayer.followers;
+    if (playerFollowers == undefined){
+      return 0;
+    }else{
+      var countFollowers = playerFollowers.length;
+      return countFollowers;
+    }
   }
 });
 

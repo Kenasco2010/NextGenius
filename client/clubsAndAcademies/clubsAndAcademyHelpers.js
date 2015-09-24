@@ -58,7 +58,15 @@ Template.viewClubAndAcademyDetails.helpers({
         //console.log(this.viewClubProfile.owner)
     },
     countClubFollowers: function () {
-      return this.followers.length;
+        var currentClub = Router.current().data().viewClubProfile
+        var clubFollowers = currentClub.followers;
+        if (clubFollowers == undefined){
+            return 0;
+        }else {
+            var clubCount = clubFollowers.length;
+            return clubCount;
+        }
+      //return this.followers.length;
   }
 
 });
