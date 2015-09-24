@@ -151,6 +151,7 @@
    <div class="row">
      <div class="col-md-6 col-md-offset-3">
        {{> afQuickField name='position' options="allowed"}}
+       {{> afQuickField name='playCountry' }}
        {{> afQuickField name='club'}}
        {{> afQuickField name='division' options="allowed"}}
        {{> afQuickField name='originCountry'}}
@@ -221,7 +222,6 @@
    </div>
    <ul class="list-inline pull-right">
      <li><a  type="button" class="btn btn-default prev-step">Previous</a></li>
-     <li><a  type="button" class="btn btn-default next-step">Skip</a></li>
      <li><button  type="submit" class="btn btn-primary ngButton">Save and continue</button></li>
    </ul>
    {{/autoForm}}
@@ -268,38 +268,80 @@
    </ul>
  </div>
 
-
- {{#with playerProfile}}
- <div class="tab-pane active" role="tabpanel" id="step1">
-   <div class="tab-pane" role="tabpanel" id="complete">
-     <h3>Complete</h3>
-
-     <p>Please verify your information before saving <br/>
-     </p>
-     <div class="row">
-       <div align="center">
-         <p class="text-center">Firstname: {{firstName}}</p>
-         <p class="text-center">Lastname: {{lastName}}</p>
-         <p class="text-center">Date Of Birth: {{dateOfBirth}}</p>
-         <p class="text-center">Gender: {{gender}}</p>
-         <p class="text-center">Position you play: {{position}}</p>
-         <p class="text-center">Club: {{club}}</p>
-         <p class="text-center">Club division: {{division}}</p>
-         <p class="text-center">Country: {{originCountry}}</p>
-         <p class="text-center">Previous Clubs: {{previousClub}}</p>
-         <p class="text-center">Transfer Status: {{transferStatus}}</p>
-         <p class="text-center">Height: {{height}}</p>
-         <p class="text-center">Weight: {{weight}}</p>
-
-       </div>
-     </div>
-   </div>
- </div>
- {{/with}}
- <ul class="text-center" >
-   <a id="registerClubbtn" href="{{pathFor 'updatePlayerProfile'}}" class="btn btn-primary">Edit</a>
-   <a type="submit" href="{{pathFor 'playerProfile'}}" class="btn btn-primary ngButton">Finish</a>
- </ul>
+<div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 " >
+          <div class="panel panel-info">
+            <div class="panel-heading toppad">
+              <h3 class="panel-title" style="color:#fff;">Please verify your information before saving</h3>
+            </div>
+             {{#with playerProfile}}
+            <div class="panel-body">
+              <div class="row">
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Firstname:</td>
+                        <td>{{firstName}}</td>
+                      </tr>
+                      <tr>
+                        <td>Lastname:</td>
+                        <td>{{lastName}}</td>
+                      </tr>
+                      <tr>
+                        <td>Date of Birth</td>
+                        <td>{{dateOfBirth}}</td>
+                      </tr>
+                       <tr>
+                        <td>Gender</td>
+                        <td>{{gender}}</td>
+                      </tr>
+                       <tr>
+                        <td>Club</td>
+                        <td>{{club}}</td>
+                      </tr>
+                       <tr>
+                        <td>Club division:</td>
+                        <td>{{division}}</td>
+                      </tr>
+                       <tr>
+                        <td>Country</td>
+                        <td>{{originCountry}}</td>
+                      </tr>
+                      <tr>
+                        <td>Previous Clubs</td>
+                        <td>{{previousClub}}</td>
+                      </tr>
+                      <tr>
+                        <td>Transfer Status</td>
+                        <td>{{transferStatus}}</td>
+                      </tr>
+                      <tr>
+                        <td>Height</td>
+                        <td>{{height}}</td>
+                      </tr>
+                       <tr>
+                        <td>Weight</td>
+                        <td>{{weight}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            {{/with}}
+                 <div class="panel-footer">
+                      <a href="{{pathFor 'updatePlayerProfile'}}" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil-square-o"></i>Edit</a>
+                        <span class="pull-right">
+                            <a href="{{pathFor 'playerProfile'}}" data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="fa fa-check"></i>Finish</a>
+                        </span>
+                    </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 </template>

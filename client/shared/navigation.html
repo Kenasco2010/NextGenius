@@ -1,83 +1,99 @@
 <template name="navigation">
-	<!--  navigation header -->
-	<div class="outter-wrapper header-area header-style-3">
-		<div class="wrapper clearfix logo-container">
+   
+
+
+<div class="outter-wrapper header-area header-style-2">
+		
+		<div class="wrapper clearfix">
 			<header>
+
+				<div class="main-header-left left"></div>
+
+
+				<div class="main-header-right right"></div>
+
 			</header>
 		</div>
 	</div>
+    	    	
+    	    
+    	
+    	
+    	
 	<!-- Post Header Area -->
-	<div class="outter-wrapper header-area header-style-5">
-		<div class="wrapper clearfix logo-container with-menu">
-
+	<div class="outter-wrapper nav-container post-header-area header-style-2">
+		<div class="wrapper logo-container with-menu">
+		
 			<!-- Start Mobile Menu Icon -->
 			<div id="mobile-header" class="">
-				<a id="responsive-menu-button" href="../skin1.1#sidr-main">
+				<a id="responsive-menu-button" href="index-2.html#sidr-main">
 					<em class="fa fa-bars"></em> Menu
 				</a>
 			</div>
 			
-			<header>
-				<div id="navigation" class="clearfix">
-
+	    	<div id="navigation" class="clearfix">
+	    	    <nav class="megamenu_container">
+	    	    	
 					<ul class="menuHideBtn">
-						<li><a id="closebtn" class="fa" href="../skin1.1#">&#xf00d;</a></li>
+						<li><a id="closebtn" class="fa" href="index-2.html#">&#xf00d;</a></li>
 					</ul>
-					
 
-					<div class="main-header-left left adjust-left">
+					<div class="post-header-left left adjust-left">
+
 						<a class="logo" href="index.html">
-							<img src="img/nextgenius-logo450slim.gif" alt="Scene" />
+							<img src="img/logo-white.png" alt="Sport" />
 						</a>
+					
 					</div>
+	    	    	
+					<div class="post-header-right right adjust-right">
 
+							{{#if currentUser}}
+						    <li class="nav-parent" id="profiles"><a href="index-2.html#">Profile</a></li>
+						    <li class="nav-parent">
+						    	<a href="index-2.html#">Feeds</a>
+						    </li>
+						    
+						    
+						 
+						                
+						                
+						    <li class="nav-parent">
+						    	<a href="index-2.html#">Find</a>
+						    	<ul>
+						    		<li><a href="{{pathFor 'allPlayers'}}">Players</a></li>
+						    		<li><a href="{{pathFor 'allClubAndAcademy'}}">Clubs</a></li>
+						    		<li><a href="{{pathFor 'allAgents'}}">Scouts</a></li>
+						    	</ul>	
+						    </li>
 
-
-					<div class="main-header-right right adjust-right">
-						<nav class="megamenu_container">
-
-							<ul id="nav" class="right megamenu">
-								{{#if currentUser}}
-
-								<li class="nav-parent" id="profiles"><a ><i class="fa fa-user"></i> Profile</a>
-
-
-								</li>
-
-								<li class="nav-parent">
-									<a href=""><i class="fa fa-home"></i> Feeds</a>
-								</li>
-
-
-								<li class="nav-parent">
-									<a href="../skin1.1#" class="megamenu_drop"><i class="fa fa-search"></i> Find <em class="fa">&#xf107;</em></a>
-									<ul>
-										<li><a href="{{pathFor 'allPlayers'}}">Players</a>
-
-										</li>
-
-										<li><a href="{{pathFor 'allClubAndAcademy'}}">Clubs</a>
-										</li>
-										<li><a href="{{pathFor 'allAgents'}}">Scouts</a></li>
-									</ul>
-								</li>
-								<li><a href="{{pathFor 'signout'}}" class="">Sign Out</a></li>
-
-								{{else}}
-								<li><a href="#">How To</a></li>
-								<li><a href="#">About</a></li>
-								<li><a href="#">Contact</a></li>
-								<li><a href="{{pathFor 'signUp'}}">SignUp</a></li>
-								<li><a href="{{pathFor 'signIn'}}">LogIn</a></li>
-								{{/if}}
-
-							</ul>
-						</nav>
+						    <li class="nav-parent"><a href="{{pathFor 'signout'}}" class="">Sign Out</a></li>
+							{{else}}
+						    <li class="nav-parent">
+						    	<a href="i#">How To</a>	
+						    </li>
+						     <li class="nav-parent">
+						    	<a href="#">Contact</a>	
+						    </li>
+						     <li class="nav-parent">
+						    	<a href="#">About</a>	
+						    </li>
+						     <li class="nav-parent">
+						    	<a href="{{pathFor 'signUp'}}">SignUp</a>	
+						    </li>
+						     <li class="nav-parent">
+						    	<a href="{{pathFor 'signIn'}}">LogIn</a>	
+						    </li>
+						
+							{{/if}}
 					</div>
+				</nav>
 
-				</div>
-			</header>
-		</div>
-	</div>	    
+	    	</div>
+    	</div>
+	</div>
+
+    	    
 </template>
+
 

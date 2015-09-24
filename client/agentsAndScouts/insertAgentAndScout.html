@@ -1,137 +1,4 @@
-<!-- <template name="insertAgentAndScoutDetail">
-    <div class="container">
-        <div class="row">
-            <section>
-                {{#autoForm collection="Agents" id="insertAgentDetail" type="insert"}}
-                    <fieldset>
-                        <legend>Please complete your profile</legend>
-
-                        <div class="wizard">
-                            <div class="wizard-inner">
-                                <div class="connecting-line"></div>
-                                <ul class="nav nav-tabs" role="tablist">
-
-                                    <li role="presentation" class="active">
-                                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-folder-open"></i>
-                            </span>
-                                        </a>
-                                    </li>
-
-                                    <li role="presentation" class="disabled">
-                                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-pencil"></i>
-                            </span>
-                                        </a>
-                                    </li>
-                                    <li role="presentation" class="disabled">
-                                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-picture"></i>
-                            </span>
-                                        </a>
-                                    </li>
-
-                                    <li role="presentation" class="disabled">
-                                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
-                            <span class="round-tab">
-                                <i class="glyphicon glyphicon-ok"></i>
-                            </span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <form role="form">
-                                <div class="tab-content">
-                                    <div class="tab-pane active" role="tabpanel" id="step1">
-                                        <h3>Step 1</h3>
-                                        <p>Personal Information</p>
-                                        <div class="row">
-                                            <div class="col-md-6 col-md-offset-3">
-                                                {{> afQuickField name='firstName'}}
-                                                {{> afQuickField name='lastName'}}
-                                                {{> afQuickField name='gender' options='allowed'}}
-                                                <!{{> afFieldInput name='picture'}}-->
-                                               <!--  <input type="file" class="agentPictureFile_bag">
-                                                {{#each files}}
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">
-                                                        {{percent_uploaded}}%
-                                                    </div>
-                                                </div>
-
-                                                <div id="imageThumbnail">
-                                                    <img src="{{url}}"  width="100"  height="100" class="img-thumbnail resetagentimage" alt="thumbnail" />
-                                                </div>
-                                                {{#if complete}}
-                                                <a href="#" data-action="remove-agent-image" data-id="{{relative_url}}" class="resetagentimage"><i class="fa fa-times"></i>Remove</a>
-                                                {{/if}}
-                                                {{/each}}
-
-                                            </div>
-                                        </div>
-
-                                        <ul class="list-inline pull-right">
-                                            <li><button  type="button" class="btn btn-primary AgentButton next-step">Save and continue</button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="tab-pane" role="tabpanel" id="step2">
-                                        <h3>Step 2</h3>
-                                        <p>Club or Academy information (if any)</p>
-                                        <div class="row">
-                                            <div class="col-md-6 col-md-offset-3">
-                                                {{> afQuickField name='license'}}
-                                                {{> afQuickField name='bio' rows=3}}
-                                                {{> afQuickField name='nationality'}}
-                                            </div>
-                                        </div>
-
-                                        <ul class="list-inline pull-right">
-                                            <li><button type="button" class="btn btn-default prev-step AgentButton">Previous</button></li>
-                                            <li><button type="button" class="btn btn-primary next-step AgentButton">Save and continue</button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="tab-pane" role="tabpanel" id="step3">
-                                        <h3>Step 3</h3>
-                                        <p>Physique information</p>
-                                        <div class="row">
-                                            <div class="col-md-6 col-md-offset-3">
-                                                {{> afQuickField name='region'}}
-                                                {{> afQuickField name='typeOfAgent' options='allowed'}}
-                                            </div>
-                                        </div>
-                                        <ul class="list-inline pull-right">
-                                            <li><button type="button" class="btn btn-default prev-step AgentButton">Previous</button></li>
-                                            <li><button type="button" class="btn btn-default next-step AgentButton">Skip</button></li>
-                                            <li><button type="button" class="btn btn-primary btn-info-full AgentButton next-step">Save and continue</button></li>
-                                        </ul>
-                                    </div>
-                                    <div class="tab-pane" role="tabpanel" id="complete">
-                                        <h3>Complete</h3>
-
-                                        <p>You have successfully completed all steps.
-                                            Please verify for correct information</p>
-
-                                        </div>
-                                        <div class="clearfix"></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </fieldset>
-                        <button class="btn btn-primary AgentButton" type="submit" id="submit">Save Detail</button>
-
-                        {{/autoForm}}
-
-                    </section>
-                </div>
-            </div>
-            </template>
-        -->
-
-        <template name="insertAgentAndScoutDetail">
+<template name="insertAgentAndScoutDetail">
             {{> navigation}}
 
             <div class="container">
@@ -349,7 +216,6 @@
         </div>
         <ul class="list-inline pull-right">
             <li><a  type="button" class="btn btn-default prev-step">Previous</a></li>
-            <li><a  type="button" class="btn btn-default next-step">Skip</a></li>
             <li><button  type="submit" class="btn btn-primary ngButton">Save and continue</button></li>
         </ul>
         {{/autoForm}}
@@ -397,7 +263,7 @@
     </div>
 
 
-    {{#with agentProfile}}
+   <!--  {{#with agentProfile}}
     <div class="tab-pane active" role="tabpanel" id="step1">
       <div class="tab-pane" role="tabpanel" id="complete">
         <h3>Complete</h3>
@@ -423,7 +289,69 @@
 <ul class="text-center" >
     <a id="registerClubbtn" href="{{pathFor 'updateAgentAndScoutDetail'}}" class="btn btn-primary">Edit</a>
     <a type="submit" href="{{pathFor 'agentProfile'}}" class="btn btn-primary ngButton">Finish</a>
-</ul>
+</ul> -->
+<div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 " >
+          <div class="panel panel-info">
+            <div class="panel-heading toppad">
+              <h3 class="panel-title" style="color:#fff;">Please verify your information before saving</h3>
+            </div>
+             {{#with agentProfile}}
+            <div class="panel-body">
+              <div class="row">
+                <div class=" col-md-9 col-lg-9 "> 
+                  <table class="table table-user-information">
+                    <tbody>
+                      <tr>
+                        <td>Firstname:</td>
+                        <td>{{firstName}}</td>
+                      </tr>
+                      <tr>
+                        <td>Lastname:</td>
+                        <td>{{lastName}}</td>
+                      </tr>
+                       <tr>
+                        <td>Gender</td>
+                        <td>{{gender}}</td>
+                      </tr>
+                       <tr>
+                        <td>License</td>
+                        <td>{{license}}</td>
+                      </tr>
+                       <tr>
+                        <td>Bio:</td>
+                        <td>{{bio}}</td>
+                      </tr>
+                       <tr>
+                        <td>Nationality</td>
+                        <td>{{nationality}}</td>
+                      </tr>
+                      <tr>
+                        <td>Region of activity</td>
+                        <td>{{region}}</td>
+                      </tr>
+                      <tr>
+                        <td>Agent type</td>
+                        <td>{{typeOfAgent4}}</td>
+                      </tr> 
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            {{/with}}
+                 <div class="panel-footer">
+                      <a href="{{pathFor 'updateAgentAndScoutDetail'}}" data-original-title="Edit this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-warning"><i class="fa fa-pencil-square-o"></i>Edit</a>
+                        <span class="pull-right">
+                            <a href="{{pathFor 'agentProfile'}}" data-original-title="Remove this user" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="fa fa-check"></i>Finish</a>
+                        </span>
+                    </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 </template>
