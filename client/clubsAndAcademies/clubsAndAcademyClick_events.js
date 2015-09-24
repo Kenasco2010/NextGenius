@@ -1,5 +1,5 @@
 Template.clubAndAcademyProfile.events({
-    "click #deleteClubAccount":function() {
+    "click #deleteClubAccount":function () {
         //console.log("hellow click me la")
         Meteor.call('deleteAccount', Meteor.userId(), function (e) {
             if (!e) {
@@ -17,9 +17,9 @@ Template.clubAndAcademyProfile.events({
 Template.viewClubAndAcademyDetails.events({
     "click .followClubButton": function () {
         var agentId = Meteor.userId();
-        console.log(agentId)
+        //console.log(agentId)
         var clubId = this._id;
-        console.log(clubId)
+        //console.log(clubId)
         Meteor.call('insertClubFollowers', clubId, agentId, function (e) {
             if (!e) {
                 //alert("you are following this club");

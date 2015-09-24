@@ -11,8 +11,13 @@ Template.agentProfile.helpers({
 	countAgentFollowings: function () {
 	var agentinfo = Router.current().data().agent;
 		var agentFollowing = agentinfo.following;
-		var mycount = agentFollowing.length;
+		if (agentFollowing == undefined){
+			return 0;
+		}else{
+			var mycount = agentFollowing.length;
 			return mycount;
+		}
+
 
 		//console.log(mycount);
 		//return count;
@@ -35,7 +40,7 @@ Template.myFeed.helpers({
 		//return agentPlayerFollows;
 	},
 	playerVideos: function () {
-		var agentId = Agents.findOne({owner: Meteor.userId()});
+		var agentId = Meteor.userId();
 		//console.log(agentId);
 		//return agentId;
 		var agentOwner = agentId.owner;
