@@ -1,107 +1,60 @@
 <template name="navigation">
-	<!--  navigation header -->
-	<!-- <div class="outter-wrapper header-area header-style-3">
-		<div class="wrapper clearfix logo-container">
-			<header>
-				<div class="clearfix">
+		<!-- <div class="outter-wrapper header-style-3"> -->
+	
+         <nav class="navbar" role="navigation" style="background-color:#00632c;">
+         <div class="container">
+         	 <div class="navbar-header">
+            	<a class="brand" href="{{pathFor 'indexPage'}}">
+            		<img src="img/brandlogo.png" width="150px" height="50px" alt="">
+            	</a>
+            
+           
+                    <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav" >
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand scroll-top logo"><b></b></a>
+                </div>
+               {{#if currentUser}}
+                 <div id="main-nav" class="collapse navbar-collapse  right" style="background-color:#00632c;">
+                    <ul class="nav navbar-nav" id="mainNav">
+                        <li class="" id="profiles"><a  class="scroll-link" style="color:#ffffff">Profile</a></li>
+                        <li><a href="#aboutUs" class="scroll-link" style="color:#ffffff">Feeds</a></li>
+                       <ul class="nav navbar-nav navbar-right" style="color:#ffffff">
+			        <li class="dropdown" >
+			          <a href="#" class="dropdown-toggle nav-parent" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:#ffffff">Find <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			            <li style="color:#ffffff"><a href="{{pathFor 'allPlayers'}}">Players</a></li>
+			            <li style="color:#ffffff"><a href="{{pathFor 'allClubAndAcademy'}}">Clubs</a></li>
+			            <li style="color:#ffffff"><a href="{{pathFor 'allAgents'}}">Scouts</a></li>
+			          </ul>
+			        </li>
+			        <li ><a href="{{pathFor 'signout'}}" class="scroll-link" style="color:#ffffff">SignOut</a></li>
+			      	</ul>
+                    </ul>
+                </div>
+			{{else}}
+				 <div id="main-nav" class="collapse navbar-collapse  right" style="background-color:#00632c;">
+                    <ul class="nav navbar-nav" id="mainNav">
+                        <li class="" id="profile"><a href="#" class="scroll-link" style="color:#ffffff">How To</a></li>
+                        <li><a href="#" class="scroll-link" style="color:#ffffff">About</a></li>
+                         <li><a href="#" class="scroll-link" style="color:#ffffff">Contact</a></li>
+                          <li><a href="{{pathFor 'signUp'}}" class="scroll-link" style="color:#ffffff">SignUp</a></li>
+                       <ul class="nav navbar-nav navbar-right" style="color:#ffffff">
+			        	
+			        <li ><a href="{{pathFor 'signIn'}}" class="scroll-link" style="color:#ffffff">LogIn</a></li>
+			      	</ul>
+                    </ul>
+                </div>
+               
+			{{/if}}
 
-					Start Logo
-					<a class="logo centered" href="index.html">
-						<img src="img/nextgenius-logo450slim.gif" alt="NG" />
-					</a>
-
-				</div>
-			</header>
-		</div>
-	</div> -->
-
-	<div class="outter-wrapper header-area header-style-3">
-		<div class="wrapper clearfix logo-container">
-			<header>
-				<div class="clearfix">
-
-					
-					<a class="logo centered" href="index.html">
-						<img src="img/nextgenius-logo450slim.gif" alt="NG" />
-					</a>
-
-				</div>
-			</header>
-		</div>
-	</div>
-
-
-	<!-- Post Header Area -->
-	<div class="outter-wrapper header-area header-style-3">
-		<div class="wrapper clearfix logo-container with-menu">
-
-			<!-- Start Mobile Menu Icon -->
-			<div id="mobile-header" class="">
-				<a id="responsive-menu-button" href="../skin1.1#sidr-main">
-					<em class="fa fa-bars"></em> Menu
-				</a>
-			</div>
-			
-			<header>
-				<div id="navigation" class="clearfix">
-
-					<ul class="menuHideBtn">
-						<li><a id="closebtn" class="fa" href="../skin1.1#">&#xf00d;</a></li>
-					</ul>
-					
-
-					<div class="main-header-left left adjust-left">
-						<a class="logo" href="{{pathFor 'indexPage'}}">
-							<img src="img/nextgenius-logo450slim.gif" alt="Scene" />
-						</a>
-					</div>
-
-
-
-					<div class="main-header-right right adjust-right">
-						<nav class="megamenu_container">
-						<ul id="nav" class="right megamenu">
-						{{#if currentUser}}
-
-							<li class="nav-parent" id="profiles"><a >Profile</a>
-
-						    </li>
-
-						    <li class="nav-parent">
-						    	<a href="">Feeds</a>
-						    </li>
-
-						    <li class="nav-parent">
-						    	<a href="../skin1.1#" class="megamenu_drop">Find<em class="fa">&#xf107;</em></a>
-						    	<ul>
-						    		<li><a href="{{pathFor 'allPlayers'}}">Players</a>
-						    			
-						    		</li>
-						    		
-						    		<li><a href="{{pathFor 'allClubAndAcademy'}}">Clubs</a>
-						    		</li>
-						    		<li><a href="{{pathFor 'allAgents'}}">Scouts</a></li>
-
-						    	</ul>
-
-						    </li>
-
-						    	<li><a href="{{pathFor 'signout'}}" class="">Sign Out</a></li>
-						
-						    {{else}}
-						    <li><a href="#">How To</a></li>
-						    <li><a href="#">About</a></li>
-						    <li><a href="#">Contact</a></li>
-						    <li><a href="{{pathFor 'signUp'}}">SignUp</a></li>
-						    <li><a href="{{pathFor 'signIn'}}">LogIn</a></li>
-						    {{/if}}
-
-						</ul>
-					</nav>
-				</div>
-			</div>
-		</header>
-	</div>
-</div>	    
+            </div>
+         </nav>
+    	
 </template>
+
+
 
