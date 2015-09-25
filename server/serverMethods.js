@@ -9,6 +9,14 @@ Meteor.methods({
         UploadVideos.insert(doc, function(err, id){
         });
     },
+    insertPlayerVideos: function(doc) {
+        UploadPlayerVideos.insert(doc, function(err, id){
+        });
+    },
+    insertClubVideos: function(doc) {
+        UploadClubVideos.insert(doc, function(err, id){
+        });
+    },
     insertPlayerFollowers: function( playerId, agentId) {
         Players.update(playerId ,{$addToSet:{followers:agentId}}, function(err, id){
 

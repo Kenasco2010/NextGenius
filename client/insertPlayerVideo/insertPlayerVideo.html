@@ -1,0 +1,44 @@
+<template name="uploadPlayerVideos">
+        <div class="row">
+            <div class="col-md-4 md-offset-3">
+                {{#autoForm collection="UploadPlayerVideos" id="insertUploadPlayerVideosForm" type="insert"}}
+                    <fieldset>
+                        {{> afQuickField name='videoCaption' label="Please Label your video" placeholder ="Video label"}}
+
+                        <input type="file" class="upload-Player-Videos-file_bag">
+                        <!--<button class="upload">Upload</button>-->
+                        {{#each files}}
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">
+                                    {{percent_uploaded}}%
+                                </div>
+                            </div>
+
+                            {{#if complete}}
+                                <div id="playerVideoDisplay">
+                                    <video width="400" controls class="myvideocontrolclass">
+                                        <source src="{{url}}" type="video/mp4" class="video-thumbnail resetPlayerVideo"/>
+                                    </video>
+                                </div>
+                                <a href="#" data-action="remove-upload-players-video" id="resetplayervideo" class="resetplayervideo"><i class="fa fa-times"></i>Remove Video</a>
+                            {{/if}}
+                        {{/each}}
+                        {{> afQuickField name='videoDescription' label="Please describe your video" placeholder ="Please describe your video" rows= 3}}
+
+                    </fieldset>
+                    <button type="submit" class="btn btn-primary publishPlayerVideoButton">Publish Video</button>
+                {{/autoForm}}
+            </div>
+        </div>
+{{> showVideos}}
+</template>
+
+<template name="showVideos">
+
+    {{#each showallvideos}}
+            <video width="600" height="300" controls>
+                <source src="{{absolutePlayerVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
+            </video>
+    {{/each}}
+
+</template>
