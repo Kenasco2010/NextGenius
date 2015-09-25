@@ -9,6 +9,10 @@ body{
 .toppad{
 	background-color: #11793f!important;
 }
+.img-sizing{
+	height: 158px !important;
+	width: auto;
+ } 
 
 
 
