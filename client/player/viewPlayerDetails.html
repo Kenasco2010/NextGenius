@@ -3,8 +3,6 @@
   <div class="outter-wrapper body-wrapper">
    <div class="wrapper ad-pad clearfix">
      <!-- Start Main Column -->
-
-
      <div class="col-1-1">
        <!-- Start Gallery Section -->
        <div class="clearfix">
@@ -119,9 +117,9 @@
             {{#if viewPlayerVideo}}
               {{#each viewPlayerVideo}}
               <div class="col-md-4">
-                <a class="thumbnail" href="{{pathFor 'thisVideos' _id=_id}}">
+                <a class="thumbnail" href="{{pathFor 'playerVideosPage' _id=_id}}">
                     <video  >
-                 <source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">
+                 <source src="{{absolutePlayerVideoUrl}}" width="1024" height="552" type="video/mp4">
               </video>
                 </a>
               </div> 

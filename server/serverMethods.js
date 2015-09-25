@@ -5,10 +5,10 @@ Meteor.methods({
        }
        // console.log(userId)
     },
-    insertVideos: function(doc) {
-        UploadVideos.insert(doc, function(err, id){
-        });
-    },
+    //insertVideos: function(doc) {
+    //    UploadVideos.insert(doc, function(err, id){
+    //    });
+    //},
     insertPlayerVideos: function(doc) {
         UploadPlayerVideos.insert(doc, function(err, id){
         });

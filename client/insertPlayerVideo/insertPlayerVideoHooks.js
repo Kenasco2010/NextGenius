@@ -7,7 +7,6 @@ AutoForm.hooks({
             doc.delivery_status = "not-delivered"
             doc.userType = Session.get('userType');
             doc.myId = Players.findOne({owner: Meteor.userId()})._id;
-
             console.log(Router.current().params._id);
             //doc.owner = Meteor.userId();
             return doc;

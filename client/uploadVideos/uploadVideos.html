@@ -1,120 +1,120 @@
-<template name="uploadVideos">
-    <div class="rows">
-        <div class="col-md-4 col-md-offset-3">
-            {{#autoForm collection="UploadVideos" id="insertUploadVideosForm" type="insert"}}
-                <fieldset>
-                    {{> afQuickField name='videoCaption' label="Please Label your video" placeholder ="Video label"}}
+<!--<template name="uploadVideos">-->
+    <!--<div class="rows">-->
+        <!--<div class="col-md-4 col-md-offset-3">-->
+            <!--{{#autoForm collection="UploadVideos" id="insertUploadVideosForm" type="insert"}}-->
+                <!--<fieldset>-->
+                    <!--{{> afQuickField name='videoCaption' label="Please Label your video" placeholder ="Video label"}}-->
 
-                    <input type="file" class="upload-players-video-file_bag">
-                    <!--<button class="upload">Upload</button>-->
-                    {{#each files}}
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">
-                                {{percent_uploaded}}%
-                            </div>
-                        </div>
+                    <!--<input type="file" class="upload-players-video-file_bag">-->
+                    <!--&lt;!&ndash;<button class="upload">Upload</button>&ndash;&gt;-->
+                    <!--{{#each files}}-->
+                        <!--<div class="progress">-->
+                            <!--<div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">-->
+                                <!--{{percent_uploaded}}%-->
+                            <!--</div>-->
+                        <!--</div>-->
 
-                        {{#if complete}}
-                            <div id="videoDisplay">
-                                <video width="400" controls class="myvideocontrolclass">
-                                    <source src="{{url}}" type="video/mp4" class="video-thumbnail resetVideo"/>
-                                </video>
-                            </div>
-                            <a href="#" data-action="remove-upload-players-video" class="resetimage"><i class="fa fa-times"></i>Remove Video</a>
-                        {{/if}}
-                    {{/each}}
-                </fieldset>
-                <button type="submit" class="btn btn-primary publishVideoButton">Publish Video</button>
-            {{/autoForm}}
-        </div>
-    </div>
-</template>
+                        <!--{{#if complete}}-->
+                            <!--<div id="videoDisplay">-->
+                                <!--<video width="400" controls class="myvideocontrolclass">-->
+                                    <!--<source src="{{url}}" type="video/mp4" class="video-thumbnail resetVideo"/>-->
+                                <!--</video>-->
+                            <!--</div>-->
+                            <!--<a href="#" data-action="remove-upload-players-video" class="resetimage"><i class="fa fa-times"></i>Remove Video</a>-->
+                        <!--{{/if}}-->
+                    <!--{{/each}}-->
+                <!--</fieldset>-->
+                <!--<button type="submit" class="btn btn-primary publishVideoButton">Publish Video</button>-->
+            <!--{{/autoForm}}-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</template>-->
 
-<template name="viewPlayerVideos">
-<div class="container">
-  <div class='row'>
-    <div class='col-md-12'>
-      <div class="carousel slide media-carousel" id="media">
-        <div class="carousel-inner">
-          <div class="item  active">
-          
-            <div class="item">
-            <div class="row">
-            {{#each playerVideos}}
-              <div class="col-md-4">
+<!--<template name="viewPlayerVideos">-->
+<!--<div class="container">-->
+  <!--<div class='row'>-->
+    <!--<div class='col-md-12'>-->
+      <!--<div class="carousel slide media-carousel" id="media">-->
+        <!--<div class="carousel-inner">-->
+          <!--<div class="item  active">-->
+          <!---->
+            <!--<div class="item">-->
+            <!--<div class="row">-->
+            <!--{{#each playerVideos}}-->
+              <!--<div class="col-md-4">-->
 
-                  <a class="thumbnail" href="{{pathFor 'thisVideos' _id=_id}}">
-                    <video >
-                   <source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">
-                </video>
-                      <!--{{> favoriteButton _id=_id}} - {{favoriteCount _id}}-->
-                </a>
-              
-              </div>
-           {{/each}}
-            </div>
-              <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
-              <a data-slide="next" href="#media" class="right carousel-control">›</a>
-            </div>                          
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-</template>
-
-
+                  <!--<a class="thumbnail" href="{{pathFor 'thisVideos' _id=_id}}">-->
+                    <!--<video >-->
+                   <!--<source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">-->
+                <!--</video>-->
+                      <!--&lt;!&ndash;{{> favoriteButton _id=_id}} - {{favoriteCount _id}}&ndash;&gt;-->
+                <!--</a>-->
+              <!---->
+              <!--</div>-->
+           <!--{{/each}}-->
+            <!--</div>-->
+              <!--<a data-slide="prev" href="#media" class="left carousel-control">‹</a>-->
+              <!--<a data-slide="next" href="#media" class="right carousel-control">›</a>-->
+            <!--</div>                          -->
+          <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<!--</div>-->
+<!--</template>-->
 
 
 
 
 
-<template name="viewClubVideos">
-  <!--   <div class="row">
-        <div class="col-md-5 col md-offset-3">
-            <p>
-            <hr/>
-            {{#each clubVideos}}
-                <video width="600" height="300" controls>
-                    <source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
 
-                </video>
-                {{> favoriteButton _id=_id}} - {{favoriteCount _id}}
 
-            {{/each}}
-            </p>
-        </div>
-    </div> -->
+<!--<template name="viewClubVideos">-->
+  <!--&lt;!&ndash;   <div class="row">-->
+        <!--<div class="col-md-5 col md-offset-3">-->
+            <!--<p>-->
+            <!--<hr/>-->
+            <!--{{#each clubVideos}}-->
+                <!--<video width="600" height="300" controls>-->
+                    <!--<source src="{{absoluteVideoUrl}}" type="video/mp4" class="video-thumbnail"/>-->
 
-<div class="container">
-  <div class='row'>
-    <div class='col-md-12'>
-      <div class="carousel slide media-carousel" id="media">
-        <div class="carousel-inner">
-          <div class="item  active">
-          
-            <div class="item">
-            <div class="row">
-            {{#each clubVideos}}
-              <div class="col-md-4">
-              
-                <a class="thumbnail" href="#"><video controls loop>
-                   <source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">
-                </video>{{> favoriteButton _id=_id}} - {{favoriteCount _id}}
-                </a>
-              
-              </div>
-           {{/each}}
-            </div>
-              <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
-              <a data-slide="next" href="#media" class="right carousel-control">›</a>
-            </div>                          
-          </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
-    
-</template>
+                <!--</video>-->
+                <!--{{> favoriteButton _id=_id}} - {{favoriteCount _id}}-->
+
+            <!--{{/each}}-->
+            <!--</p>-->
+        <!--</div>-->
+    <!--</div> &ndash;&gt;-->
+
+<!--<div class="container">-->
+  <!--<div class='row'>-->
+    <!--<div class='col-md-12'>-->
+      <!--<div class="carousel slide media-carousel" id="media">-->
+        <!--<div class="carousel-inner">-->
+          <!--<div class="item  active">-->
+          <!---->
+            <!--<div class="item">-->
+            <!--<div class="row">-->
+            <!--{{#each clubVideos}}-->
+              <!--<div class="col-md-4">-->
+              <!---->
+                <!--<a class="thumbnail" href="#"><video controls loop>-->
+                   <!--<source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">-->
+                <!--</video>{{> favoriteButton _id=_id}} - {{favoriteCount _id}}-->
+                <!--</a>-->
+              <!---->
+              <!--</div>-->
+           <!--{{/each}}-->
+            <!--</div>-->
+              <!--<a data-slide="prev" href="#media" class="left carousel-control">‹</a>-->
+              <!--<a data-slide="next" href="#media" class="right carousel-control">›</a>-->
+            <!--</div>                          -->
+          <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<!--</div>-->
+    <!---->
+<!--</template>-->

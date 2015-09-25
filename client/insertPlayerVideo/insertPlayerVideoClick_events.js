@@ -36,8 +36,9 @@ Template.uploadPlayerVideos.events({
                 else {
                     this.status = 'removed';
                     reset_form_element( $('.upload-Player-Videos-file_bag') );
-                    $("#imageThumbnail .myvideocontrolclass").attr("src", "");
+                    $("#playerVideoDisplay .myvideocontrolclass").attr("src", "");
                     $('.video-thumbnail').hide();
+                    $('.myvideocontrolclass').hide();
                     $("[data-action='remove-upload-players-video']").hide();
                     $(".progress").remove();
                 }

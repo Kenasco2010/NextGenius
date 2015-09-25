@@ -1,6 +1,5 @@
 <template name="uploadPlayerVideos">
-        <div class="row">
-            <div class="col-md-4 md-offset-3">
+
                 {{#autoForm collection="UploadPlayerVideos" id="insertUploadPlayerVideosForm" type="insert"}}
                     <fieldset>
                         {{> afQuickField name='videoCaption' label="Please Label your video" placeholder ="Video label"}}
@@ -28,12 +27,11 @@
                     </fieldset>
                     <button type="submit" class="btn btn-primary publishPlayerVideoButton">Publish Video</button>
                 {{/autoForm}}
-            </div>
-        </div>
-{{> showVideos}}
+
+{{> showPlayerVideos}}
 </template>
 
-<template name="showVideos">
+<template name="showPlayerVideos">
 
     {{#each showallvideos}}
             <video width="600" height="300" controls>

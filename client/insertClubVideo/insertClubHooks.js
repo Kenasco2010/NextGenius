@@ -4,10 +4,9 @@ AutoForm.hooks({
         formToDoc: function(doc, ss, formId) {
             doc.relativeClubVideoUrl = Session.get('relativeClubVideoUrl');
             doc.absoluteClubVideoUrl = Session.get('absoluteClubVideoUrl');
-            doc.delivery_status = "not-delivered"
-            //doc.userType = Session.get('userType');
-            //doc.myId = Clubs.findOne({owner: Meteor.userId()})._id;
-
+            doc.delivery_status = "not-delivered";
+            doc.userType = Session.get('userType');
+            doc.myId = Clubs.findOne({owner: Meteor.userId()})._id;
             console.log(Router.current().params._id);
             //doc.owner = Meteor.userId();
             return doc;

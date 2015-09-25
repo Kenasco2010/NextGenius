@@ -1,11 +1,10 @@
 <template name="uploadClubVideos">
-    <div class="row">
-        <div class="col-md-4 md-offset-3">
+
             {{#autoForm collection="UploadClubVideos" id="insertUploadClubVideosForm" type="insert"}}
                 <fieldset>
                     {{> afQuickField name='videoCaption' label="Please Label your video" placeholder ="Video label"}}
 
-                    <input type="file" class="upload-club-Videos-file_bag">
+                    <input type="file" class="upload-club-Videos-file_bag" id="clubVideo">
                     <!--<button class="upload">Upload</button>-->
                     {{#each files}}
                         <div class="progress">
@@ -28,9 +27,8 @@
                 </fieldset>
                 <button type="submit" class="btn btn-primary publishClubVideoButton">Publish Video</button>
             {{/autoForm}}
-        </div>
-    </div>
-    {{> showVideos}}
+
+    {{> showClubVideos}}
 </template>
 
 <template name="showClubVideos">
