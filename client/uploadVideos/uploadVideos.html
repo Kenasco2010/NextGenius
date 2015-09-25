@@ -3,7 +3,7 @@
         <div class="col-md-4 col-md-offset-3">
             {{#autoForm collection="UploadVideos" id="insertUploadVideosForm" type="insert"}}
                 <fieldset>
-                    {{> afQuickField name='videoCaption' label="Please Upload a Video"}}
+                    {{> afQuickField name='videoCaption' label="Please Label your video" placeholder ="Video label"}}
 
                     <input type="file" class="upload-players-video-file_bag">
                     <!--<button class="upload">Upload</button>-->
@@ -42,10 +42,12 @@
             <div class="row">
             {{#each playerVideos}}
               <div class="col-md-4">
-              
-                <a class="thumbnail" href="#"><video controls loop>
+
+                  <a class="thumbnail" href="{{pathFor 'thisVideos' _id=_id}}">
+                    <video >
                    <source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">
-                </video>{{> favoriteButton _id=_id}} - {{favoriteCount _id}}
+                </video>
+                      <!--{{> favoriteButton _id=_id}} - {{favoriteCount _id}}-->
                 </a>
               
               </div>

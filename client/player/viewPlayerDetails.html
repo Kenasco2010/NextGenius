@@ -24,7 +24,7 @@
                                <br/>
 
                                <li>
-                                  {{firstName}}&nbsp;{{lastName}}
+                                 <strong>{{firstName}}&nbsp;{{lastName}}</strong>
                                </li>
                                <li>
                                   {{gender}}
@@ -92,7 +92,8 @@
                                      <div class="row">
                                        <div class="col-md-6">
                                       <span class="playerFollowers">
-                                       <a href="#" class="btn btn-primary AgentButton">{{countPlayerFollowers}} Follower(s)</a></span>
+                                       <a href="#" class="btn btn-primary AgentButton">{{countPlayerFollowers}} Follower(s)</a>
+                                       <a href="#" class="btn btn-primary AgentButton">Contact Me</a></span>
                                        <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
                                      </div>
                                    </div>
@@ -122,9 +123,11 @@
             {{#if viewPlayerVideo}}
               {{#each viewPlayerVideo}}
               <div class="col-md-4">
-                <a class="thumbnail" href="#"><video controls  loop>
+                <a class="thumbnail" href="{{pathFor 'thisVideos' _id=_id}}">
+                    <video  >
                  <source src="{{absoluteVideoUrl}}" width="1024" height="552" type="video/mp4">
-              </video></a>
+              </video>
+                </a>
               </div> 
                 {{/each}}
               {{else}}
