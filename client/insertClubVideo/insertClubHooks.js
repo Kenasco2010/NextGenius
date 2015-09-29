@@ -16,6 +16,7 @@ AutoForm.hooks({
         },
         onSubmit: function (insertDoc, updateDoc, currentDoc) {
             Meteor.call('insertClubVideos', insertDoc, function (error, result) {
+                console.log("hellooooo")
                 if (error) {
                     this.done(new Error(error));
                 }
