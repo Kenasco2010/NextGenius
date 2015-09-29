@@ -3,35 +3,36 @@ Template.uploadClubVideos.events({
     "change .upload-club-Videos-file_bag": function(event, template){
         var getvideo = $(".upload-club-Videos-file_bag");
        var  getVideoSize = getvideo[0].files[0].size;
-        //var fileSize = getVideoSize / 1048576;
-        //alert(getvideo)
-        //var getVideoSize = $('#clubVideo').validate({
-        //    rules: { inputimage: { required: true, accept: "png|jpe?g|gif", filesize: 1048576  }},
-        //    messages: { inputimage: "File must be JPG, GIF or PNG, less than 1MB" }
-        //});
-        alert(getVideoSize);
-        sAlert.info('Please wait while we upload your video');
-        //alert("helloooooo")
-        var files = $("input.upload-club-Videos-file_bag")[0].files
-        S3.upload({
-            files:files,
-            path:"clubVideos",
-            unique_name: false,
-            acl: "public-read"
-        },function(error, success){
-            if (error) {
-                swal('we are sorry, something went wrong');
-            }
-            else {
-                Session.set('fileExists', true);
-                Session.set('absoluteClubVideoUrl', success.url);
-                Session.set('relativeClubVideoUrl', success.relative_url);
-                Session.set('percent_uploaded', success.percent_uploaded);
-                sAlert.success('You have successfully uploaded your video');
+        var fileSize = getVideoSize / 1048576;
+        var fileSizeInMB = fileSize.toFixed(2);
+        var clubVideoSize = 50;
+        if (fileSizeInMB < clubVideoSize || fileSizeInMB == clubVideoSize){
+            sAlert.info('Please wait while we upload your video');
+            //alert("helloooooo")
+            var files = $("input.upload-club-Videos-file_bag")[0].files;
+            S3.upload({
+                files:files,
+                path:"clubVideos",
+                unique_name: false,
+                acl: "public-read"
+            },
+             function(error, success){
+                if (error) {
+                    swal('we are sorry, something went wrong');
+                }
+                else {
+                    Session.set('fileExists', true);
+                    Session.set('absoluteClubVideoUrl', success.url);
+                    Session.set('relativeClubVideoUrl', success.relative_url);
+                    Session.set('percent_uploaded', success.percent_uploaded);
+                    sAlert.success('You have successfully uploaded your video');
 
 
-            }
-        });
+                }
+            });
+        }else{
+            alert("Your Video should be 50MB or less!")
+        }
     },
     "click [data-action='remove-upload-club-video']": function() {
         sAlert.warning('You have removed your video');
