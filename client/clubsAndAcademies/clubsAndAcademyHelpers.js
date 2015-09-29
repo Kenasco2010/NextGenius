@@ -21,7 +21,7 @@ Template.clubAndAcademyProfile.helpers({
 
 Template.updateClubAndAcademy.helpers({
     doc: function(){
-        return Clubs.findOne();
+        return Clubs.findOne(Session.get("clubId"));
     }
 });
 
@@ -149,3 +149,4 @@ Template.insertClubsAndAcademy1.rendered = function () {
 
 $(".btn-default").attr('id', 'registerClubbtn');
 };
+

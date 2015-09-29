@@ -26,7 +26,7 @@ Template.updatePlayerProfile.helpers({
 
 Template.updatePlayerProfile.helpers({
   updateDoc: function(){
-    return Players.findOne();
+    return Players.findOne(Session.get("profileId"));
   }
 });
 

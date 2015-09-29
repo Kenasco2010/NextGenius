@@ -191,3 +191,9 @@ reset_form_element = function(e) {
     e.wrap('<form>').parent('form').trigger('reset');
     e.unwrap();
 };
+
+Template.playerProfile.events({
+    'click #update': function () {
+        Session.set("profileId", this._id);
+    }
+});

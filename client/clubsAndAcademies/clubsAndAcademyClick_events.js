@@ -184,3 +184,9 @@ reset_form_element = function(e) {
     e.wrap('<form>').parent('form').trigger('reset');
     e.unwrap();
 };
+
+Template.clubAndAcademyProfile.events({
+    'click #update': function () {
+        Session.set("clubId", this._id)
+    }
+})

@@ -124,6 +124,6 @@ Template.updateAgentAndScoutDetail.helpers({
 	},
 	updateAgent: function() {
 		var id = Meteor.userId();
-		return Agents.findOne({ "owner": id });
+		return Agents.findOne(Session.get("agentProfileId"));
 	}
 });

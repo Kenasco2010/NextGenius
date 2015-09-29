@@ -102,3 +102,9 @@ reset_form_element = function(e) {
     e.wrap('<form>').parent('form').trigger('reset');
     e.unwrap();
 };
+
+Template.agentProfile.events({
+    'click #update': function () {
+        Session.set("agentProfileId", this._id)
+    }
+})
