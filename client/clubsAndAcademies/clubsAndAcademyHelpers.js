@@ -19,6 +19,12 @@ Template.clubAndAcademyProfile.helpers({
     }
 });
 
+Template.insertClubsAndAcademy1.rendered = function () {
+$(".progress").remove();
+$(".resetclubimage").remove();
+$("#imageThumbnail").remove();
+};
+
 Template.updateClubAndAcademy.helpers({
     doc: function(){
         return Clubs.findOne(Session.get("clubId"));

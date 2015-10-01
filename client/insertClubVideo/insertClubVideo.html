@@ -1,0 +1,42 @@
+<template name="uploadClubVideos">
+
+            {{#autoForm collection="UploadClubVideos" id="insertUploadClubVideosForm" type="insert"}}
+                <fieldset>
+                    {{> afQuickField name='videoCaption' label="Please Label your video" placeholder ="Video label"}}
+
+                    <input type="file" class="upload-club-Videos-file_bag" id="clubVideo">
+                    <!--<button class="upload">Upload</button>-->
+                    {{#each files}}
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{percent_uploaded}}" aria-valuemin="0" aria-valuemax="100" style="width: {{percent_uploaded}}%">
+                                {{percent_uploaded}}%
+                            </div>
+                        </div>
+
+                        {{#if complete}}
+                            <div id="clubVideoDisplay">
+                                <video width="400" controls class="myClubVideoControlClass">
+                                    <source src="{{url}}" type="video/mp4" class="club-video-thumbnail resetClubVideo"/>
+                                </video>
+                            </div>
+                            <a href="#" data-action="remove-upload-club-video" id="resetclubvideo" class="resetclubvideo"><i class="fa fa-times"></i>Remove Video</a>
+                        {{/if}}
+                    {{/each}}
+                    {{> afQuickField name='videoDescription' label="Please describe your video" placeholder ="Please describe your video" rows= 3}}
+
+                </fieldset>
+                <button type="submit" class="btn btn-primary publishClubVideoButton">Publish Video</button>
+            {{/autoForm}}
+
+    {{> showClubVideos}}
+</template>
+
+<template name="showClubVideos">
+
+    {{#each showallclubvideos}}
+        <video width="600" height="300" controls>
+            <source src="{{absoluteClubVideoUrl}}" type="video/mp4" class="video-thumbnail"/>
+        </video>
+    {{/each}}
+
+</template>

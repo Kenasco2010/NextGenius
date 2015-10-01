@@ -85,9 +85,55 @@
 
 {{/with}}
 
+<div class="container">
+<div class="row">
+    <div class="col-md-6 col-md-offset-3">
+        <h4>Please upload your <u>Best</u> video</h4>
+        {{> uploadPlayerVideos}}
+    </div>
+</div>
+
+</div>
+    <!--{{#each playerVideos}}-->
+        <!--<video width="600" height="300" controls>-->
+            <!--<source src="{{absolutePlayerVideoUrl}}" type="video/mp4" class="video-thumbnail"/>-->
+        <!--</video>-->
+        <!--{{/each}}-->
 
 
-{{> uploadVideos}}
-{{> viewPlayerVideos}}
 
+    <div class="container">
+        <div class='row'>
+            <div class='col-md-12'>
+                <div class="carousel slide media-carousel" id="media">
+                    <div class="carousel-inner">
+                        <div class="item  active">
+
+                            <div class="item">
+                                <div class="row">
+                                    {{#if playerVideos}}
+                                        {{#each playerVideos}}
+                                            <div class="col-md-4">
+                                                    <video  controls>
+                                                        <source src="{{absolutePlayerVideoUrl}}" width="1024" height="552" type="video/mp4">
+                                                    </video>
+                                                Video Title: {{videoCaption}}<br/>
+                                                Video Description: {{videoDescription}}
+                                            </div>
+                                        {{/each}}
+                                    {{else}}
+                                        <h2>&nbsp;No Videos uploaded </h2>
+                                    {{/if}}
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
+                    <a data-slide="next" href="#media" class="right carousel-control">›</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </template>
