@@ -14,7 +14,7 @@
     margin-top:15px;
 }
 .brand img{
-    margin-top: 5px
+    margin-top: 15px
 }
 @media (max-width:768px) {
     .brand img{
@@ -29,4 +29,7 @@
 }
 #nav-toggle{
     background-color: #ffffff;
+}
+.navbar {
+    border-radius: 0px;
 }
