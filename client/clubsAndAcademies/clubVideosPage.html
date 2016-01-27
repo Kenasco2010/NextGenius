@@ -14,41 +14,52 @@
                                         <source src="{{absoluteClubVideoUrl}}" width="1024" height="552" type="video/mp4">
                                     </video>
                                     Video Title: {{videoCaption}}
-                                    Video Description: {{videoDescription}}
+                                    Video Description: {{videoDescription}}<br/>
+                                    <span class="likes">{{> favoriteButton _id=_id}} - {{favoriteCount _id}}</span>
+
                                 {{/with}}
+                                <div class="container">
 
                                 <ul class="row">
+                                    <ul class="list-unstyled video-list-thumbs row">
+                                        <li class="col-lg-3 col-sm-4 col-xs-6">
 
-
-                                    <div class='col-md-12'>
-                                        <div class="carousel slide media-carousel" id="media">
-                                            <div class="carousel-inner">
-                                                <div class="item active">
-                                                    <div class="item">
-                                                        <div class="row">
-                                                            <div class="col-md-6">
+                                    <!--<div class='col-md-12'>-->
+                                        <!--<div class="carousel slide media-carousel" id="media">-->
+                                            <!--<div class="carousel-inner">-->
+                                                <!--<div class="item active">-->
+                                                    <!--<div class="item">-->
+                                                        <!--<div class="row">-->
+                                                            <!--<div class="col-md-6">-->
                                                                 <!--<a class="thumbnail" href="#">-->
                                                                 {{#each clubVideos}}
                                                                     <a class="thumbnail" href="{{pathFor 'clubVideosPage' _id=_id}}" onclick="window.location.href=this">
                                                                         <video >
                                                                             <source src="{{absoluteClubVideoUrl}}" width="900" height="552" type="video/mp4">
                                                                         </video>
+                                                                        <span class="glyphicon glyphicon-play-circle"></span>
+                                                                        <h2>{{videoCaption}}</h2>
+
                                                                     </a>
                                                                 {{/each}}
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                            <!--</div>-->
+                                                        <!--</div>-->
+                                                    <!--</div>-->
+                                                <!--</div>-->
 
-                                            </div>
-                                            <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
-                                            <a data-slide="next" href="#media" class="right carousel-control">›</a>
-                                        </div>
-                                    </div>
+                                            <!--</div>-->
+                                            <!--<a data-slide="prev" href="#media" class="left carousel-control">‹</a>-->
+                                            <!--<a data-slide="next" href="#media" class="right carousel-control">›</a>-->
+                                        <!--</div>-->
+                                    </li>
+                                    </ul>
+
+                                    <!--</div>-->
 
 
                                 </ul>
                             </div>
+                                </div>
 
                             <div class="col-1-3">
                                 <div class="container">

@@ -30,8 +30,10 @@
                                <li>
                                   {{originCountry}}
                                </li>
+                                {{#if ownDoc}}
                                <a href="#" class="btn btn-primary unFollowPlayerButton" name="unFollowPlayerButton">Unfollow</a>
                                <a href="#" class="btn btn-primary followPlayerButton" name="followPlayerButton">Follow</a>
+                                {{/if}}
                           </ul>
                        </div>
 
@@ -110,42 +112,46 @@
                    </div>
                    {{/with}}
 <div class="container">
-  <div class='row'>
-    <div class='col-md-12'>
-      <div class="carousel slide media-carousel" id="media">
-        <div class="carousel-inner">
-          <div class="item  active">
-          
-            <div class="item">
-            <div class="row">
+  <!--<div class='row'>-->
+    <!--<div class='col-md-12'>-->
+      <!--<div class="carousel slide media-carousel" id="media">-->
+        <!--<div class="carousel-inner">-->
+          <!--<div class="item  active">-->
+          <!---->
+            <!--<div class="item">-->
+            <!--<div class="row">-->
+                <ul class="list-unstyled video-list-thumbs row">
+                    <li class="col-lg-3 col-sm-4 col-xs-6">
             {{#if viewPlayerVideo}}
               {{#each viewPlayerVideo}}
-              <div class="col-md-4">
-                <a class="thumbnail" href="{{pathFor 'playerVideosPage' _id=_id}}">
+              <!--<div class="col-md-4">-->
+                <a class="thumbnail video-link" href="{{pathFor 'playerVideosPage' _id=_id}}">
                     <video  >
-                 <source src="{{absolutePlayerVideoUrl}}" width="1024" height="552" type="video/mp4">
-              </video>
+                        <source src="{{absolutePlayerVideoUrl}}" width="1024" height="552" type="video/mp4">
+                    </video>
+                    <span class="glyphicon glyphicon-play-circle"></span>
+                    <h2>{{videoCaption}}</h2>
                 </a>
-              </div> 
+                  Video ratings:  {{favoriteCount _id}}
+              <!--</div> -->
                 {{/each}}
               {{else}}
           <h2>&nbsp;No Videos for this player</h2>
-          {{/if}}    
-            </div>
-          </div>
-         
-            
-          </div>
-          {{#if currentUser}}
-          {{else}}
-            <a href="#" class="btn btn-primary">Likes</a>
-                       <span class="likes"></span>
           {{/if}}
-        </div>
-        <a data-slide="prev" href="#media" class="left carousel-control">‹</a>
-        <a data-slide="next" href="#media" class="right carousel-control">›</a>
-      </div>                          
-    </div>
-  </div>
-</div>
+                    </li>
+                    </ul>
+            </div>
+          <!--</div>-->
+         <!---->
+            <!---->
+          <!--</div>-->
+        <!--</div>-->
+        <!--<a data-slide="prev" href="#media" class="left carousel-control">‹</a>-->
+        <!--<a data-slide="next" href="#media" class="right carousel-control">›</a>-->
+      <!--</div>                          -->
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+
+
 </template>

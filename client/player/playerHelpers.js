@@ -54,6 +54,14 @@ Template.viewPlayerDetails.helpers({
       var countFollowers = playerFollowers.length;
       return countFollowers;
     }
+  },
+  ownDoc: function () {
+    if (this.owner === Meteor.userId()){
+      $(".unFollowPlayerButton").hide();
+      $(".followPlayerButton").hide();
+    }
+
+
   }
 });
 

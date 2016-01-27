@@ -73,8 +73,13 @@ Template.viewClubAndAcademyDetails.helpers({
             return clubCount;
         }
       //return this.followers.length;
-  }
-
+  },
+    ownDoc: function () {
+        if (this.owner === Meteor.userId()) {
+            $(".unFollowClubButton").hide();
+            $(".followClubButton").hide();
+        }
+    }
 });
 
 Template.viewClubAndAcademyDetails.rendered = function () {
