@@ -33,4 +33,5 @@
 .navbar {
     border-radius: 0px;
     background-color: #FEFCFF;
+    border-bottom: 2px solid #00632C;
 }
