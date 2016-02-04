@@ -1,14 +1,13 @@
 <template name="navigation">
+
   <!-- <div class="outter-wrapper header-style-3"> -->
   
-  <nav class="navbar" role="navigation"  style="background-color:#FEFCFF">
+  <nav class="navbar " role="navigation"  style="">
    <!-- style="background-color:#00632c;" -->
    <div class="container">
      <div class="navbar-header">
        <a class="brand" href="{{pathFor 'indexPage'}}">
-
-          <img src="img/logo2.jpg" width="150px" height="50px" alt="">
-
+        <img src="img/logo2.jpg" width="150px" height="50px" alt="">
       </a>
       
       
@@ -17,48 +16,48 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
-    </button>
-    <a href="#" class="navbar-brand scroll-top logo"><b></b></a>
-</div>
-{{#if currentUser}}
-<div id="main-nav" class="collapse navbar-collapse  right" style="background-color:#00632c;">
-    <ul class="nav navbar-nav" id="mainNav">
-        <li class="" id="profiles"><a  class="scroll-link" style="color:#ffffff">Profile</a></li>
-        <li><a href="#aboutUs" class="scroll-link" style="color:#ffffff">Feeds</a></li>
-        <ul class="nav navbar-nav navbar-right" style="color:#ffffff">
+      </button>
+      <a href="#" class="navbar-brand scroll-top logo"><b></b></a>
+    </div>
+    {{#if currentUser}}
+    <div id="main-nav" class="collapse navbar-collapse  right" >
+      <ul class="nav navbar-nav" id="mainNav">
+        <li class="" id="profiles"><a  class="scroll-link" style="color:#000000">Profile</a></li>
+        <li><a href="#aboutUs" class="scroll-link" style="color:#000000">Feeds</a></li>
+        <ul class="nav navbar-nav navbar-right" style="color:#000000">
          <li class="dropdown" >
-           <a href="#" class="dropdown-toggle nav-parent" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:#ffffff">Find <span class="caret"></span></a>
+           <a href="#" class="dropdown-toggle nav-parent" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color:#000000">Find <span class="caret"></span></a>
            <ul class="dropdown-menu">
-             <li style="color:#ffffff"><a href="{{pathFor 'allPlayers'}}">Players</a></li>
-             <li style="color:#ffffff"><a href="{{pathFor 'allClubAndAcademy'}}">Clubs</a></li>
-             <li style="color:#ffffff"><a href="{{pathFor 'allAgents'}}">Scouts</a></li>
-         </ul>
-     </li>
-     <li ><a href="{{pathFor 'signout'}}" class="scroll-link" style="color:#ffffff">SignOut</a></li>
- </ul>
-</ul>
-</div>
-{{else}}
-<div id="main-nav" class="collapse navbar-collapse  right" style="color:#ffffff">
-   <!-- style="background-color:#00632c;" -->
-   <ul class="nav navbar-nav" id="mainNav">
-    <li class="" id="profile"><a href="#" class="scroll-link" style="color:#000000">How To</a></li>
-    <li><a href="#" class="scroll-link" style="color:#000000">About</a></li>
-    <li><a href="#" class="scroll-link" style="color:#000000">Contact</a></li>
-    <li><a href="{{pathFor 'signUp'}}" class="scroll-link" style="color:#000000">SignUp</a></li>
-    <ul class="nav navbar-nav navbar-right" style="color:#000000">
-        
-     <li ><a href="{{pathFor 'signIn'}}" class="scroll-link" style="color:#000000">LogIn</a></li>
- </ul>
-</ul>
-</div>
+             <li style="color:#000000"><a href="{{pathFor 'allPlayers'}}">Players</a></li>
+             <li style="color:#000000"><a href="{{pathFor 'allClubAndAcademy'}}">Clubs</a></li>
+             <li style="color:#000000"><a href="{{pathFor 'allAgents'}}">Scouts</a></li>
+           </ul>
+         </li>
+         <li ><a href="{{pathFor 'signout'}}" class="scroll-link" style="color:#000000">SignOut</a></li>
+       </ul>
+     </ul>
+   </div>
+   {{else}}
+   <div id="main-nav" class="collapse navbar-collapse  right" style="color:#000000">
+     <!-- style="background-color:#00632c;" -->
+     <ul class="nav navbar-nav" id="mainNav">
+                        <!-- <li class="" id="profile"><a href="#" class="scroll-link" style="color:#000000">How To</a></li>
+                        <li><a href="#" class="scroll-link" style="color:#000000">About</a></li>
+                        <li><a href="#" class="scroll-link" style="color:#000000">Contact</a></li> -->
+                        <li><a href="{{pathFor 'signUp'}}" class="scroll-link" style="color:#000000">SignUp</a></li>
+                        <ul class="nav navbar-nav navbar-right" style="color:#000000">
+                          
+                         <li ><a href="{{pathFor 'signIn'}}" class="scroll-link" style="color:#000000">LogIn</a></li>
+                       </ul>
+                     </ul>
+                   </div>  
+                   
+                   {{/if}}
 
-{{/if}}
-
-</div>
-</nav>
-
-</template>
+                 </div>
+               </nav>
+               
+             </template>
 
 
 
