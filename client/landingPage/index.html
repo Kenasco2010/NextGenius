@@ -7,20 +7,22 @@
 </head>
 
 
-<template name="landingPage">
+<template name="emailPage">
     <section class="container-fluid" id="section1" style="background:center no-repeat fixed url(img/soccerbg.jpg);">
    
 	    <div class="v-center">
 	        <h1 class="text-center">NextGenius</h1>
 	        <h2 class="text-center lato animate slideInDown">Get Discovered  <b>Now</b></h2>
-	    <div class="col-lg-4 col-md-3 col-xs-12"></div>
-		<div class="col-lg-4 col-md-12 col-xs-10">
+	    
+		<div class="col-lg-6 col-lg-offset-3 col-md-12 col-xs-10">
 	        <p class="text-center">
 
 	    {{#autoForm collection="Emails" id="insertEmailsForm" type="insert" }}
 
 	    	<br/>
-		     <div class="form-group">
+	    	<div class="container inputEmail">
+	    		<div class="row">
+	    			  <div class="form-group">
 		    	{{> afQuickField name='fullname' placeholder="Please Enter Your Name Here"}}
 		    	<br/>
 		    	{{> afQuickField name='email' placeholder="Please Enter Email or Phone Number Here"}}
@@ -28,6 +30,9 @@
 
 		        <button class="btn btn-danger btn-lg btn-huge lato" type="submit" id="submitemail">GET NOTIFIED</button>
 		   	</div>
+	    		</div>
+	    	</div>
+		   
 	    	
 	    {{/autoForm}}
 	        </p>

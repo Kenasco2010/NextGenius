@@ -29,6 +29,11 @@ a:hover {
     color:#111;
 }
 
+
+.btn{
+    background-color: #111
+}
+
 .btn,.well,.panel {
     border-radius:0;
 }
@@ -70,6 +75,22 @@ section {
         position: absolute;
         top: 0; left: 0; bottom: 0; right: 0;
     }
+}
+
+.inputEmail{
+    width: 80%;
+    margin-top: -50px;
+}
+
+
+.emailBtn{
+    width:500px;
+    margin-left: 100px;
+    color: white;
+}
+.emailBtn h3 {
+    text-transform: capitalize;
+    color: #fff;
 }
 
 /*  
