@@ -3,7 +3,7 @@
 
 html,body {
 	height:100%;
-      background-size: cover;
+    width:100%;
     color:#444;
     font-family: 'Lato', sans-serif;
 }
@@ -16,6 +16,13 @@ html,body {
 
 a {
     color:#999;
+}
+
+.v-center h1{
+    color: #fff;
+}
+.v-center h2{
+    color: #fff;
 }
 
 a:hover {
@@ -64,6 +71,7 @@ section {
         top: 0; left: 0; bottom: 0; right: 0;
     }
 }
+
 /*  
 #section1 {
 	background-color: rgba(0,0,0,0.7);
