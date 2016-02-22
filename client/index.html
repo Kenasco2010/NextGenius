@@ -92,7 +92,7 @@
 
 
 
-		<div class="tp-caption fadeout sfr tp-resizeme"
+		<div class="tp-caption fadeout sfr tp-resizeme "
 		data-x="0" data-hoffset="0"
 		data-y="460" data-voffset="0"
 		data-speed="800"
@@ -110,9 +110,23 @@
 		{{else}}
 		<a class="btn-2" href="{{pathFor 'signIn'}}">Login</a>
 		{{/if}} -->
-		<div class="col-lg-8 col-lg-offset-4">
-		<a class="btn btn-primary emailBtn" href="{{pathFor 'emailPage'}}"><h3>Enter your email to be notified when we launch</h3></a>&nbsp;
+		
+		<!-- <a class="btn btn-primary emailBtn"  href="{{pathFor 'emailPage'}}"><h3>Enter your email to be notified when we launch</h3></a>&nbsp; -->
+
+		{{#autoForm collection="Emails" id="insertEmailsForm" type="insert" }}
+		<div class="container">
+		<div class="row">
+		<div class="col-lg-6 emailForm centered">
+				
+					<div class="">
+						{{> afQuickField name='email' placeholder="Please Enter Email"}}
+						<button class="btn-danger btn-lg btn-huge lato" type="submit" id="submitemail">Notify me when you start</button>
+					</div>
+				</div>
+			</div>
 		</div>
+		{{/autoForm}}
+		
 	</div>	
 </li>
 </ul>
